@@ -1,0 +1,27 @@
+	<!-- DEBUT DE LA MISE EN PAGE DE TROIS/DEUX COLONNES | THREE/TWO COLUMN LAYOUT BEGINS -->
+	<!-- DEBUT DU MENU LATERAL GAUCHE | LEFT SIDE MENU BEGINS --> 
+	<div class="left">
+		<!-- DEBUT DU TITRE DU MENU LATERAL | SIDE MENU TITLE BEGINS -->
+		<h1 class="navaid"><a name="il" id="il">Liens institutionnels</a></h1>
+		<!-- FIN DU TITRE DU MENU LATERAL | SIDE MENU TITLE ENDS -->
+		<ul class="nav">
+                    <% unless User.current.logged? %>
+				<h2 class="nav"><acronym title="Ressources Intellectuelles Canada">RICan</acronym></h2>
+				<ul class="nav">
+					<li class="menucontent"><a class="menulink" title="Enregistrer &lt; Ressources Intellectuelles Canada" href="reg-enreg-fra.html">Enregistrer</a></li>
+				</ul>
+                    <% end %>
+        <%= render_clf_menu :top_menu -%>
+        <%= render_clf_main_menu(@project) %>
+            <% if controller.class == WelcomeController %>
+			<li>
+				<div class="prodis"></div>
+				<h2 class="navaid">Divulgation proactive</h2>
+				<!-- DEBUT DU LIEN DIVULGATION PROACTIVE | PROACTIVE DISCLOSURE BEGINS -->
+				<div class="menucontent"><a class="menulink" href="http://www.tbs-sct.gc.ca/pd-dp/index-fra.asp">Divulgation proactive</a></div>
+				<!-- FIN DU LIEN DIVULGATION PROACTIVEE | PROACTIVE DISCLOSURE ENDS -->
+			</li>
+            <% end %>
+		</ul>
+	</div>    
+	<!-- FIN DU MENU LATERAL GAUCHE | LEFT SIDE MENU ENDS --> 

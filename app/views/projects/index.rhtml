@@ -1,0 +1,44 @@
+<div class="contextual">
+    <%= link_to(l(:label_project_new), {:controller => 'projects', :action => 'add'}, :class => 'icon icon-add') + ' |' if User.current.admin? %>
+    <%= link_to l(:label_issue_view_all), { :controller => 'issues' } %> |
+    <%= link_to l(:label_overall_activity), { :controller => 'projects', :action => 'activity' }%>
+</div>
+
+<h2><%=l(:label_project_plural)%></h2>
+
+<table class="list">
+  <thead><tr>
+	<th><%=l(:label_project)%></th>
+	<th><%=l(:field_description)%></th>
+  </tr></thead>
+  <tbody>
+    <%# Need to refind the projects but only the root projects and in
+      # alphabetical order by name (dynamic name based on the current
+      # language). Then each root project can be rendered with it's
+      # descendants properly
+      %>
+<% @projects = Project.visible.all(:order => 'lft ASC', :conditions => {:parent_id => nil}) %>
+<% for project in @projects.sort %>
+  <%# Skip projects that will be rendered under their ancestor %>
+  <% next if @projects.any? {|other_project| project.is_ancestor_of?(other_project) } %>
+
+  <%= render :partial => 'clf_project', :locals => {:project => project} %>
+
+  <% children = project.descendants.all(:conditions => Project.visible_by(User.current)).sort %>
+  <%= render(:partial => 'clf_project', :collection => children, :as => :project) if children.present? %>
+
+<% end %>
+  </tbody>
+</table>
+
+<% if User.current.logged? %>
+<p style="text-align:right;">
+<span class="my-project"><%= l(:label_my_projects) %></span>
+</p>
+<% end %>
+
+<% other_formats_links do |f| %>
+	<%= f.link_to 'Atom', :url => {:key => User.current.rss_key} %>
+<% end %>
+
+<% html_title(l(:label_project_plural)) -%>

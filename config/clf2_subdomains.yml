@@ -1,0 +1,8 @@
+# Mapping of the first subdomain to the language to use. Examples:
+#
+#   ircan.gc.ca => English
+#   rican.gc.ca => French
+#   ircan.a.really.deep.subdomain.gc.ca => English
+#   rican.even-in-a-different-top-level-domain.com => French
+ircan: :en
+rican: :fr

@@ -1,0 +1,29 @@
+fr:
+  clf2_text_top_menu: Menu du site
+  clf2_text_main_menu: Menu du projet
+  clf2_text_read_more: Lire la suite
+  label_clf_redmine: RICan Redmine
+  label_overview: Vue d'ensemble
+  label_help: Aide RICan Redmine
+  label_powered_by: Logiciels Libre en marche
+  field_description_fr: Description Francophone
+  #
+  # Rename all language strings in the core Redmine:
+  #
+  # * Documents to Reference Desk
+  # * Files to Releases
+  #
+  # Documents:
+  permission_manage_documents: Administration du Bureau de référence
+  permission_view_documents: Visionnement du Bureau de référence
+  project_module_documents: Bureau de référence
+  label_document: Bureau de référence
+  label_document_new: Nouveau Document de référence
+  label_document_plural: Bureau de référence
+  label_document_added: Document sauvegardé
+  enumeration_doc_categories: Catégorie du Bureau de référence
+  # Files:
+  permission_manage_files: Administration des Émissions
+  permission_view_files: Visionnement des Émissions
+  project_module_files: Émissions
+  label_file_plural: Émissions

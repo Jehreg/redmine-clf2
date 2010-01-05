@@ -1,0 +1,30 @@
+en:
+  clf2_text_top_menu: Site Menu
+  clf2_text_main_menu: Project Menu
+  clf2_text_read_more: Read More
+  label_clf_redmine: IRCan Redmine
+  label_help: IRCan Redmine Help
+  label_powered_by: Free Software at Work
+  field_description_fr: French Description
+  field_name_fr: French Name
+  setting_welcome_text_fr: French Welcome Text
+  #
+  # Rename all language strings in the core Redmine:
+  #
+  # * Documents to Reference Desk
+  # * Files to Releases
+  #
+  # Documents:
+  permission_manage_documents: Manage Reference Desk
+  permission_view_documents: View Reference Desk
+  project_module_documents: Reference Desk
+  label_document: Reference Desk
+  label_document_new: New Reference Document
+  label_document_plural: Reference Desk
+  label_document_added: Document added
+  enumeration_doc_categories: Reference Desk categories
+  # Files:
+  permission_manage_files: Manage Releases
+  permission_view_files: View Releases
+  project_module_files: Releases
+  label_file_plural: Releases
