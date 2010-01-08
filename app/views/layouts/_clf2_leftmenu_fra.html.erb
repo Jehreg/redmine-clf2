@@ -8,10 +8,13 @@
                     <% unless User.current.logged? %>
 				<h2 class="nav"><acronym title="Ressources Intellectuelles Canada">RICan</acronym></h2>
 				<ul class="nav">
-					<li class="menucontent"><a class="menulink" title="Enregistrer &lt; Ressources Intellectuelles Canada" href="reg-enreg-fra.html">Enregistrer</a></li>
+					<li class="menucontent"><a class="menulink" title="Enregistrer &lt; Ressources Intellectuelles Canada" href="/account/register">Enregistrer</a></li>
 				</ul>
                     <% end %>
         <%= render_clf_menu :top_menu -%>
+        <% if User.current.logged? %>
+	<li class="menucontent"><a class="menulink" title="D&eacute;connecter &lt; Ressources Intellectuelles Canada" href="/logout">D&eacute;connecter</a></li>
+        <% end %>
         <%= render_clf_main_menu(@project) %>
             <% if controller.class == WelcomeController %>
 			<li>
