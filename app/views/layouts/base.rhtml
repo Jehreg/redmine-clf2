@@ -3,9 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="<%= current_language() %>" xml:lang="<%= current_language() %>">
 
 <head>
-<%= stylesheet_link_tag 'application', :plugin => 'redmine_clf2', :media => 'all' %>
 <%= render :partial => 'layouts/clf2_titlemetacss_eng', :plugin => 'redmine_clf2' unless current_language() == :fr %>
 <%= render :partial => 'layouts/clf2_titlemetacss_fra', :plugin => 'redmine_clf2' if current_language() == :fr %>
+<%= stylesheet_link_tag 'application', :plugin => 'redmine_clf2', :media => 'all' %>
 
 	<%= javascript_include_tag :defaults %>
 	<%= heads_for_wiki_formatter %>

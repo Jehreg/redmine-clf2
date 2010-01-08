@@ -711,3 +711,5 @@ body div.center { margin-right: 155px; margin-left: 145px;}
 body div.powered { text-align: center; }
 
 body div.banner { background: none; color: black; }
+
+body { font-size: 10px; }
