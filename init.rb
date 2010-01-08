@@ -10,6 +10,8 @@ Redmine::Plugin.register :redmine_clf2 do
   settings(:default => {
              'welcome_text_fr' => ''
            })
+
+  menu :top_menu, :report_a_problem, 'http://tbscio.ircan.gc.ca/projects/help-aide/issues/new', :caption => :text_report_a_problem
 end
 
 require 'clf2/hooks/project_hooks'
