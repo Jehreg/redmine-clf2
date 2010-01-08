@@ -6,7 +6,9 @@ en:
   label_help: Redmine Help
   label_powered_by: Free Software at Work
   field_description_fr: French Description
-  field_name_fr: French Name
+  field_description: English Description
+  field_name_fr: French Project Name
+  field_name : English Project Name
   setting_welcome_text_fr: French Welcome Text
   text_report_a_problem: Report a Problem
   #
