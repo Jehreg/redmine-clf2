@@ -6,12 +6,14 @@
 		<!-- SIDE MENU TITLE ENDS | FIN DU TITRE DU MENU LATERAL -->
 		<ul class="nav">
                     <% unless User.current.logged? %>
-			<h2 class="nav"><acronym title="Intellectual Resources Canada">IRCan</acronym></h2>
-			<ul class="nav">
+			<li><h2 class="nav"><acronym title="Intellectual Resources Canada">IRCan</acronym></h2></li>
+			<li><ul class="nav">
 					<li class="menucontent"><a class="menulink" title="Register &lt; Intellectual Resources Canada" href="/account/register">Register</a></li>
-				</ul>
+				</ul></li>
                     <% end %>
+	<!--- Redmine Site Menu BEGINS -->
         <%= render_clf_menu :top_menu -%>
+	<!--- Redmine Site Menu ENDS -->
         <% if User.current.logged? %>
 	<li class="menucontent"><a class="menulink" title="Logout &lt; Intellectual Resources Canada" href="/logout">Logout</a></li>
         <% end %>

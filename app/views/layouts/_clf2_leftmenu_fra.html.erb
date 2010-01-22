@@ -1,15 +1,15 @@
 	<!-- DEBUT DE LA MISE EN PAGE DE TROIS/DEUX COLONNES | THREE/TWO COLUMN LAYOUT BEGINS -->
-	<!-- DEBUT DU MENU LATERAL GAUCHE | LEFT SIDE MENU BEGINS --> 
+	<!-- DEBUT DU MENU LATERAL GAUCHE | LEFT SIDE MENU BEGINS -->
 	<div class="left">
 		<!-- DEBUT DU TITRE DU MENU LATERAL | SIDE MENU TITLE BEGINS -->
 		<h1 class="navaid"><a name="il" id="il">Liens institutionnels</a></h1>
 		<!-- FIN DU TITRE DU MENU LATERAL | SIDE MENU TITLE ENDS -->
 		<ul class="nav">
                     <% unless User.current.logged? %>
-				<h2 class="nav"><acronym title="Ressources Intellectuelles Canada">RICan</acronym></h2>
-				<ul class="nav">
+				<li><h2 class="nav"><acronym title="Ressources Intellectuelles Canada">RICan</acronym></h2></li>
+				<li><ul class="nav">
 					<li class="menucontent"><a class="menulink" title="Enregistrer &lt; Ressources Intellectuelles Canada" href="/account/register">Enregistrer</a></li>
-				</ul>
+				</ul></li>
                     <% end %>
         <%= render_clf_menu :top_menu -%>
         <% if User.current.logged? %>
@@ -26,5 +26,5 @@
 			</li>
             <% end %>
 		</ul>
-	</div>    
+	</div> 
 	<!-- FIN DU MENU LATERAL GAUCHE | LEFT SIDE MENU ENDS --> 
