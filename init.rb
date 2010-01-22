@@ -12,6 +12,7 @@ Redmine::Plugin.register :redmine_clf2 do
            })
 
   menu :top_menu, :report_a_problem, 'http://tbscio.ircan.gc.ca/projects/help-aide/issues/new', :caption => :text_report_a_problem
+  menu :top_menu, :my_account, '/my/account', :caption => :label_my_account
 end
 
 require 'clf2/hooks/project_hooks'
