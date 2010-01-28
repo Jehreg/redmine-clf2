@@ -167,6 +167,9 @@ fieldset#filters table { border-collapse: collapse; }
 fieldset#filters table td { padding: 0; vertical-align: middle; }
 fieldset#filters tr.filter { height: 2em; }
 fieldset#filters td.add-filter { text-align: right; vertical-align: top; }
+fieldset.collapsible { border-width: 1px 0 0 0; font-size: 0.9em; }
+fieldset.collapsible legend { padding-left: 16px; background: url(http://www.redmine.org/images/arrow_expanded.png) no-repeat 0% 40%; cursor:pointer; }
+fieldset.collapsible.collapsed legend { background-image: url(http://www.redmine.org/images/arrow_collapsed.png); }
 .buttons { font-size: 0.9em; }
 
 div#issue-changesets {float:right; width:45%; margin-left: 1em; margin-bottom: 1em; background: #fff; padding-left: 1em; font-size: 90%;}
