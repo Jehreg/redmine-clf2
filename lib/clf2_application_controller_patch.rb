@@ -77,19 +77,22 @@ module Clf2
         # Skip if language is already set
         return true if session[:language]
 
-        subdomain = request.subdomains.first
+	request.subdomains.each do |subdomain|
 
-        if subdomain && self.clf2_subdomain_languages.respond_to?(:key?) && self.clf2_subdomain_languages.key?(subdomain)
-          logger.info ">>> Switching language from domain"
+          if subdomain && self.clf2_subdomain_languages.respond_to?(:key?) && self.clf2_subdomain_languages.key?(subdomain)
+            logger.info ">>> Switching language from domain"
 
-          if self.clf2_subdomain_languages[subdomain] == :fr
-            switch_language_to(:french)
-          elsif self.clf2_subdomain_languages[subdomain] == :en
-            switch_language_to(:english)
-          else
-            # Fallback to the other detection methods
+            if self.clf2_subdomain_languages[subdomain] == :fr
+              switch_language_to(:french)
+	      break
+            elsif self.clf2_subdomain_languages[subdomain] == :en
+              switch_language_to(:english)
+	      break
+            else
+              # Fallback to the other detection methods
+            end
           end
-        end
+	end
       end
 
       def set_current_language_from_session
