@@ -7,9 +7,7 @@
 		<ul class="nav">
                     <% unless User.current.logged? %>
 			<li><h2 class="nav"><acronym title="Intellectual Resources Canada">IRCan</acronym></h2></li>
-			<li><ul class="nav">
-					<li class="menucontent"><a class="menulink" title="Register &lt; Intellectual Resources Canada" href="/account/register">Register</a></li>
-				</ul></li>
+			<li class="menucontent"><a class="menulink" title="Register &lt; Intellectual Resources Canada" href="/account/register">Register</a></li>
                     <% end %>
 	<!--- Redmine Site Menu BEGINS -->
         <%= render_clf_menu :top_menu -%>
