@@ -1,0 +1,33 @@
+/* CLF 2.0 TEMPLATE VERSION 1.04 | VERSION 1.04 DU GABARIT NSI 2.0 */
+/* Downloaded from http://www.tbs-sct.gc.ca/cioscripts/styles/clf2/3col.css */
+/* THREE COLUMN LAYOUT CSS BEGINS | DEBUT DU CSS DE LA MISE EN PAGE DE TROIS COLONNES */
+div.left {
+	float: left;
+	width: 150px;
+}
+div.right {
+	float: right; 
+	width: 195px;
+}
+div.center {
+	padding: 0px 5px 5px 5px;
+	margin-left: 150px;
+	margin-right: 195px;
+}
+	
+div.colLayout {
+		background: #FFF url('/cioscripts/images/3-col.gif') repeat-y 0 0;
+	} /*** Puts brown color below sidebars - NI ****/
+
+div.colLayoutArchE { background: #FFF url('/cioscripts/images/3-col-archivee.gif') repeat-y 0 0; } 
+div.colLayoutArchF { background: #FFF url('/cioscripts/images/3-col-archivef.gif') repeat-y 0 0; }
+
+
+* html div.center {
+	margin-left: auto;
+	margin-right: auto;
+	float: left;
+}
+/* THREE COLUMN LAYOUT CSS ENDS | FIN DU CSS DE LA MISE EN PAGE DE TROIS COLONNES */
+
+* html div.center table {margin-left: -2px; margin-right: -2px;}
