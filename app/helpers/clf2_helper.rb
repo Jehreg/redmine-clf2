@@ -24,9 +24,8 @@ module Clf2Helper
     if links.empty?
       return nil
     else
-      inner_menu = content_tag('ul',
-                               links.join("\n"),
-                               :class => options[:ul_class])
+      #inner_menu = content_tag( 'li', links.join("\n"), :class => options[:li_class] )
+      inner_menu = links.join("\n")
 
       return outer_clf_menu(inner_menu, options[:title], options)
     end
@@ -40,13 +39,11 @@ module Clf2Helper
       :title => :clf2_text_top_menu
     }.merge(options)
 
-    content_tag(:ul,
-                content_tag(:li,
+    content_tag(:li,
                             content_tag(:h2,
                                         l(title),
-                                        :class => options[:ul_class]) +
-                            inner_html),
-                :class => options[:ul_class])
+                                        :class => options[:ul_class])) +
+                            inner_html
   end
 
   # Wraps the Redmine core's render_main_main but using the CLF
