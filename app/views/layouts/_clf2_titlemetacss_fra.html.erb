@@ -22,9 +22,9 @@
 	<!-- FIN DES METADONNEES | METADATA ENDS -->
 
 	<!-- DEBUT DES SCRIPTS/CSS DU GABARIT | TEMPLATE SCRIPTS/CSS BEGIN -->
-	<link href="http://www.tbs-sct.gc.ca/cioscripts/styles/clf2/base.css" media="screen, print" rel="stylesheet" type="text/css" />
-	<link href="http://www.tbs-sct.gc.ca/cioscripts/styles/clf2/3col.css" media="screen, print" rel="stylesheet" type="text/css" />
-	<style type="text/css" media="all">@import url(http://www.tbs-sct.gc.ca/cioscripts/styles/clf2/base2.css);</style>
+	<%= stylesheet_link_tag 'base', :plugin => 'redmine_clf2', :media => 'screen,print' %>
+	<%= stylesheet_link_tag '3col', :plugin => 'redmine_clf2', :media => 'screen,print' %>
+	<%= stylesheet_link_tag 'base2', :plugin => 'redmine_clf2', :media => 'all' %>
 	<!-- FIN DES SCRIPTS/CSS DU GABARIT | TEMPLATE SCRIPTS/CSS END -->
 	
 	<!-- DEBUT DE L'AMELIORATION PROGRESSIVE | PROGRESSIVE ENHANCEMENT BEGINS -->
@@ -41,10 +41,10 @@
 	<!-- FIN DE L'AMELIORATION PROGRESSIVE | PROGRESSIVE ENHANCEMENT ENDS -->
 
 	<!-- DEBUT DES SCRIPTS/CSS PERSONNALISES | CUSTOM SCRIPTS/CSS BEGIN -->
-	<link href="http://www.tbs-sct.gc.ca/cioscripts/styles/clf2/base-institution.css" media="screen, print" rel="stylesheet" type="text/css" />
-	<link href="http://www.tbs-sct.gc.ca/cioscripts/styles/clf2/institution.css" media="screen, print" rel="stylesheet" type="text/css" />
+	<%= stylesheet_link_tag 'base-institution', :plugin => 'redmine_clf2', :media => 'screen,print' %>
+	<%= stylesheet_link_tag 'institution', :plugin => 'redmine_clf2', :media => 'screen,print' %>
 	<!-- FIN DES SCRIPTS/CSS PERSONNALISES | CUSTOM SCRIPTS/CSS END -->
 
 	<!-- DEBUT DU CSS DU GABARIT POUR L'IMPRESSION | TEMPLATE PRINT CSS BEGINS -->
-	<link href="http://www.tbs-sct.gc.ca/cioscripts/styles/clf2/pf-if.css" rel="stylesheet" type="text/css" />
+	<%= stylesheet_link_tag 'pf-if', :plugin => 'redmine_clf2', :media => 'screen,print' %>
 	<!-- FIN DU CSS DU GABARIT POUR L'IMPRESSION | TEMPLATE PRINT CSS ENDS -->
