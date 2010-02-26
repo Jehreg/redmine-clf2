@@ -14,8 +14,8 @@
 	<%= yield :header_tags -%>
 </head><body>
 <div class="page"><div class="core">
-    <% if current_language() == :fr %>
-        <%= render :partial => 'layouts/clf2_header_fra', :plugin => 'redmine_clf2' %>
+<% if current_language() == :fr %>
+<%= render :partial => 'layouts/clf2_header_fra', :plugin => 'redmine_clf2' %>
 
 	<div class="colLayout">
 	<%= render :partial => 'layouts/clf2_leftmenu_fra', :plugin => 'redmine_clf2' %>
@@ -23,14 +23,15 @@
 	<%= render :partial => 'layouts/clf2_rightmenu_fra', :plugin => 'redmine_clf2' %>
 	
 	<%= render :partial => 'layouts/clf2_contentstart_fra', :plugin => 'redmine_clf2' %>
-	</div>
-    <%  else  %>
-        <%= render :partial => 'layouts/clf2_header_eng', :plugin => 'redmine_clf2' %>
+<%  else  %>
+<%= render :partial => 'layouts/clf2_header_eng', :plugin => 'redmine_clf2' %>
+
 	<div class="colLayout">
 	<%= render :partial => 'layouts/clf2_leftmenu_eng', :plugin => 'redmine_clf2' %>
-	<%= render :partial => 'layouts/clf2_contentstart_eng', :plugin => 'redmine_clf2' %>
+	
 	<%= render :partial => 'layouts/clf2_rightmenu_eng', :plugin => 'redmine_clf2' %>
-	</div>
+	
+	<%= render :partial => 'layouts/clf2_contentstart_eng', :plugin => 'redmine_clf2' %>
 <% end %>
 
 			<div id="content">
@@ -44,6 +45,7 @@
 
 <%= render :partial => 'layouts/clf2_footer_eng', :plugin => 'redmine_clf2' unless current_language() == :fr %>
 <%= render :partial => 'layouts/clf2_footer_fra', :plugin => 'redmine_clf2' if current_language() == :fr %>
+	</div>
 </div></div>
 </body>
 </html>
