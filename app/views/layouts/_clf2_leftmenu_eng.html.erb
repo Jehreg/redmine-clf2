@@ -8,11 +8,12 @@
                     <% unless User.current.logged? %>
 			<li><h2 class="nav"><acronym title="Intellectual Resources Canada">IRCan</acronym></h2></li>
 			<li class="menucontent"><a class="menulink" title="Register &lt; Intellectual Resources Canada" href="/account/register">Register</a></li>
-			<li class="menucontent"><a class="menulink" title="Login &lt; Intellectual Resources Canada" href="/login">Login</a></li>
                     <% end %>
+	<!--- Redmine Site Menu BEGINS -->
         <%= render_clf_menu :top_menu -%>
+	<!--- Redmine Site Menu ENDS -->
         <% if User.current.logged? %>
-		<li class="menucontent"><a class="menulink" title="Logout &lt; Intellectual Resources Canada" href="/logout">Logout</a></li>
+	<li class="menucontent"><a class="menulink" title="Logout &lt; Intellectual Resources Canada" href="/logout">Logout</a></li>
         <% end %>
         <%= render_clf_main_menu(@project) %>
             <% if controller.class == WelcomeController %>

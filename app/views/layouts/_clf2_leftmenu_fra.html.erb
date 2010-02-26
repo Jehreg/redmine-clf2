@@ -6,13 +6,14 @@
 		<!-- FIN DU TITRE DU MENU LATERAL | SIDE MENU TITLE ENDS -->
 		<ul class="nav">
                     <% unless User.current.logged? %>
-			<li><h2 class="nav"><acronym title="Ressources Intellectuelles Canada">RICan</acronym></h2></li>
-			<li class="menucontent"><a class="menulink" title="Enregistrer &lt; Ressources Intellectuelles Canada" href="/account/register">Enregistrer</a></li>
-			<li class="menucontent"><a class="menulink" title="Connecter &lt; Ressources Intellectuelles Canada" href="/login">Connecter</a></li>
+				<li><h2 class="nav"><acronym title="Ressources Intellectuelles Canada">RICan</acronym></h2></li>
+				<li><ul class="nav">
+					<li class="menucontent"><a class="menulink" title="Enregistrer &lt; Ressources Intellectuelles Canada" href="/account/register">Enregistrer</a></li>
+				</ul></li>
                     <% end %>
         <%= render_clf_menu :top_menu -%>
         <% if User.current.logged? %>
-		<li class="menucontent"><a class="menulink" title="D&eacute;connecter &lt; Ressources Intellectuelles Canada" href="/logout">D&eacute;connecter</a></li>
+	<li class="menucontent"><a class="menulink" title="D&eacute;connecter &lt; Ressources Intellectuelles Canada" href="/logout">D&eacute;connecter</a></li>
         <% end %>
         <%= render_clf_main_menu(@project) %>
             <% if controller.class == WelcomeController %>
