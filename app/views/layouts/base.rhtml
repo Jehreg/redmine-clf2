@@ -27,18 +27,17 @@
     <%  else  %>
         <%= render :partial => 'layouts/clf2_header_eng', :plugin => 'redmine_clf2' %>
 	<div class="colLayout">
-	<%= render :partial => 'layouts/clf2_contentstart_eng', :plugin => 'redmine_clf2' %>
-	<div id="content">
-		<%= content_tag('div', flash[:error], :class => 'flash error') if flash[:error] %>
-		<%= content_tag('div', flash[:notice], :class => 'flash notice') if flash[:notice] %>
-		<%= yield %>
-	</div>
-	<%= render :partial => 'layouts/clf2_contentend', :plugin => 'redmine_clf2' %>
 	<%= render :partial => 'layouts/clf2_leftmenu_eng', :plugin => 'redmine_clf2' %>
+	<%= render :partial => 'layouts/clf2_contentstart_eng', :plugin => 'redmine_clf2' %>
 	<%= render :partial => 'layouts/clf2_rightmenu_eng', :plugin => 'redmine_clf2' %>
-<!--	</div> -->
+	</div>
 <% end %>
 
+			<div id="content">
+				<%= content_tag('div', flash[:error], :class => 'flash error') if flash[:error] %>
+				<%= content_tag('div', flash[:notice], :class => 'flash notice') if flash[:notice] %>
+				<%= yield %>
+			</div>
 		
 			<div id="ajax-indicator" style="display:none;"><span><%= l(:label_loading) %></span></div>
 		    <%= call_hook :view_layouts_base_body_bottom %>
