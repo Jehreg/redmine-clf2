@@ -1,0 +1,75 @@
+/* CLF 2.0 TEMPLATE VERSION 1.04 | VERSION 1.04 DU GABARIT NSI 2.0 */
+/* Downloaded from http://www.tbs-sct.gc.ca/cioscripts/styles/clf2/institution.css */
+
+/* GENERAL CSS BEGINS | DEBUT DU CSS GENERAL */
+
+/* needed for the welcome page on archive sites */
+.notice    { background: #ffff00; } 
+
+
+/* 
+	for use on the page 
+	/tbs-sct/audience-auditoire/parliamentarian-parlementaire-eng.asp
+*/
+.container {
+	margin: 5px auto;
+	width: 100%;
+	border: solid 1px #cccc99; 
+	background-color: #ffffff;
+}
+.leftcontainer {
+	float: left;
+	margin: 3px;
+	padding: 0.1em;
+	width: 140px;
+	text-align: center;
+}
+.rightcontainer {
+	margin-left: 150px;
+	padding: 0.1em;
+	border-left: solid 1px #fff; 
+}
+/* 
+	Modified Blockquote for Financial Management pages
+	/fm-gf/abu-ans/abu-ans-eng.asp
+*/
+blockquote.noMargins {
+	margin: 0; 
+	padding: .5em;
+	font-style: normal;
+}
+/* 
+	for use on the page 
+	/ocg-bcg/events-evenements/presentations/menu-eng.asp
+*/
+.fm-gf, .ia-vi, .ocg-bcg {
+	padding-left: 5px;
+	border-top: solid 1px #000;
+	border-right: solid 1px #000;
+	border-bottom: solid 1px #000;
+}
+.fm-gf { border-left: solid 10px #369; border-color: #369; }
+.ia-vi { border-left: solid 10px #ccc; border-color: #ccc;}
+.ocg-bcg { border-left: solid 10px #369; border-color: #369;}
+
+
+
+/*	for use on folder
+	/tbsrp-prsct/foiard-rpafvi/career-carriere/profiles-profils/
+
+*/
+div.profilepage-spotlight p{
+	margin-top: 0px;
+	margin-bottom: 12px;
+	
+}
+
+
+/*	for use on folder
+	/tbsrp-prsct/foiard-rpafvi/career-carriere/profiles-profils/
+*/
+div.profile-spotlight-separation{
+	height: 75px;
+}
+
+/* GENERAL CSS ENDS | FIN DU CSS GENERAL */
