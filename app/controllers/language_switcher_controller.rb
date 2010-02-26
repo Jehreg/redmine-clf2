@@ -2,7 +2,7 @@ class LanguageSwitcherController < ApplicationController
   unloadable
 
   def french
-    logger.debug "Setting french"
+    logger.info ">>> Setting french"
     session[:language] = 'fr'
     if request.referer
       redirect_to request.referer
@@ -12,7 +12,7 @@ class LanguageSwitcherController < ApplicationController
   end
   
   def english
-    logger.debug "Setting english"
+    logger.info ">>> Setting english"
     session[:language] = 'en'
     if request.referer
       redirect_to request.referer
