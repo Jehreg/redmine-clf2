@@ -80,7 +80,7 @@ module Clf2
         subdomain = request.subdomains.first
 
         if subdomain && self.clf2_subdomain_languages.respond_to?(:key?) && self.clf2_subdomain_languages.key?(subdomain)
-          logger.debug "Switching language from domain"
+          logger.info ">>> Switching language from domain"
 
           if self.clf2_subdomain_languages[subdomain] == :fr
             switch_language_to(:french)
@@ -102,7 +102,7 @@ module Clf2
       end
 
       def set_localization_with_clf_mods
-        logger.debug "In set_localization_with_clf_mods"
+        logger.info ">>> In new set_localization"
         switch_language_to(:french) if request.request_uri =~ /\/french$/ 
         switch_language_to(:english) if request.request_uri =~ /\/english$/
         set_current_language_from_session
