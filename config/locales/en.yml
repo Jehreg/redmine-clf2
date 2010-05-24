@@ -32,3 +32,5 @@ en:
   project_module_files: Releases
   label_file_plural: Releases
   label_wiki: Project Wiki
+  # Other strings
+  notice_failed_to_save_members: "Please ensure you indicate a role and user. / SVP assurez d'indiquer un rôle et utilisateur."

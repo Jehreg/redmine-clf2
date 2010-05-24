@@ -33,3 +33,5 @@ fr:
   project_module_files: Émissions
   label_file_plural: Émissions
   label_wiki: Wiki du projet
+  # Other strings
+  notice_failed_to_save_members: "Please ensure you indicate a role and user. / SVP assurez d'indiquer un rôle et utilisateur."
