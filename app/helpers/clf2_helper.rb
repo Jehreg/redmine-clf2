@@ -62,4 +62,11 @@ module Clf2Helper
 
     render_clf_menu((project && !project.new_record?) ? :project_menu : :application_menu, project, options)
   end
+
+  # Truncate text based on word boundries
+  def truncate_words(text, length = 30, end_string = ' ...')
+    return if text == nil
+    words = text.split
+    words[0..(length-1)].join(' ') + (words.length > length ? end_string : '')
+  end
 end
