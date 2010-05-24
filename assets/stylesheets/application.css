@@ -311,6 +311,18 @@ p.other-formats { text-align: right; font-size:0.9em; color: #666; }
 
 a.atom { background: url(../../../images/feed.png) no-repeat 1px 50%; padding: 2px 0px 3px 16px; }
 
+/* Project members tab */
+div#tab-content-members .splitcontentleft, div#tab-content-memberships .splitcontentleft, div#tab-content-users .splitcontentleft { width: 64% }
+div#tab-content-members .splitcontentright, div#tab-content-memberships .splitcontentright, div#tab-content-users .splitcontentright { width: 34% }
+div#tab-content-members fieldset, div#tab-content-memberships fieldset, div#tab-content-users fieldset { padding:1em; margin-bottom: 1em; }
+div#tab-content-members fieldset legend, div#tab-content-memberships fieldset legend, div#tab-content-users fieldset legend { font-weight: bold; }
+div#tab-content-members fieldset label, div#tab-content-memberships fieldset label, div#tab-content-users fieldset label { display: block; }
+div#tab-content-members fieldset div, div#tab-content-users fieldset div { max-height: 400px; overflow:auto; }
+
+table.members td.group { padding-left: 20px; background: url(../images/group.png) no-repeat 0% 50%; }
+
+* html div#tab-content-members fieldset div { height: 450px; }
+
 /***** Flash & error messages ****/
 #errorExplanation, div.flash, .nodata, .warning {
     padding: 4px 4px 4px 30px;
