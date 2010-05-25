@@ -288,6 +288,11 @@ display: block;
 width: auto;
 }
 
+.tabular label.inline{
+float:none;
+margin-left: 5px !important;
+width: auto;
+}
 
 input#time_entry_comments { width: 90%;}
 
@@ -299,7 +304,7 @@ input#time_entry_comments { width: 90%;}
 .required {color: #bb0000;}
 .summary {font-style: italic;}
 
-#attachments_fields input[type=text] {margin-left: 8px; }
+#attachments_fields input[type=text] {margin-left: 8px; width: 250px;}
 
 div.attachments { margin-top: 12px; }
 div.attachments p { margin:4px 0 2px 0; }
