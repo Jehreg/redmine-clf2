@@ -9,6 +9,7 @@ en:
   field_description: English Description
   field_name_fr: French Project Name
   field_name : English Project Name
+  setting_welcome_text: English Welcome Text
   setting_welcome_text_fr: French Welcome Text
   text_report_a_problem: Report a Problem
   #

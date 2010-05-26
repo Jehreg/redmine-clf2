@@ -11,7 +11,8 @@ fr:
   field_name_fr: Nom Francophone du projet
   field_name : Nom Anglophone du projet
   text_report_a_problem: Signaler un problème
-  setting_welcome_text_fr: Texte de Bienvenue Francophone
+  setting_welcome_text: "Texte d'accueil anglophone"
+  setting_welcome_text_fr: "Texte d'accueil francophone"
   #
   # Rename all language strings in the core Redmine:
   #
