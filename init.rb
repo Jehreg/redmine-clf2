@@ -41,5 +41,8 @@ Dispatcher.to_prepare :redmine_clf2_patches do
   User.send(:include, Clf2::Principal::Patch)
   Project.send(:include, Clf2::Patches::ProjectPatch)
   Setting.send(:include, Clf2::Patches::SettingPatch)
+  require_dependency 'settings_helper'
+  unless SettingsHelper.included_modules.include? RedmineClf2::Patches::SettingsHelperPatch
+    SettingsHelper.send(:include, RedmineClf2::Patches::SettingsHelperPatch)
+  end
 end
-
