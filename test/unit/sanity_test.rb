@@ -14,7 +14,6 @@ class SanityTest < Test::Unit::TestCase
   end
 
   should "connect to database" do
-    User.generate_with_protected!(:firstname => 'Testing connection')
-    assert_equal 1, User.count(:all, :conditions => {:firstname => 'Testing connection'})
+    assert_equal 0, User.count(:all, :conditions => {:firstname => 'Testing connection'})
   end
 end
