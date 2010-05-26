@@ -35,7 +35,9 @@ Dispatcher.to_prepare :redmine_clf2_patches do
   require_dependency 'user'
   require_dependency 'setting'
 
-  ApplicationController.send(:include, Clf2::ApplicationController::Patch)
+  unless ApplicationController.included_modules.include? Clf2::ApplicationController::Patch
+    ApplicationController.send(:include, Clf2::ApplicationController::Patch)
+  end
   ProjectsController.send(:include, Clf2::ProjectsController::Patch)
   Principal.send(:include, Clf2::Principal::Patch)
   User.send(:include, Clf2::Principal::Patch)

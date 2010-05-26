@@ -21,6 +21,24 @@ module Clf2
           base.load_clf2_subdomains_file
           
           helper :clf2
+
+          # Include the current language in the url as a query string (ISO 639-2)
+          def url_for_with_language_in_url(options)
+            # Pass without language if options isn't a hash (e.g. url string)
+            unless options.respond_to?(:merge)
+              return url_for_without_language_in_url(options)
+            end
+            
+            case current_language
+            when :en
+              url_for_without_language_in_url(options.merge(:language => 'eng'))
+            when :fr
+              url_for_without_language_in_url(options.merge(:language => 'fra'))
+            else
+              url_for_without_language_in_url(options)
+            end
+          end
+          alias_method_chain :url_for, :language_in_url
         end
       end
     end

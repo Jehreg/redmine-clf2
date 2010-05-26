@@ -7,7 +7,7 @@ class LanguageSwitcherController < ApplicationController
     if request.referer
       redirect_to request.referer
     else
-      redirect_back_or_default('/')
+      redirect_back_or_default(url_for(:controller => 'welcome', :action => 'index'))
     end
   end
   
@@ -17,7 +17,7 @@ class LanguageSwitcherController < ApplicationController
     if request.referer
       redirect_to request.referer
     else
-      redirect_back_or_default('/')
+      redirect_back_or_default(url_for(:controller => 'welcome', :action => 'index'))
     end
   end
 
