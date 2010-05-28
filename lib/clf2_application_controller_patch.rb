@@ -31,9 +31,9 @@ module Clf2
             
             case current_language
             when :en
-              url_for_without_language_in_url(options.merge(:language => 'eng'))
+              url_for_without_language_in_url(options.merge(:lang => 'eng'))
             when :fr
-              url_for_without_language_in_url(options.merge(:language => 'fra'))
+              url_for_without_language_in_url(options.merge(:lang => 'fra'))
             else
               url_for_without_language_in_url(options)
             end
