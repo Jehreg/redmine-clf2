@@ -36,3 +36,4 @@ fr:
   label_wiki: Wiki du projet
   # Other strings
   notice_failed_to_save_members: "Please ensure you indicate a role and user. / SVP assurez d'indiquer un rôle et utilisateur."
+  notice_account_pending: "Les inscriptions sont activées individuellement par notre personnel. Vous recevrez un message automatique pour vous informer au moment où votre compte est activé."
