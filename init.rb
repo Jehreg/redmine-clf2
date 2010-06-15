@@ -50,3 +50,9 @@ Dispatcher.to_prepare :redmine_clf2_patches do
     SettingsHelper.send(:include, RedmineClf2::Patches::SettingsHelperPatch)
   end
 end
+
+Redmine::MenuManager.map :top_menu do |menu|
+  menu.delete(:help)
+  menu.push :english_help, "http://www.redmine.org/wiki/redmine/Guide", :last => true, :caption => :label_help, :if => Proc.new { ::I18n.locale == :en }
+  menu.push :french_help, "http://www.redmine.org/wiki/redmine/FrGuide", :last => true, :caption => :label_help, :if => Proc.new { ::I18n.locale == :fr }
+end
