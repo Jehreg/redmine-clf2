@@ -36,3 +36,7 @@ en:
   # Other strings
   notice_failed_to_save_members: "Please ensure you indicate a role and user. / SVP assurez d'indiquer un rôle et utilisateur."
   notice_account_pending: "Registrations are individually activated by our personnel. You will receive an automated message to let you know when your account is activated."
+ # Issues
+  label_issue_new: New task
+  label_issue_plural: Tasks
+  label_issue_tracking: Tracking
