@@ -11,7 +11,7 @@ Redmine::Plugin.register :redmine_clf2 do
              'welcome_text_fr' => ''
            })
 
-  menu :top_menu, :report_a_problem, 'http://tbscio.ircan.gc.ca/projects/help-aide/issues/new', :caption => :text_report_a_problem
+  menu :top_menu, :report_a_problem, '/projects/help-aide/issues/new', :caption => :text_report_a_problem
   menu :top_menu, :my_account, '/my/account', :caption => :label_my_account
 end
 
@@ -53,6 +53,7 @@ end
 
 Redmine::MenuManager.map :top_menu do |menu|
   menu.delete(:help)
-  menu.push :english_help, "http://www.redmine.org/wiki/redmine/Guide", :last => true, :caption => :label_help, :if => Proc.new { ::I18n.locale == :en }
-  menu.push :french_help, "http://www.redmine.org/wiki/redmine/FrGuide", :last => true, :caption => :label_help, :if => Proc.new { ::I18n.locale == :fr }
+#  menu.push :english_help, "http://www.redmine.org/wiki/redmine/Guide", :last => true, :caption => :label_help, :if => Proc.new { ::I18n.locale == :en }
+#  menu.push :french_help, "http://www.redmine.org/wiki/redmine/FrGuide", :last => true, :caption => :label_help, :if => Proc.new { ::I18n.locale == :fr }
+  menu.push :help, '/projects/help-aide', :caption => :label_help
 end

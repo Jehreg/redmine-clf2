@@ -3,7 +3,7 @@ en:
   clf2_text_main_menu: Project Menu
   clf2_text_read_more: Read More
   label_clf_redmine: IRCan Redmine
-  label_help: Redmine Help
+#  label_help: Redmine Help
   label_powered_by: Free Software at Work
   field_description_fr: French Description
   field_description: English Description
