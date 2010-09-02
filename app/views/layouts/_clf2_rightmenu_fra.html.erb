@@ -1,9 +1,9 @@
 	<!-- DEBUT DU MENU LATERAL DROIT | RIGHT SIDE MENU BEGINS -->
 	<div class="right">
-        <ul class="nav">
+          <ul class="nav">
           <li><%= tag('div', {:id => 'main', :class => (has_content?(:sidebar) ? '' : 'nosidebar')}, true) %></div></li>
           <li><div id="sidebar">
-	<%= yield :sidebar %></div>
+	<%= yield :sidebar %>
 	<%= call_hook :view_layouts_base_sidebar %>
 	</div></li>
         </ul>
