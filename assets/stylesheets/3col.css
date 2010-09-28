@@ -16,11 +16,11 @@ div.center {
 }
 	
 div.colLayout {
-		background: #FFF url('/cioscripts/images/3-col.gif') repeat-y 0 0;
+		background: #FFF url('http://www.tbs-sct.gc.ca/cioscripts/images/3-col.gif') repeat-y 0 0;
 	} /*** Puts brown color below sidebars - NI ****/
 
-div.colLayoutArchE { background: #FFF url('/cioscripts/images/3-col-archivee.gif') repeat-y 0 0; } 
-div.colLayoutArchF { background: #FFF url('/cioscripts/images/3-col-archivef.gif') repeat-y 0 0; }
+div.colLayoutArchE { background: #FFF url('http://www.tbs-sct.gc.ca/cioscripts/images/3-col-archivee.gif') repeat-y 0 0; } 
+div.colLayoutArchF { background: #FFF url('http://www.tbs-sct.gc.ca/cioscripts/images/3-col-archivef.gif') repeat-y 0 0; }
 
 
 * html div.center {

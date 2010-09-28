@@ -22,7 +22,7 @@ div.cwm img {
 /* INSTITUTIONAL BANNER CSS BEGINS | DEBUT DU CSS DE LA BANNIERE INSTITUTIONNELLE */
 div.banner {
 	color: #FFF;
-	background: url(/cioscripts/images/banner-tbs-sct.jpg) #269 no-repeat center center; }
+	background: url(http://www.tbs-sct.gc.ca/cioscripts/images/banner-tbs-sct.jpg) #269 no-repeat center center; }
 div.banner-eng, div.banner-lfcoa-eng {
 	background: url() #FFF no-repeat center center;
 }
