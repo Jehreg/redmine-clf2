@@ -3,6 +3,7 @@ fr:
   clf2_text_main_menu: Menu du projet
   clf2_text_read_more: Lire la suite
   label_clf_redmine: RICan Redmine
+  label_app_title: Environnement extranet
   label_overview: Vue d'ensemble
 #  label_help: Aide Redmine
   label_powered_by: Logiciels Libre en marche
