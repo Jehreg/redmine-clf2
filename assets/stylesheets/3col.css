@@ -28,6 +28,7 @@ div.colLayoutArchF { background: #FFF url('/cioscripts/images/3-col-archivef.gif
 	margin-right: auto;
 	float: left;
 }
+body div.innerLayout {background: transparent url(../images/3-col-right-only.gif) repeat-y scroll right 0;}
 /* THREE COLUMN LAYOUT CSS ENDS | FIN DU CSS DE LA MISE EN PAGE DE TROIS COLONNES */
 
 * html div.center table {margin-left: -2px; margin-right: -2px;}
