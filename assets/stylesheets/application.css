@@ -706,7 +706,6 @@ td.username img.gravatar {
 	margin: 0 1em 1em 0;
 }
 
-#activity dt,
 .journal {
 	clear: left;
 }
@@ -739,6 +738,7 @@ div.missing-language-fr {}
 body div.left { width: 142px;}
 body div.right { width: 150px;}
 body div.center { margin-right: 155px; margin-left: 145px;}
+body div.center * { clear: none; }
 body div.powered { text-align: center; }
 
 body div.banner { background: rgb(255,255,220); color: black; }
