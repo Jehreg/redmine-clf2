@@ -42,3 +42,5 @@ fr:
   label_issue_new: Nouvelle tâche
   label_issue_plural: Tâches
   label_issue_tracking: Suivi
+  # Missing in plugin 'timesheet_plugin'
+  label_log_time: Entrée de temps
