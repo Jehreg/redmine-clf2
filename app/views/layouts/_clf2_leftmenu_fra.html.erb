@@ -6,7 +6,7 @@
 		<!-- FIN DU TITRE DU MENU LATERAL | SIDE MENU TITLE ENDS -->
 		<ul class="nav">
                     <% unless User.current.logged? %>
-				<li><h2 class="nav"><acronym title="Ressources Intellectuelles Canada">RICan</acronym></h2></li>
+				<li><h2 class="nav"><acronym title="Commencez">Commencez</acronym></h2></li>
 				<li><ul class="nav">
 					<li class="menucontent"><a class="menulink" title="Enregistrer &lt; Ressources Intellectuelles Canada" href="/account/register">Enregistrer</a></li>
 					<li class="menucontent"><a class="menulink" title="Connecter &lt; Ressources Intellectuelles Canada" href="/login">Connecter</a></li>
@@ -20,10 +20,13 @@
             <% if controller.class == WelcomeController %>
 			<li>
 				<div class="prodis"></div>
-				<h2 class="navaid">Divulgation proactive</h2>
+                                <% if $IRCanFranchise %>
+				<h2 class="navaid">Divulgation proactive</h2> 
 				<!-- DEBUT DU LIEN DIVULGATION PROACTIVE | PROACTIVE DISCLOSURE BEGINS -->
-				<div class="menucontent"><a class="menulink" href="http://www.tbs-sct.gc.ca/pd-dp/index-fra.asp">Divulgation proactive</a></div>
+                                <!-- This is for gc sites only -->
+				<div class="menucontent"><a class="menulink" href="http://www.tbs-sct.gc.ca/pd-dp/index-fra.asp">Divulgation proactive</a></div> 
 				<!-- FIN DU LIEN DIVULGATION PROACTIVEE | PROACTIVE DISCLOSURE ENDS -->
+                                <% end %>
 			</li>
             <% end %>
 		</ul>

@@ -9,10 +9,12 @@
 		<div class="powered"><%= l(:label_powered_by) %> <%= link_to Redmine::Info.app_name, Redmine::Info.url %>, <a href="http://ruby-lang.org/">Ruby</a>, <a href="http://www.postgresql.org/">PostgreSQL</a>, <a href="http://www.apache.org/">Apache</a>, <a href="http://wiki.openvz.org/Main_Page">OpenVZ</a>, <a href="http://www.ubuntu.com/">Ubuntu</a> </div>
 		<div class="foot1">
 		<!-- DATE MODIFIED BEGINS | DEBUT DE LA DATE DE MODIFICATION -->
-		Date Modified: <span class="date">2009-02-04</span>
+		Date Modified: <span class="date"><%= Time.now.strftime("%Y-%m-%d") %></span>
 		<!-- DATE MODIFIED ENDS | FIN DE LA DATE DE MODIFICATION -->
 		</div>
-		<div class="foot2"><a href="#tphp" title="Return to Top of Page"><img class="uparrow" src="http://www.tbs-sct.gc.ca/cioscripts/images/clf2/tphp.gif" width="19" height="12" alt="" /><br />Top of Page</a></div>
-		<div class="foot3"><a href="http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-eng.asp">Important Notices</a></div>
+		<div class="foot2"><a href="#tphp" title="Return to Top of Page"><img class="uparrow" src="/assets/imageo/tphp.gif" width="19" height="12" alt="" /><br />Top of Page</a></div>
+                <% if $IRCanFranchise %>
+		  <div class="foot3"><a href="http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-eng.asp">Important Notices</a></div>
+                <% end %>
 	</div>
 	<!-- FOOTER ENDS | FIN DU PIED DE LA PAGE -->
