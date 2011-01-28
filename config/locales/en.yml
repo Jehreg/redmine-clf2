@@ -43,3 +43,5 @@ en:
   label_issue_tracking: Tracking
   # Missing in plugin 'timesheet_plugin'
   label_log_time: Log time
+  field_deliverable: Deliverable
+  field_overtime: Overtime

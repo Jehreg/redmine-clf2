@@ -44,3 +44,5 @@ fr:
   label_issue_tracking: Suivi
   # Missing in plugin 'timesheet_plugin'
   label_log_time: Entrée de temps
+  field_deliverable: Livrable
+  field_overtime: Temps supplémentaire
