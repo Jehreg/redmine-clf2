@@ -69,6 +69,8 @@ input#openid_url { background: url(../../../images/openid-bg.gif) no-repeat; bac
 
 .clear:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; }
 
+#query_form { margin-bottom: 4em; }
+
 /***** Links *****/
 
 a.issue.closed { text-decoration: line-through; }
