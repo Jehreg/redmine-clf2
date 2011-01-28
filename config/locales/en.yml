@@ -24,7 +24,7 @@ en:
   permission_view_documents: View Reference Desk
   project_module_documents: Reference Desk
   label_document: Reference Desk
-  label_document_new: New Reference Document
+  label_document_new: New Document Group
   label_document_plural: Reference Desk
   label_document_added: Document added
   enumeration_doc_categories: Reference Desk categories
