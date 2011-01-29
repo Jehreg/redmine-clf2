@@ -1,0 +1,23 @@
+From 7036af0c0c1a11186b5bbe43b2112e05f171285c Mon Sep 17 00:00:00 2001
+From: Patrick Naubert <patrickn@xelerance.com>
+Date: Fri, 6 Aug 2010 15:00:18 -0400
+Subject: [PATCH] We depend on Postgresql
+
+---
+ config/environment.rb |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+diff --git a/config/environment.rb b/config/environment.rb
+index f89695f..51511b4 100644
+--- a/config/environment.rb
++++ b/config/environment.rb
+@@ -57,4 +57,6 @@ Rails::Initializer.run do |config|
+   if File.exists?(File.join(File.dirname(__FILE__), 'additional_environment.rb'))
+     instance_eval File.read(File.join(File.dirname(__FILE__), 'additional_environment.rb'))
+   end
++
++  config.gem "postgres"
+ end
+-- 
+1.7.3.3
+

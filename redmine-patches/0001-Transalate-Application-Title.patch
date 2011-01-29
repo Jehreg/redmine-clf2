@@ -1,0 +1,227 @@
+From dc58e2b6c468ead71278fb9e5d274f7570e7df3f Mon Sep 17 00:00:00 2001
+From: Patrick Naubert <patrickn@xelerance.com>
+Date: Fri, 28 Jan 2011 22:37:28 -0500
+Subject: [PATCH] Transalate Application Title
+
+---
+ app/controllers/activities_controller.rb  |    2 +-
+ app/controllers/application_controller.rb |    2 +-
+ app/controllers/issues_controller.rb      |    2 +-
+ app/controllers/journals_controller.rb    |    2 +-
+ app/controllers/news_controller.rb        |    2 +-
+ app/controllers/projects_controller.rb    |    2 +-
+ app/helpers/application_helper.rb         |    4 ++--
+ app/models/mailer.rb                      |   12 ++++++------
+ app/views/common/feed.atom.rxml           |    2 +-
+ app/views/journals/index.rxml             |    4 ++--
+ app/views/welcome/index.rhtml             |    4 ++--
+ 11 files changed, 19 insertions(+), 19 deletions(-)
+
+diff --git a/app/controllers/activities_controller.rb b/app/controllers/activities_controller.rb
+index d6292ea..ba82ecf 100644
+--- a/app/controllers/activities_controller.rb
++++ b/app/controllers/activities_controller.rb
+@@ -36,7 +36,7 @@ class ActivitiesController < ApplicationController
+           elsif @activity.scope.size == 1
+             title = l("label_#{@activity.scope.first.singularize}_plural")
+           end
+-          render_feed(events, :title => "#{@project || Setting.app_title}: #{title}")
++          render_feed(events, :title => "#{@project || l(Setting.app_title)}: #{title}")
+         }
+       end
+     end
+diff --git a/app/controllers/application_controller.rb b/app/controllers/application_controller.rb
+index 803eb5f..b384bb8 100644
+--- a/app/controllers/application_controller.rb
++++ b/app/controllers/application_controller.rb
+@@ -321,7 +321,7 @@ class ApplicationController < ActionController::Base
+     @items = items || []
+     @items.sort! {|x,y| y.event_datetime <=> x.event_datetime }
+     @items = @items.slice(0, Setting.feeds_limit.to_i)
+-    @title = options[:title] || Setting.app_title
++    @title = options[:title] || l(Setting.app_title)
+     render :template => "common/feed.atom.rxml", :layout => false, :content_type => 'application/atom+xml'
+   end
+   
+diff --git a/app/controllers/issues_controller.rb b/app/controllers/issues_controller.rb
+index 3d1dbe9..c766263 100644
+--- a/app/controllers/issues_controller.rb
++++ b/app/controllers/issues_controller.rb
+@@ -90,7 +90,7 @@ class IssuesController < ApplicationController
+       respond_to do |format|
+         format.html { render :template => 'issues/index.rhtml', :layout => !request.xhr? }
+         format.api
+-        format.atom { render_feed(@issues, :title => "#{@project || Setting.app_title}: #{l(:label_issue_plural)}") }
++        format.atom { render_feed(@issues, :title => "#{@project || l(Setting.app_title)}: #{l(:label_issue_plural)}") }
+         format.csv  { send_data(issues_to_csv(@issues, @project), :type => 'text/csv; header=present', :filename => 'export.csv') }
+         format.pdf  { send_data(issues_to_pdf(@issues, @project, @query), :type => 'application/pdf', :filename => 'export.pdf') }
+       end
+diff --git a/app/controllers/journals_controller.rb b/app/controllers/journals_controller.rb
+index d3b56e8..8eff49b 100644
+--- a/app/controllers/journals_controller.rb
++++ b/app/controllers/journals_controller.rb
+@@ -37,7 +37,7 @@ class JournalsController < ApplicationController
+       @journals = @query.journals(:order => "#{Journal.table_name}.created_on DESC", 
+                                   :limit => 25)
+     end
+-    @title = (@project ? @project.name : Setting.app_title) + ": " + (@query.new_record? ? l(:label_changes_details) : @query.name)
++    @title = (@project ? @project.name : l(Setting.app_title)) + ": " + (@query.new_record? ? l(:label_changes_details) : @query.name)
+     render :layout => false, :content_type => 'application/atom+xml'
+   rescue ActiveRecord::RecordNotFound
+     render_404
+diff --git a/app/controllers/news_controller.rb b/app/controllers/news_controller.rb
+index e7c643e..8c9dbe8 100644
+--- a/app/controllers/news_controller.rb
++++ b/app/controllers/news_controller.rb
+@@ -46,7 +46,7 @@ class NewsController < ApplicationController
+     respond_to do |format|
+       format.html { render :layout => false if request.xhr? }
+       format.api
+-      format.atom { render_feed(@newss, :title => (@project ? @project.name : Setting.app_title) + ": #{l(:label_news_plural)}") }
++      format.atom { render_feed(@newss, :title => (@project ? @project.name : l(Setting.app_title)) + ": #{l(:label_news_plural)}") }
+     end
+   end
+   
+diff --git a/app/controllers/projects_controller.rb b/app/controllers/projects_controller.rb
+index 459b547..76eea27 100644
+--- a/app/controllers/projects_controller.rb
++++ b/app/controllers/projects_controller.rb
+@@ -57,7 +57,7 @@ class ProjectsController < ApplicationController
+       format.atom {
+         projects = Project.visible.find(:all, :order => 'created_on DESC',
+                                               :limit => Setting.feeds_limit.to_i)
+-        render_feed(projects, :title => "#{Setting.app_title}: #{l(:label_project_latest)}")
++        render_feed(projects, :title => "#{l(Setting.app_title)}: #{l(:label_project_latest)}")
+       }
+     end
+   end
+diff --git a/app/helpers/application_helper.rb b/app/helpers/application_helper.rb
+index 3cdd3ad..3245d87 100644
+--- a/app/helpers/application_helper.rb
++++ b/app/helpers/application_helper.rb
+@@ -381,7 +381,7 @@ module ApplicationHelper
+   
+   def page_header_title
+     if @project.nil? || @project.new_record?
+-      h(Setting.app_title)
++      h(l(Setting.app_title))
+     else
+       b = []
+       ancestors = (@project.root? ? [] : @project.ancestors.visible)
+@@ -404,7 +404,7 @@ module ApplicationHelper
+       title = []
+       title << @project.name if @project
+       title += @html_title if @html_title
+-      title << Setting.app_title
++      title << l(Setting.app_title)
+       title.select {|t| !t.blank? }.join(' - ')
+     else
+       @html_title ||= []
+diff --git a/app/models/mailer.rb b/app/models/mailer.rb
+index e88e740..9cba27e 100644
+--- a/app/models/mailer.rb
++++ b/app/models/mailer.rb
+@@ -210,7 +210,7 @@ class Mailer < ActionMailer::Base
+   def account_information(user, password)
+     set_language_if_valid user.language
+     recipients user.mail
+-    subject l(:mail_subject_register, Setting.app_title)
++    subject l(:mail_subject_register, l(Setting.app_title))
+     body :user => user,
+          :password => password,
+          :login_url => url_for(:controller => 'account', :action => 'login')
+@@ -225,7 +225,7 @@ class Mailer < ActionMailer::Base
+   def account_activation_request(user)
+     # Send the email to all active administrators
+     recipients User.active.find(:all, :conditions => {:admin => true}).collect { |u| u.mail }.compact
+-    subject l(:mail_subject_account_activation_request, Setting.app_title)
++    subject l(:mail_subject_account_activation_request, l(Setting.app_title))
+     body :user => user,
+          :url => url_for(:controller => 'users', :action => 'index', :status => User::STATUS_REGISTERED, :sort_key => 'created_on', :sort_order => 'desc')
+     render_multipart('account_activation_request', body)
+@@ -239,7 +239,7 @@ class Mailer < ActionMailer::Base
+   def account_activated(user)
+     set_language_if_valid user.language
+     recipients user.mail
+-    subject l(:mail_subject_register, Setting.app_title)
++    subject l(:mail_subject_register, l(Setting.app_title))
+     body :user => user,
+          :login_url => url_for(:controller => 'account', :action => 'login')
+     render_multipart('account_activated', body)
+@@ -248,7 +248,7 @@ class Mailer < ActionMailer::Base
+   def lost_password(token)
+     set_language_if_valid(token.user.language)
+     recipients token.user.mail
+-    subject l(:mail_subject_lost_password, Setting.app_title)
++    subject l(:mail_subject_lost_password, l(Setting.app_title))
+     body :token => token,
+          :url => url_for(:controller => 'account', :action => 'lost_password', :token => token.value)
+     render_multipart('lost_password', body)
+@@ -257,7 +257,7 @@ class Mailer < ActionMailer::Base
+   def register(token)
+     set_language_if_valid(token.user.language)
+     recipients token.user.mail
+-    subject l(:mail_subject_register, Setting.app_title)
++    subject l(:mail_subject_register, l(Setting.app_title))
+     body :token => token,
+          :url => url_for(:controller => 'account', :action => 'activate', :token => token.value)
+     render_multipart('register', body)
+@@ -349,7 +349,7 @@ class Mailer < ActionMailer::Base
+     # Common headers
+     headers 'X-Mailer' => 'Redmine',
+             'X-Redmine-Host' => Setting.host_name,
+-            'X-Redmine-Site' => Setting.app_title,
++            'X-Redmine-Site' => l(Setting.app_title),
+             'Precedence' => 'bulk',
+             'Auto-Submitted' => 'auto-generated'
+   end
+diff --git a/app/views/common/feed.atom.rxml b/app/views/common/feed.atom.rxml
+index 70dacc7..09835a1 100644
+--- a/app/views/common/feed.atom.rxml
++++ b/app/views/common/feed.atom.rxml
+@@ -5,7 +5,7 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
+   xml.link    "rel" => "alternate", "href" => url_for(params.merge(:only_path => false, :format => nil, :key => nil))
+   xml.id      url_for(:controller => 'welcome', :only_path => false)
+   xml.updated((@items.first ? @items.first.event_datetime : Time.now).xmlschema)
+-  xml.author  { xml.name "#{Setting.app_title}" }
++  xml.author  { xml.name "#{l(Setting.app_title)}" }
+   xml.generator(:uri => Redmine::Info.url) { xml.text! Redmine::Info.app_name; }
+   @items.each do |item|
+     xml.entry do
+diff --git a/app/views/journals/index.rxml b/app/views/journals/index.rxml
+index 4c1e678..527abfd 100644
+--- a/app/views/journals/index.rxml
++++ b/app/views/journals/index.rxml
+@@ -5,7 +5,7 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
+   xml.link    "rel" => "alternate", "href" => home_url(:only_path => false)
+   xml.id      url_for(:controller => 'welcome', :only_path => false)
+   xml.updated((@journals.first ? @journals.first.event_datetime : Time.now).xmlschema)
+-  xml.author  { xml.name "#{Setting.app_title}" }
++  xml.author  { xml.name "#{l(Setting.app_title)}" }
+   @journals.each do |change|
+     issue = change.issue
+     xml.entry do
+@@ -27,4 +27,4 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
+       end
+     end
+   end
+-end
+\ No newline at end of file
++end
+diff --git a/app/views/welcome/index.rhtml b/app/views/welcome/index.rhtml
+index 982d6da..fbadc2a 100644
+--- a/app/views/welcome/index.rhtml
++++ b/app/views/welcome/index.rhtml
+@@ -33,7 +33,7 @@
+ 
+ <% content_for :header_tags do %>
+ <%= auto_discovery_link_tag(:atom, {:controller => 'news', :action => 'index', :key => User.current.rss_key, :format => 'atom'},
+-                                   :title => "#{Setting.app_title}: #{l(:label_news_latest)}") %>
++                                   :title => "#{l(Setting.app_title)}: #{l(:label_news_latest)}") %>
+ <%= auto_discovery_link_tag(:atom, {:controller => 'activities', :action => 'index', :key => User.current.rss_key, :format => 'atom'},
+-                                   :title => "#{Setting.app_title}: #{l(:label_activity)}") %>
++                                   :title => "#{l(Setting.app_title)}: #{l(:label_activity)}") %>
+ <% end %>
+-- 
+1.7.3.3
+

@@ -1,0 +1,31 @@
+From c9497fd4a27519c34cb791e1c8712c7f6fd97d73 Mon Sep 17 00:00:00 2001
+From: Patrick Naubert <patrickn@xelerance.com>
+Date: Fri, 6 Aug 2010 14:57:11 -0400
+Subject: [PATCH] More files in .gitignore specific to us and our installation environment.
+
+---
+ .gitignore |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+diff --git a/.gitignore b/.gitignore
+index 853230d..f146ab3 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -8,6 +8,7 @@
+ /db/schema.rb
+ /files/*
+ /log/*.log*
++/log/*.pid
+ /log/mongrel_debug
+ /public/dispatch.*
+ /public/plugin_assets
+@@ -17,4 +18,6 @@
+ /tmp/sockets/*
+ /tmp/test/*
+ /vendor/rails
++/vendor/plugins/redmine_clf2
++/config/mongrel_cluster.yml
+ *.rbc
+-- 
+1.7.3.3
+
