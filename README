@@ -1,3 +1,18 @@
-= ircan
+= Franglish
 
-This plugin is an implementation of the Government of Canada Common Look and Feel standard, version 2.0
+This plugin is an implementation of a Bilingual (English/French)
+style.  It can be used to implement the Government of Canada Common Look and Feel standard, version 2.0. 
+
+There are still many things which need to be edited directly.
+Please grep this tree for FRANGLISH and edit to suit.
+
+There is also a variable $IRCanFranchise which can be set to true
+to enable a few elements which are only applicable to an IRCan franchise.
+
+Comments and contributions can be made at: 
+  http://tbs-sct.ircan.gc.ca/projects/redmine-clf2?lang=eng
+
+The Franglish version was adapted by Michael Richardson, and can
+be found at:  
+  https://github.com/mcr/redmine-franglish
+

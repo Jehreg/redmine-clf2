@@ -1,10 +1,10 @@
 require 'redmine'
 
-Redmine::Plugin.register :redmine_clf2 do
-  name 'Redmine IRCan plugin'
-  author 'Patrick Naubert'
-  description 'This is a plugin for Redmine to insert the GoC CLF2 constraints.'
-  version '0.9.0'
+Redmine::Plugin.register :redmine_franglish do
+  name 'Redmine Franglish plugin'
+  author 'Patrick Naubert/Michael RIchardson'
+  description 'This is a plugin for Redmine to insert a bilingual profile which can be CLF2 constraints.'
+  version '1.0.0'
 
   permission(:change_language, {:language_switcher => [:french, :english]}, :public => true)
   settings(:default => {
@@ -25,7 +25,7 @@ require 'clf2_projects_controller_patch'
 require 'clf2_principal_patch'
 
 
-Dispatcher.to_prepare :redmine_clf2_patches do
+Dispatcher.to_prepare :redmine_franglish_patches do
   begin
     require_dependency 'application'
   rescue LoadError
