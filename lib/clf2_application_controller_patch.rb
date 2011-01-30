@@ -97,19 +97,19 @@ module Clf2
 
 	request.subdomains.each do |subdomain|
 
-        if subdomain && self.clf2_subdomain_languages.respond_to?(:key?) && self.clf2_subdomain_languages.key?(subdomain)
-          logger.debug "Switching language from domain"
-
-            if self.clf2_subdomain_languages[subdomain] == :fr
-              switch_language_to(:french)
-	      break
-            elsif self.clf2_subdomain_languages[subdomain] == :en
-              switch_language_to(:english)
-	      break
-            else
-              # Fallback to the other detection methods
-            end
-          end
+#        if subdomain && self.clf2_subdomain_languages.respond_to?(:key?) && self.clf2_subdomain_languages.key?(subdomain)
+#          logger.debug "Switching language from domain"
+#
+#            if self.clf2_subdomain_languages[subdomain] == :fr
+#              switch_language_to(:french)
+#	      break
+#            elsif self.clf2_subdomain_languages[subdomain] == :en
+#              switch_language_to(:english)
+#	      break
+#            else
+#              # Fallback to the other detection methods
+#            end
+#          end
 	end
       end
 
