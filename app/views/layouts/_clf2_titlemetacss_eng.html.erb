@@ -2,7 +2,7 @@
 	<!-- HEADER BEGINS | DEBUT DE L'EN-TETE -->
 	<!-- TITLE BEGINS | DEBUT DU TITRE -->
 	<title><%=h html_title %></title>
-        <!-- Changed by: Michael Richardson, 28-Jan-2011 -->
+        <!-- Changed by: Michael Richardson, 30-Jan-2011 -->
 	<!-- TITLE ENDS | FIN DU TITRE -->
 
 	<!-- META DATA BEGINS | DEBUT DES META DONNEES -->
@@ -29,7 +29,7 @@
 	<!-- TEMPLATE SCRIPTS/CSS END | FIN DES SCRIPTS/CSS DU GABARIT -->
 	
 	<!-- PROGRESSIVE ENHANCEMENT BEGINS | DEBUT DE L'AMELIORATION PROGRESSIVE -->
-	<script src="/assets/javascript/pe-ap.js" type="text/javascript"></script>
+        <%= javascript_include_tag 'pe-ap.js', :plugin => 'redmine-franglish' %>
 	<script type="text/javascript">
 	/* <![CDATA[ */
 		var params = {
