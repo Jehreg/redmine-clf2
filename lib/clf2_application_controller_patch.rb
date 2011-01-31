@@ -71,7 +71,7 @@ module Clf2
       # to language mapping.  In development mode this will be
       # reloaded with each request but in production, it will be cached.
       def load_clf2_subdomains_file
-        domain_file = File.join(Rails.plugins['redmine_clf2'].directory,'config','clf2_subdomains.yml')
+        domain_file = File.join(Rails.plugins['redmine-franglish'].directory,'config','clf2_subdomains.yml')
         if File.exists?(domain_file)
           self.clf2_subdomain_languages = YAML::load(File.read(domain_file))
           logger.debug "Loaded CLF2 subdomain file"
