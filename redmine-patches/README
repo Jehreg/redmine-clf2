@@ -1,0 +1,10 @@
+To apply these patches:
+
+Get the whole repo from eDavis.
+Checkout a certain tag, and branch from there. Say the 1.1.0 tag.
+Then apply these patches:
+
+cd /var/www/rails_apps/redmine
+git am /var/www/rails_apps/redmine/vendor/plugins/redmine_clf2
+
+If you get conflicts, it is probably because the functionality we are trying to add it, was finally added to the core.  If that is the case, ignore the clashing patch and send me an email.
