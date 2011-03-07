@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<head>
+	<css>
+		<base>inc/css-theme-base.inc</base>
+		<pfif/>
+	</css>
+	<params />
+</head>
+<body>
+	<header>inc/header-theme-base-eng.inc</header>
+	<content>inc/content-theme-base-eng.inc</content>
+	<leftcol>
+		<prenav/>
+		<nav/>
+		<postnav/>
+	</leftcol>
+	<rightcol>
+		<prenav/>
+		<nav/>
+		<postnav/>
+	</rightcol>
+	<footer>inc/footer-theme-base-eng.inc</footer>
+</body>
