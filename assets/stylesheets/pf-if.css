@@ -1,41 +1,14 @@
-/* CLF 2.0 TEMPLATE VERSION 1.04 | VERSION 1.04 DU GABARIT NSI 2.0 */
-/* Downloaded from http://www.tbs-sct.gc.ca/cioscripts/styles/clf2/pf-if.css */
-/* PRINT CSS BEGINS | DEBUT DU CSS POUR L'IMPRESSION */
+@charset "utf-8";
+/* Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+Terms and conditions of use: http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Terms
+Conditions régissant l'utilisation : http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Conditions
+*/
 @media print {
-	h1, h2, h3, h4, h5, h6, body, p, blockquote, table, td, th, li, a, ul, ol, dd, dl, dt,
-	form, button, fieldset, label, div.foot1, span.date {
-  		font-family: Verdana, Arial, Helvetica, sans-serif; 
-	}
-	select, option, input, textarea {
-		font-family: "Courier New", Courier, monospace;
-	}
-	body {
-		padding: 0;
-		background-color: #FFF;
-	}
-	div.banner, div.banner-eng, div.banner-fra, div.banner-lfcoa-eng, div.banner-lfcoa-fra, div.fp, div.fpml, div.left, div.right, div.footer div.foot1 a, div.footer div.foot2 a, div.footer div.foot3 a, div.footer div.footerline, div.navaid, div.topPage, p.topPage {
-		display: none;
-	}
-	div.fip, div.cwm {
-		margin-bottom: 12.0pt;
-	}
-	div.center, * html div.center {
-		margin-left: 0px;
-		margin-right: 0px;
-		padding-left: 0px;
-		padding-right: 10px;
-		width: auto;
-		float: none;
-	}
-	div.page {
-		width: auto;
-	}
-	div.blackborder {
-		border: none;
-	}
-	div.colLayout {
-		background-color: #FFF;
-		height: auto;
-	}
+	body {background: #FFF;}
+	abbr, acronym {border-bottom: none;} 
+	#cn-cols {clear: none;}
+	#cn-skip-head, #cn-left-col, #cn-left-col-gap, #cn-right-col, #cn-right-col-gap, #cn-centre-col-gap {display: none;}
+	#cn-centre-col {position: static; width: 100%; float: none;}
+	#cn-body-inner-3col #cn-centre-col-inner, #cn-body-inner-2col #cn-centre-col-inner, #cn-body-inner-2col-right #cn-centre-col-inner {margin: 0; padding: 0; border: none; position: static;}
+	#cn-centre-col-inner {border-top: 3px outset #666; padding-top: 20px;}
 }
-/* PRINT CSS ENDS | FIN DU CSS POUR L'IMPRESSION */
