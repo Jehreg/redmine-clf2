@@ -4,9 +4,6 @@ module Clf2Helper
   def render_clf_menu(menu, project=nil, options = {})
     # Default options
     options = {
-      :ul_class => 'nav',
-      :li_class => 'menucontent',
-      :menulink_class => 'menulink',
       :title => :clf2_text_top_menu
     }.merge(options)
 
@@ -15,38 +12,16 @@ module Clf2Helper
     menu_items_for(menu, project) do |menu_node|
       caption, url, selected = extract_node_details(menu_node, project)
 
-      links << content_tag('li', 
-                           link_to(h(caption),
-                                   url,
-                                   menu_node.html_options(:selected => selected).merge(:class => options[:menulink_class])),
-                           :class => options[:li_class])
+      links << content_tag('li', link_to(
+        h(caption),
+        url,
+        menu_node.html_options(:selected => selected)))
     end
     if links.empty?
       return nil
     else
-      inner_menu = content_tag('ul',
-                               links.join("\n"),
-                               :class => options[:ul_class])
-
-      return outer_clf_menu(inner_menu, options[:title], options)
+      return content_tag(:h3, l(options[:title])) + content_tag(:ul, content_tag(:li, links.join("\n")))
     end
-  end
-
-  # Renders the outer CLF menu for inner_html and a title.
-  def outer_clf_menu(inner_html, title, options = {})
-    # Default options
-    options = {
-      :ul_class => 'nav',
-      :title => :clf2_text_top_menu
-    }.merge(options)
-
-    content_tag(:ul,
-                content_tag(:li,
-                            content_tag(:h2,
-                                        l(title),
-                                        :class => options[:ul_class]) +
-                            inner_html),
-                :class => options[:ul_class])
   end
 
   # Wraps the Redmine core's render_main_main but using the CLF
