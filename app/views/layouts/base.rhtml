@@ -103,7 +103,7 @@
 		<nav role="navigation">
 			<h2>Breadcrumb</h2>
 			<ol>
-				<li><a href="#" title="Home - Main page of the Web site">Home</a></li>
+				<li>&nbsp;</li>
 			</ol>
 		</nav>
 		</div>
@@ -117,9 +117,17 @@
 	<!-- Main content begins / Début du contenu principal -->
 	<div id="cn-centre-col-gap"></div>
 	<div id="cn-centre-col" role="main"><div id="cn-centre-col-inner">
+  <section>
+    <!-- Content title begins / Début du titre du contenu -->
+		<header>
+			<h1 id="cn-cont"><%= page_header_title %></h1>
+		</header>
+		<!-- Content Title ends / Fin du titre du contenu -->
+
     <%= content_tag('div', flash[:error], :class => 'flash error') if flash[:error] %>
     <%= content_tag('div', flash[:notice], :class => 'flash notice') if flash[:notice] %>
     <%= yield %>
+  </section>
 	</div></div>
 	<!-- Main content ends / Fin du contenu principal --> 
 
@@ -129,19 +137,6 @@
 	<section>
 		<h2 id="cn-nav">Primary navigation (left column)</h2>
 		<div class="cn-left-col-default">
-<!-- general theme begins / Début du thème général -->
-		<div role="search">
-			<section>
-				<h3><label for="cn-search">Search</label></h3>
-				<form action="#" method="post">
-				<div id="cn-search-box">
-					<input id="cn-search" name="cn-search" type="search" size="20" maxlength="40" /><input id="cn-search-submit" name="cn-search-submit" type="submit" value="Search" />
-					<a rel="search" href="#">Advanced search</a>
-				</div>
-				</form>
-			</section>
-		</div>
-<!-- general theme ends / Fin du thème général -->
 		<nav role="navigation">
 <!-- general theme begins / Début du thème général -->
 			<section>
