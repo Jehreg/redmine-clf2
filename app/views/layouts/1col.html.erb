@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= render :partial => 'layouts/head' %>
+</head>
+<body>
+<!-- One column layout begins / Début de la mise en page d'une colonne -->
+<div id="cn-body-inner-1col">
+	<!-- Skip header begins / Début du saut de l'en-tête -->
+  <%= render :partial => 'layouts/skip_header' %>
+	<!-- Skip header ends / Fin du saut de l'en-tête -->
+
+  <!-- Header begins / Début de l'en-tête -->
+  <%= render :partial => 'layouts/header' %>
+  <!-- Header ends / Fin de l'en-tête -->
+
+	<div id="cn-cols">
+	<!-- Main content begins / Début du contenu principal --> 
+	<div id="cn-centre-col" role="main"><div id="cn-centre-col-inner">
+    <%= yield %>
+	</div></div>
+	<!-- Main content ends / Fin du contenu principal --> 
+	</div>
+  
+  <%= render :partial => 'layouts/footer' %>
+</div>
+<!-- One column layout ends / Fin de la mis en page d'une colonne -->
+</body>
+</html>

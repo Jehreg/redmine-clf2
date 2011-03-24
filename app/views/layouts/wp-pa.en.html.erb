@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= render :partial => 'layouts/wp-pa_head' %>
+</head>
+<body>
+<!-- One column layout begins / Début de la mise en page d'une colonne -->
+<div id="cn-body-inner-1col">
+	<!-- Skip header begins / Début du saut de l'en-tête -->
+	<div id="cn-skip-head">
+	<nav>
+		<ul id="cn-tphp">
+			<li id="cn-sh-link-1"><a href="#cn-cont">Skip to main content / <span lang="fr">Passer au contenu principal</span></a></li>
+			<li id="cn-sh-link-2"><a href="#cn-nav">Skip to footer / <span lang="fr">Passer au pied de page</span></a></li>
+		</ul>
+	</nav>
+	</div>
+	<!-- Skip header ends / Fin du saut de l'en-tête -->
+
+	<!-- Header begins / Début de l'en-tête -->
+	<div id="cn-head"><div id="cn-head-inner">
+	<header>
+<!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
+		<div id="cn-sig"><img src="images/sig-eng.gif" width="372" height="20" alt="Government of Canada / Gouvernement du Canada" title="Government of Canada / Gouvernement du Canada" /></div>
+<!-- clf2-nsi2 theme ends / Fin du thème clf2-nsi2 -->
+	</header>
+	</div></div>
+	<!-- Header ends / Fin de l'en-tête -->
+
+	<div id="cn-cols">
+	<!-- Main content begins / Début du contenu principal --> 
+	<div id="cn-centre-col" role="main"><div id="cn-centre-col-inner">
+    <%= yield %>
+	</div></div>
+	<!-- Main content ends / Fin du contenu principal --> 
+	</div>
+
+	<!-- Footer begins / Début du pied de page --> 
+	<div id="cn-foot"><div id="cn-foot-inner">
+	<footer>
+		<h2 id="cn-nav">Footer</h2>
+<!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
+		<ul id="cn-in-links">
+			<li><a href="#" rel="license">Important Notices</a></li>
+			<li lang="fr"><a href="#" rel="license">Avis importants</a></li>
+		</ul>
+<!-- clf2-nsi2 theme ends / Fin du thème clf2-nsi2 -->
+	</footer>
+	</div></div>
+	<!-- Footer ends / Fin du pied de page -->
+</div>
+<!-- One column layout ends / Fin de la mis en page d'une colonne -->
+</body>
+</html>
