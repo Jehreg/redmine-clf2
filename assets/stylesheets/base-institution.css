@@ -16,18 +16,6 @@ div.cwm img {
 }
 /* FIP HEADER CSS ENDS | FIN DU CSS DE L'EN-TETE PCIM */
 
-/* INSTITUTIONAL BANNER CSS BEGINS | DEBUT DU CSS DE LA BANNIERE INSTITUTIONNELLE */
-div.banner {
-	color: #FFF;
-	background: url(http://www.tbs-sct.gc.ca/cioscripts/images/banner-tbs-sct.jpg) #269 no-repeat center center; }
-div.banner-eng, div.banner-lfcoa-eng {
-	background: url() #FFF no-repeat center center;
-}
-div.banner-fra, div.banner-lfcoa-fra {
-	background: url() #FFF no-repeat center center;
-}
-/* INSTITUTIONAL BANNER CSS ENDS | FIN DU CSS DE LA BANNIERE INSTITUTIONNELLE */
-
 /* SKIP NAVIGATION CSS BEGINS | DEBUT DU CSS DU SAUT DE NAVIGATION */
 div.page div.core div.navaid {
 	width: 450px;
