@@ -712,36 +712,9 @@ td.username img.gravatar {
 	clear: left;
 }
 
-
-
 /***** Media print specific styles *****/
 @media print {
   #top-menu, #header, #main-menu, #sidebar, #footer, .contextual, .other-formats { display:none; }
   #main { background: #fff; }
   #content { width: 99%; margin: 0; padding: 0; border: 0; background: #fff; overflow: visible !important;}
 }
-
-/* Target the elements with body in order to override the CLF styles */
-/*body div.page {width: auto; margin-right: 5%; margin-left: 5%;}*/
-/* IRCan uses the maximum width it can: */
-body div.page {width: auto;}
-body div.colLayout {background: #FFFFFF url(../images/3-col-left-only.gif) repeat-y scroll 0 0;}
-
-/* Some Redmine overrides */
-body #content {width: 100%; border-right: none;}
-body #sidebar {float: none; width: 100%; padding:0 5px;}
-
-/* Project descriptions */
-div.missing-language-en {}
-div.missing-language-fr {}
-
-/* Main Page sizing */
-body div.left { width: 142px;}
-body div.right { width: 150px;}
-body div.center { margin-right: 155px; margin-left: 145px;}
-body div.center * { clear: none; }
-body div.powered { text-align: center; }
-
-body div.banner { background: rgb(255,255,220); color: black; }
-
-body { font-size: 0.7em; }
