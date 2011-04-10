@@ -3,10 +3,10 @@
 Terms and conditions of use: http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Terms
 Conditions régissant l'utilisation : http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Conditions
 */
-#cn-body-inner-3col, #cn-body-inner-2col, #cn-body-inner-1col {margin: 0 auto; width: 760px; min-width: 12.00em;}
+#cn-body-inner-3col, #cn-body-inner-2col, #cn-body-inner-1col {margin: 0 auto; width: 940px; min-width: 12.00em;}
 
 /*** Expandable page CSS (IE6-specific CSS in theme-clf2-nsi2-ie6.css) / Le CSS pour une page extensible (le CSS pour IE6 se trouve dans theme-clf2-nsi2-ie6.css ***/
-#cn-body-inner-3col, #cn-body-inner-2col, #cn-body-inner-1col {padding: 0; width: auto;}
+/* #cn-body-inner-3col, #cn-body-inner-2col, #cn-body-inner-1col {padding: 0; width: auto;} */
 
 #cn-left-col, #cn-left-col-gap {width: 150px;}
 #cn-left-col {margin-right: -150px;}
