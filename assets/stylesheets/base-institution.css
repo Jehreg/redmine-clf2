@@ -1,5 +1,5 @@
 #cn-skip-head a:hover, #cn-skip-head a:focus, #cn-skip-head a:active {background-color: #FFFFDC;}
-#cn-banner, #cn-banner-eng, #cn-banner-fra {background-color: #FFFFDC;}
+#cn-banner, #cn-banner-eng, #cn-banner-fra {background-color: #CC9;}
 #cn-banner #cn-banner-text, #cn-banner-eng #cn-banner-text, #cn-banner-fra #cn-banner-text {color: #000;}
 #cn-banner p, #cn-banner-eng p, #cn-banner-fra p {color: #000;}
 .cn-left-col-default h3 {background-color: #CC9;}
@@ -85,36 +85,3 @@ div.prodis {
 }
 /* SIDE MENU CSS ENDS | FIN DU CSS DU MENU LATERAL */
 
-/* CONTENT CSS BEGINS | DEBUT DU CSS DU CONTENU */
-div#cn-centre-col h1, h2, h3, h4, h5, h6 {
-	color: #000;
-}
-div#cn-centre-col a:link {
-	color: #039;
-}
-div#cn-centre-col a:visited {
-	color: #663;
-}
-/****div.blackborder {
-	border: solid #CC9 1px;
-} ******Old style - NI  */
-
-div.blackborder {
-	border: solid #FFF 1px;
-}
-
-div.blackborder:after {
-	content: ""; 
-	display: block; 
-	height: 0; 
-	clear: left;
-	visibility: hidden;
-}
-/* CONTENT CSS ENDS | FIN DU CSS DU CONTENU */
-
-/* FOOTER CSS BEGINS | DEBUT DU CSS DU PIED DE LA PAGE */
-div#cn-foot a:link, div#cn-foot a:visited, div#cn-centre-col div#cn-foot a:link, div#cn-centre-col div#cn-foot a:visited, div#cn-centre-col div.topPage a:link, div#cn-centre-col div.topPage a:visited, div#cn-centre-col p.topPage a:link, div#cn-centre-col p.topPage a:visited {
-	color: #039;
-	background-color: #FFF;
-}
-/* FOOTER CSS ENDS | FIN DU CSS DU PIED DE LA PAGE */
