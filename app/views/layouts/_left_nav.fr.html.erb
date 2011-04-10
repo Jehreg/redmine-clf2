@@ -6,14 +6,14 @@
   <div class="cn-left-col-default">
   <nav role="navigation">
     <section>
-      <h3><acronym title="Intellectual Resources Canada">IRCan</acronym></h3>
+      <h3><acronym title="Ressources Intellectuelles Canada">RICan</acronym></h3>
       <ul>
         <% unless User.current.logged? %>
-          <li><a title="Register &lt; Intellectual Resources Canada" href="/account/register">Register</a></li>
-          <li><a title="Login &lt; Intellectual Resources Canada" href="/login">Login</a></li>
+          <li><a title="Enregistrer &lt; Ressources Intellectuelles Canada" href="/account/register">Enregistrer</a></li>
+          <li><a title="Connecter &lt; Ressources Intellectuelles Canada" href="/login">Connecter</a></li>
         <% end %>
         <% if User.current.logged? %>
-          <li><a title="Logout &lt; Intellectual Resources Canada" href="/logout">Logout</a></li>
+          <li><a title="D&eacute;connecter &lt; Ressources Intellectuelles Canada" href="/logout">D&eacute;connecter</a></li>
         <% end %>
       </ul>
     </section>
