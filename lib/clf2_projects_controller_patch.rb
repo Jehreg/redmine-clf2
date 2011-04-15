@@ -6,6 +6,7 @@ module Clf2
         base.extend(::Clf2::ProjectsController::ClassMethods)
         base.class_eval do
           helper :admin
+          #Project.safe_attributes 'description_fr', 'name_fr'
         end
       end
     end
