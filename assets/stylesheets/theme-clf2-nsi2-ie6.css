@@ -7,9 +7,9 @@ Conditions régissant l'utilisation : http://tbs-sct.ircan.gc.ca/projects/gcwwwt
 body {margin: 0 auto; width: 780px;}
 
 /*** Expandable page CSS / Le CSS pour une page extensible ***/
-/* body {width: auto;}
+body {width: auto;}
 #cn-body-inner-2col #cn-centre-col-gap, #cn-body-inner-3col #cn-centre-col-gap {width: 90% !important; margin-left: -150px;}
-#cn-right-col-gap {right: 2% !important;} */
+#cn-right-col-gap {right: 2% !important;}
 
 #cn-skip-head {float: none;}
 #cn-skip-head #cn-sh-link-1 {right: 51%;}
