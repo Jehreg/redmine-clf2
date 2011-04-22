@@ -3,18 +3,6 @@
 Terms and conditions of use: http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Terms
 Conditions régissant l'utilisation : http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Conditions
 */
-div.tooltip {
-	z-index: 21000;
-	border: 1px solid InfoText;
-	background: InfoBackground;
-	color: InfoText;
-	font: message-box;
-	padding: 2px 4px;
-	text-align: left;
-	position: absolute;
-	width: auto;
-	height: auto;
-}
 div.safetooltip {
 	z-index: 21000;
 	border: 1px solid #000;
