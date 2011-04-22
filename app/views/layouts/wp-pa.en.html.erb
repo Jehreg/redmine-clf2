@@ -1,7 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%= render :partial => 'layouts/wp-pa_head' %>
+  <meta charset="utf-8" />
+  <link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+
+  <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+  Terms and conditions of use: http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Terms
+  Conditions régissant l'utilisation : http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Conditions
+  -->
+
+  <!-- Title begins / Début du titre -->
+  <title><%= t(:app_title, :en) %> / <%= t(:app_title, :fr) %></title>
+  <!-- Title ends / Fin du titre -->
+
+  <!-- Favicon (optional) begins / Début du favicon (optionnel) -->
+  <!-- <link rel="shortcut icon" href="images/favicon.ico" /> -->
+  <!-- Favicon (optional) ends / Find du favicon (optionnel) -->
+
+  <!-- Meta-data begins / Début des métadonnées -->
+  <meta name="dcterms.description" content="<%= t(:app_description, :en) %>" />
+  <meta name="dcterms.description" lang="fr" content="<%= t(:app_description, :fr) %>" />
+  <meta name="description" content="<%= t(:app_description, :en) %>" />
+  <meta name="description" lang="fr" content="<%= t(:app_description, :fr) %>" />
+  <meta name="keywords" content="<%= t(:app_keywords, :en) %>" />
+  <meta name="keywords" lang="fr" content="<%= t(:app_keywords, :fr) %>" />
+  <meta name="dcterms.creator" title="<%= t(:app_creator_title, :en) %>" content="<%= t(:app_creator, :en) %>" />
+  <meta name="dcterms.creator" lang="fr" title="<%= t(:app_creator_title, :fr) %>" content="<%= t(:app_creator, :fr) %>" />
+  <meta name="dcterms.title" content="<%= t(:app_title, :en) %>" />
+  <meta name="dcterms.title" lang="fr" content="<%= t(:app_title, :fr) %>" />
+  <meta name="dcterms.issued" title="W3CDTF" content="2008-12-19" />
+  <meta name="dcterms.modified" title="W3CDTF" content="2011-03-23" />
+  <meta name="dcterms.subject" title="scheme" content="<%= t(:app_subject, :en) %>" />
+  <meta name="dcterms.subject" lang="fr" title="scheme" content="<%= t(:app_subject, :fr) %>" />
+  <meta name="dcterms.language" title="ISO639-2" content="eng" />
+  <meta name="dcterms.language" lang="fr" title="ISO639-2" content="fra" />
+  <!-- Meta-data frds / Fin des métadonnées -->
+
+  <!-- WET scripts/CSS begin / Début des scripts/CSS de la BOEW --><!--[if IE 6]><![endif]-->
+  <%= stylesheet_link_tag 'base', :media => 'screen,print', :plugin => 'redmine_clf2' %>
+  <!--[if IE 8]><%= stylesheet_link_tag 'base-ie8', :media => 'screen,print', :plugin => 'redmine_clf2' %><![endif]-->
+  <!--[if IE 7]><%= stylesheet_link_tag 'base-ie7', :media => 'screen,print', :plugin => 'redmine_clf2' %><![endif]-->
+  <!--[if lte IE 6]><%= stylesheet_link_tag 'base-ie6', :media => 'screen,print', :plugin => 'redmine_clf2' %><![endif]-->
+  <%= stylesheet_link_tag 'util', :media => 'screen,print', :plugin => 'redmine_clf2' %>
+  <!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
+  <%= stylesheet_link_tag 'wp-pa-theme-clf2-nsi2', :media => 'screen,print', :plugin => 'redmine_clf2'  %>
+  <!--[if IE 7]><%= stylesheet_link_tag 'wp-pa-theme-clf2-nsi2-ie7', :media => 'screen,print', :plugin => 'redmine_clf2'  %><![endif]-->
+  <!--[if lte IE 6]><%= stylesheet_link_tag 'wp-pa-theme-clf2-nsi2-ie6', :media => 'screen,print', :plugin => 'redmine_clf2'  %><![endif]-->
+  <!-- clf2-nsi2 theme ends / Fin du thème clf2-nsi2 -->
+  <!-- WET scripts/CSS end / Fin des scripts/CSS de la BOEW -->
+
+  <!-- Progressive enhancement begins / Début de l'amélioration progressive -->
+  <%= javascript_include_tag "jquery.min.js", :plugin => 'redmine_clf2' %>
+  <%= javascript_include_tag "pe-ap.js", :plugin => 'redmine_clf2', :id => 'progressive' %>
+  <script type="text/javascript">
+  /* <![CDATA[ */
+    var params = {
+    };
+    PE.progress(params);
+  /* ]]> */
+  </script>
+  <!-- Progressive enhancement ends / Fin de l'amélioration progressive -->
+
+  <!-- WET print CSS begins / Début du CSS de la BOEW pour l'impression -->
+  <%= stylesheet_link_tag 'pf-if', :media => 'print' %>
+  <!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
+  <%= stylesheet_link_tag 'pf-if-theme-clf2-nsi2', :media => 'print' %>
+  <!-- clf2-nsi2 theme ends / Fin du thème clf2-nsi2 -->
+  <!-- WET print CSS ends / Fin du CSS de la BOEW pour l'impression -->
 </head>
 <body>
 <!-- One column layout begins / Début de la mise en page d'une colonne -->
