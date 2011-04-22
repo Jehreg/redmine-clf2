@@ -44,4 +44,16 @@ module Clf2Helper
     words = text.split
     words[0..(length-1)].join(' ') + (words.length > length ? end_string : '')
   end
+
+  def page_header_title
+    if @project.nil? || @project.new_record?
+      concat('<li>&nbsp;</li>')
+    else
+      projects = @project.root? ? [@project] : (@project.ancestors.visible.all + [@project])
+      projects.each_with_index do |p,i|
+        separator = i == projects.length ? '' : '&#160;&#62;'
+        concat("<li>#{link_to_project(p, {:jump => current_menu_item}, :rel => ("up" *  (projects.length - i))) }#{separator}</li>")
+      end
+    end
+  end
 end
