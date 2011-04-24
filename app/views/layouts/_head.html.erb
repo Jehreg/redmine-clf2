@@ -42,18 +42,6 @@ Conditions régissant l'utilisation : http://tbs-sct.ircan.gc.ca/projects/gcwwwt
 <%= stylesheet_link_tag 'application', :media => 'screen,print' %>
 <%= stylesheet_link_tag 'base-institution', :media => 'screen,print', :plugin => 'redmine_clf2' %>
 
-<!-- Progressive enhancement begins / Début de l'amélioration progressive -->
-<%= javascript_include_tag "jquery.min.js", :plugin => 'redmine_clf2' %>
-<script src="/plugin_assets/redmine_clf2/javascripts/pe-ap.js" type="text/javascript" id="progressive"></script>
-<script type="text/javascript">
-/* <![CDATA[ */
-  var params = {
-  };
-  PE.progress(params);
-/* ]]> */
-</script>
-<!-- Progressive enhancement ends / Fin de l'amélioration progressive -->
-
 <!-- WET print CSS begins / Début du CSS de la BOEW pour l'impression -->
 <%= stylesheet_link_tag 'pf-if', :media => 'print', :plugin => 'redmine_clf2' %>
 <!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
