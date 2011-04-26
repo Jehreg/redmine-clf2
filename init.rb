@@ -28,6 +28,10 @@ Dispatcher.to_prepare :redmine_clf2_patches do
   require 'redmine_clf2/patches/principal_patch'
   Principal.send(:include, RedmineClf2::Patches::PrincipalPatch)
 
+  require_dependency 'project'
+  require 'redmine_clf2/patches/project_patch'
+  Project.send(:include, RedmineClf2::Patches::ProjectPatch)
+
   require_dependency 'projects_controller'
   require 'redmine_clf2/patches/projects_controller_patch'
   ProjectsController.send(:include, RedmineClf2::Patches::ProjectsControllerPatch)
