@@ -3,11 +3,12 @@ module RedmineClf2
   module Patches
     module ApplicationControllerPatch
       def self.included(base)
-        base.extend(::Clf2::ApplicationController::ClassMethods)
+        base.extend ClassMethods
+        base.send(:include, InstanceMethods)
+
         base.class_eval do
           cattr_accessor :clf2_subdomain_languages
 
-          base.send(:include, ::Clf2::ApplicationController::InstanceMethods)
 
           # Skip Redmine's default :set_localization
           skip_before_filter :set_localization
@@ -17,28 +18,13 @@ module RedmineClf2
           prepend_before_filter_if_not_already_added :switch_language_from_domain
 
           alias_method_chain :set_localization, :clf_mods  
+          alias_method_chain :url_for, :language_in_url
 
           base.load_clf2_subdomains_file
           
           helper :clf2
 
-          # Include the current language in the url as a query string (ISO 639-2)
-          def url_for_with_language_in_url(options)
-            # Pass without language if options isn't a hash (e.g. url string)
-            unless options.respond_to?(:merge)
-              return url_for_without_language_in_url(options)
-            end
-            
-            case current_language
-            when :en
-              url_for_without_language_in_url(options.merge(:lang => 'eng'))
-            when :fr
-              url_for_without_language_in_url(options.merge(:lang => 'fra'))
-            else
-              url_for_without_language_in_url(options)
-            end
-          end
-          alias_method_chain :url_for, :language_in_url
+          
         end
       end
     end
@@ -94,23 +80,6 @@ module RedmineClf2
       def switch_language_from_domain
         # Skip if language is already set
         return true if session[:language]
-
-	request.subdomains.each do |subdomain|
-
-#        if subdomain && self.clf2_subdomain_languages.respond_to?(:key?) && self.clf2_subdomain_languages.key?(subdomain)
-#          logger.debug "Switching language from domain"
-#
-#            if self.clf2_subdomain_languages[subdomain] == :fr
-#              switch_language_to(:french)
-#	      break
-#            elsif self.clf2_subdomain_languages[subdomain] == :en
-#              switch_language_to(:english)
-#	      break
-#            else
-#              # Fallback to the other detection methods
-#            end
-#          end
-	end
       end
 
       def set_current_language_from_session
@@ -142,6 +111,22 @@ module RedmineClf2
         lang ||= Setting.default_language
         set_language_if_valid(lang)
 
+      end
+
+      def url_for_with_language_in_url(options)
+        # Pass without language if options isn't a hash (e.g. url string)
+        unless options.respond_to?(:merge)
+          return url_for_without_language_in_url(options)
+        end
+        
+        case current_language
+        when :en
+          url_for_without_language_in_url(options.merge(:lang => 'eng'))
+        when :fr
+          url_for_without_language_in_url(options.merge(:lang => 'fra'))
+        else
+          url_for_without_language_in_url(options)
+        end
       end
     end # InstanceMethods
   end
