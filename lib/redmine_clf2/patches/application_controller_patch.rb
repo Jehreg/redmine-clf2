@@ -1,7 +1,7 @@
 # Patched to the ApplicationController
-module Clf2
-  module ApplicationController
-    module Patch
+module RedmineClf2
+  module Patches
+    module ApplicationControllerPatch
       def self.included(base)
         base.extend(::Clf2::ApplicationController::ClassMethods)
         base.class_eval do

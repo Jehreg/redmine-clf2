@@ -1,7 +1,7 @@
 # Patches to the ProjectsController
-module Clf2
-  module ProjectsController
-    module Patch
+module RedmineClf2
+  module Patches 
+    module ProjectsControllerPatch
       def self.included(base)
         base.extend(::Clf2::ProjectsController::ClassMethods)
         base.class_eval do

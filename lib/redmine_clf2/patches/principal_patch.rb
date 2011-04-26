@@ -1,7 +1,7 @@
 # Patches for the Principal class (Users and Groups)
-module Clf2
-  module Principal
-    module Patch
+module RedmineClf2
+  module Patches
+    module PrincipalPatch 
       def self.included(base)
         base.class_eval do
           # Patch and override the named_scope.  Should be included in

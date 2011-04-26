@@ -1,5 +1,5 @@
 # Patches for the Setting class
-module Clf2
+module RedmineClf2
   module Patches
     module SettingPatch
       def self.included(base)
