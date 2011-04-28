@@ -13,6 +13,7 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_w3h)
              })
 
     menu :top_menu, :my_account, '/my/account', :caption => :label_my_account
+    delete_menu_item :top_menu, :help
   end
 end
 
