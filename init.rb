@@ -21,6 +21,8 @@ end
 # Patches to the Redmine core
 require "dispatcher"
 Dispatcher.to_prepare :redmine_clf2_patches do
+  next if ApplicationController.included_modules.include? RedmineClf2::Patches::ApplicationControllerPatch
+
   require_dependency 'application_controller'
   require 'redmine_clf2/patches/application_controller_patch'
   ApplicationController.send(:include, RedmineClf2::Patches::ApplicationControllerPatch)
