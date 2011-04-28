@@ -45,10 +45,10 @@ en:
   label_log_time: Log time
   field_deliverable: Deliverable
   field_overtime: Overtime
-  app_title: Intellectual Resources Canada - PWGSC Franchise
+  app_title: Intellectual Resources Canada
   app_description: IRCan is a management framework and set of online services available to any community engaged in the joint creation and evolution of re-usable digital data, information or knowledge assets, which Canadian Government personnel consider to be helpful towards achieving their public interest mandate.
   app_keywords: TBS, Franchise, Intellectual, Resources, Canada, Proof-of-Concept, Environment, issue, bug, tracker
   app_creator: Government of Canada, Treasury Board of Canada, Secretariat, Treasury Board of Canada Secretariat, Chief Information Officer Branch, Information Technology, Intellectual Resources Canada
   app_creator_title: Titles of Federal Organizations
-  app_url: pacdev2.ncr.pwgsc.gc.ca
+  app_url: tbs-sct.ircan.gc.ca
   app_subject: English subject terms
