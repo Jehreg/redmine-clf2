@@ -14,8 +14,8 @@
 #cn-in-pd {border-top: 15px solid #CC9;}
 #login-form table {background-color: #eee; border: 2px solid #cc9;}
 .nodata, .warning {background-color: #eee; border-color: #cc9;}
-.contextual input, .contextual select { font-size: 12px; }
-* html .contextual input, .contextual select {margin-top: -5px;}
+.contextual input, .contextual select { font-size: 12px; margin-top: -5px; }
+* html .contextual input, * html .contextual select {margin-top: auto;}
 
 #content { width: auto; background-color: auto; margin: auto; border-right: auto; padding: auto; z-index: auto; }
 * html #content{ width: auto; padding-left: 0auto; margin-top: auto; padding: auto;}
