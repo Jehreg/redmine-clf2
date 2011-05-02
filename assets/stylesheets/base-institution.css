@@ -1,3 +1,4 @@
+/* CLF2 OVERRIDES */
 #cn-skip-head a:hover, #cn-skip-head a:focus, #cn-skip-head a:active {background-color: #FFFFDC;}
 #cn-banner, #cn-banner-eng, #cn-banner-fra {background: #eee url('../images/banner.png') no-repeat;}
 #cn-banner #cn-banner-text, #cn-banner-eng #cn-banner-text, #cn-banner-fra #cn-banner-text {color: #000;}
@@ -12,15 +13,17 @@
 #cn-pd-ul {border-top: 15px solid #CC9;}
 .cn-right-col-default h3 {background-color: #CC9;}
 #cn-in-pd {border-top: 15px solid #CC9;}
+
+/* REDMINE OVERRIDES */
 #login-form table {background-color: #eee; border: 2px solid #cc9;}
 .nodata, .warning {background-color: #eee; border-color: #cc9;}
 .contextual input, .contextual select { font-size: 12px; margin-top: -5px; }
 * html .contextual input, * html .contextual select {margin-top: auto;}
-
 #content { width: auto; background-color: auto; margin: auto; border-right: auto; padding: auto; z-index: auto; }
 * html #content{ width: auto; padding-left: 0auto; margin-top: auto; padding: auto;}
 html>body #content { min-height: auto; } 
 * html body #content { height: auto; } /* IE */
+div#context-menu { margin-top: -200px; }
 
 div.colLayout {
 	background-color: #FFF;
