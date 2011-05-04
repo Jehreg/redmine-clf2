@@ -5,18 +5,15 @@
   <h2 id="cn-nav">Navigation principale (colonne gauche)</h2>
   <div class="cn-left-col-default">
   <nav role="navigation">
-    <section>
-      <h3><acronym title="Ressources Intellectuelles Canada">RICan</acronym></h3>
-      <ul>
-        <% unless User.current.logged? %>
+    <% unless User.current.logged? %>
+      <section>
+        <h3><acronym title="Ressources Intellectuelles Canada">RICan</acronym></h3>
+        <ul>
           <li><a title="Enregistrer &lt; Ressources Intellectuelles Canada" href="/account/register">Enregistrer</a></li>
           <li><a title="Connecter &lt; Ressources Intellectuelles Canada" href="/login">Connecter</a></li>
-        <% end %>
-        <% if User.current.logged? %>
-          <li><a title="D&eacute;connecter &lt; Ressources Intellectuelles Canada" href="/logout">D&eacute;connecter</a></li>
-        <% end %>
-      </ul>
-    </section>
+        </ul>
+      </section>
+    <% end %>
     <section>
       <%= render_clf_menu :top_menu %>
     </section>

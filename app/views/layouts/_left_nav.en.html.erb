@@ -5,18 +5,15 @@
   <h2 id="cn-nav">Primary navigation (left column)</h2>
   <div class="cn-left-col-default">
   <nav role="navigation">
-    <section>
-      <h3><acronym title="Intellectual Resources Canada">IRCan</acronym></h3>
-      <ul>
-        <% unless User.current.logged? %>
-          <li><a title="Register &lt; Intellectual Resources Canada" href="/account/register">Register</a></li>
-          <li><a title="Login &lt; Intellectual Resources Canada" href="/login">Login</a></li>
-        <% end %>
-        <% if User.current.logged? %>
-          <li><a title="Logout &lt; Intellectual Resources Canada" href="/logout">Logout</a></li>
-        <% end %>
-      </ul>
-    </section>
+    <% unless User.current.logged? %>
+      <section>
+        <h3><acronym title="Intellectual Resources Canada">IRCan</acronym></h3>
+        <ul>
+            <li><a title="Register &lt; Intellectual Resources Canada" href="/account/register">Register</a></li>
+            <li><a title="Login &lt; Intellectual Resources Canada" href="/login">Login</a></li>
+        </ul>
+      </section>
+    <% end %>
     <section>
       <%= render_clf_menu :top_menu %>
     </section>

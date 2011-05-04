@@ -17,6 +17,11 @@ module Clf2Helper
         url,
         menu_node.html_options(:selected => selected)))
     end
+
+    if menu == :top_menu
+      links << content_tag('li', link_to(l(:label_logout), '/logout')) if User.current.logged?
+    end
+
     if links.empty?
       return nil
     else
