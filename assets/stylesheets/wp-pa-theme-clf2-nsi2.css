@@ -7,10 +7,10 @@ Conditions régissant l'utilisation : http://tbs-sct.ircan.gc.ca/projects/gcwwwt
 #cn-centre-col-inner h1, #cn-in-pd h3 {position: absolute; left: -9000px; font-size: 10%;}
 
 #cn-skip-head li span {display: block;}
-#cn-skip-head a:hover, #cn-skip-head a:focus, #cn-skip-head a:active {background-color: #363;}
+#cn-skip-head a:hover, #cn-skip-head a:focus, #cn-skip-head a:active {background-color: #CC9;}
 #cn-sig {margin-bottom: 10px;}
 #cn-msg-space {margin-bottom: 30px; min-height: 250px; width: 600px; color: #000;}
-#cn-upper-msg {height: 130px; background: #363;}
+#cn-upper-msg {height: 130px; background: #CC9;}
 #cn-lower-msg {min-height: 120px; background: #CCC; float: left; width: 100%;}
 #cn-lower-msg p {width: 45%; padding: 10px; font-size: 140%;}
 #cn-left-msg {float: left;}

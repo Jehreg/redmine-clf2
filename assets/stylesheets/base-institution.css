@@ -1,5 +1,5 @@
 /* CLF2 OVERRIDES */
-#cn-skip-head a:hover, #cn-skip-head a:focus, #cn-skip-head a:active {background-color: #FFFFDC;}
+#cn-skip-head a:hover, #cn-skip-head a:focus, #cn-skip-head a:active {background-color: #CC9; color: #000;}
 #cn-banner, #cn-banner-eng, #cn-banner-fra {background: #eee url('../images/banner.png') no-repeat;}
 #cn-banner #cn-banner-text, #cn-banner-eng #cn-banner-text, #cn-banner-fra #cn-banner-text {color: #000;}
 #cn-banner p, #cn-banner-eng p, #cn-banner-fra p {color: #000;}

@@ -10,7 +10,7 @@
   -->
 
   <!-- Title begins / Début du titre -->
-  <title><%= t(:app_title, :fr) %> / <%= t(:app_title, :en) %></title>
+  <title><%= t(:app_title, :locale => :fr) %> / <%= t(:app_title, :locale => :en) %></title>
   <!-- Title ends / Fin du titre -->
 
   <!-- Favicon (optional) begins / Début du favicon (optionnel) -->
@@ -18,20 +18,20 @@
   <!-- Favicon (optional) ends / Find du favicon (optionnel) -->
 
   <!-- Meta-data begins / Début des métadonnées -->
-  <meta name="dcterms.description" content="<%= t(:app_description, :fr) %>" />
-  <meta name="dcterms.description" lang="en" content="<%= t(:app_description, :en) %>" />
-  <meta name="description" content="<%= t(:app_description, :fr) %>" />
-  <meta name="description" lang="en" content="<%= t(:app_description, :en) %>" />
-  <meta name="keywords" content="<%= t(:app_keywords, :fr) %>" />
-  <meta name="keywords" lang="en" content="<%= t(:app_keywords, :en) %>" />
-  <meta name="dcterms.creator" title="<%= t(:app_creator_title, :fr) %>" content="<%= t(:app_creator, :fr) %>" />
-  <meta name="dcterms.creator" lang="en" title="<%= t(:app_creator_title, :en) %>" content="<%= t(:app_creator, :en) %>" />
-  <meta name="dcterms.title" content="<%= t(:app_title, :fr) %>" />
-  <meta name="dcterms.title" lang="en" content="<%= t(:app_title, :en) %>" />
+  <meta name="dcterms.description" content="<%= t(:app_description, :locale => :fr) %>" />
+  <meta name="dcterms.description" lang="en" content="<%= t(:app_description, :locale => :en) %>" />
+  <meta name="description" content="<%= t(:app_description, :locale => :fr) %>" />
+  <meta name="description" lang="en" content="<%= t(:app_description, :locale => :en) %>" />
+  <meta name="keywords" content="<%= t(:app_keywords, :locale => :fr) %>" />
+  <meta name="keywords" lang="en" content="<%= t(:app_keywords, :locale => :en) %>" />
+  <meta name="dcterms.creator" title="<%= t(:app_creator_title, :locale => :fr) %>" content="<%= t(:app_creator, :locale => :fr) %>" />
+  <meta name="dcterms.creator" lang="en" title="<%= t(:app_creator_title, :locale => :en) %>" content="<%= t(:app_creator, :locale => :en) %>" />
+  <meta name="dcterms.title" content="<%= t(:app_title, :locale => :fr) %>" />
+  <meta name="dcterms.title" lang="en" content="<%= t(:app_title, :locale => :en) %>" />
   <meta name="dcterms.issued" title="W3CDTF" content="2008-12-19" />
   <meta name="dcterms.modified" title="W3CDTF" content="2011-03-23" />
-  <meta name="dcterms.subject" title="scheme" content="<%= t(:app_subject, :fr) %>" />
-  <meta name="dcterms.subject" lang="en" title="scheme" content="<%= t(:app_subject, :en) %>" />
+  <meta name="dcterms.subject" title="scheme" content="<%= t(:app_subject, :locale => :fr) %>" />
+  <meta name="dcterms.subject" lang="en" title="scheme" content="<%= t(:app_subject, :locale => :en) %>" />
   <meta name="dcterms.language" title="ISO639-2" content="fra" />
   <meta name="dcterms.language" lang="en" title="ISO639-2" content="eng" />
   <!-- Meta-data ends / Fin des métadonnées -->
@@ -49,22 +49,10 @@
   <!-- clf2-nsi2 theme ends / Fin du thème clf2-nsi2 -->
   <!-- WET scripts/CSS end / Fin des scripts/CSS de la BOEW -->
 
-  <!-- Progressive enhancement begins / Début de l'amélioration progressive -->
-  <%= javascript_include_tag "jquery.min.js", :plugin => 'redmine_clf2' %>
-  <script src="/plugin_assets/redmine_clf2/javascripts/pe-ap.js" type="text/javascript" id="progressive"></script>
-  <script type="text/javascript">
-  /* <![CDATA[ */
-    var params = {
-    };
-    PE.progress(params);
-  /* ]]> */
-  </script>
-  <!-- Progressive enhancement ends / Fin de l'amélioration progressive -->
-
   <!-- WET print CSS begins / Début du CSS de la BOEW pour l'impression -->
-  <%= stylesheet_link_tag 'pf-if', :media => 'print' %>
+  <%= stylesheet_link_tag 'pf-if', :media => 'print', :plugin => 'redmine_clf2' %>
   <!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
-  <%= stylesheet_link_tag 'pf-if-theme-clf2-nsi2', :media => 'print' %>
+  <%= stylesheet_link_tag 'pf-if-theme-clf2-nsi2', :media => 'print', :plugin => 'redmine_clf2' %>
   <!-- clf2-nsi2 theme ends / Fin du thème clf2-nsi2 -->
   <!-- WET print CSS ends / Fin du CSS de la BOEW pour l'impression -->
 </head>
@@ -86,7 +74,7 @@
 	<div id="cn-head"><div id="cn-head-inner">
 	<header>
 <!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
-		<div id="cn-sig"><img src="images/sig-fra.gif" width="372" height="20" alt="Gouvernement du Canada / Government of Canada" title="Gouvernement du Canada / Government of Canada" /></div>
+    <div id="cn-sig"><%= image_tag 'sig-fra.gif', :plugin => 'redmine_clf2', :width => "372", :height=>"20", :alt=>"Gouvernement du Canada / Government of Canada", :title => "Gouvernement du Canada / Government of Canada" %></div>
 <!-- clf2-nsi2 theme ends / Fin du thème clf2-nsi2 -->
 	</header>
 	</div></div>

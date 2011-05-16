@@ -1,24 +1,14 @@
 class LanguageSwitcherController < ApplicationController
   unloadable
 
-  def french
-    logger.debug "Setting french"
+  def francais
     session[:language] = 'fr'
-    if request.referer
-      redirect_to request.referer
-    else
-      redirect_back_or_default(url_for(:controller => 'welcome', :action => 'index'))
-    end
+    redirect_to :controller => 'welcome', :action => 'index'
   end
   
   def english
-    logger.debug "Setting english"
     session[:language] = 'en'
-    if request.referer
-      redirect_to request.referer
-    else
-      redirect_back_or_default(url_for(:controller => 'welcome', :action => 'index'))
-    end
+    redirect_to :controller => 'welcome', :action => 'index'
   end
 
   private
