@@ -1,7 +1,7 @@
 class LanguageSwitcherController < ApplicationController
   unloadable
 
-  def francais
+  def french
     session[:language] = 'fr'
     redirect_to :controller => 'welcome', :action => 'index'
   end

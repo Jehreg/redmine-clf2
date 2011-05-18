@@ -7,7 +7,7 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_w3h)
     description 'This plugin implements the GoC Web Experience Toolkit CLF2 theme for Redmine'
     version '0.9.0'
 
-    permission(:change_language, {:language_switcher => [:french, :english]}, :public => true)
+    permission(:change_language, {:language_switcher => [:francais, :english]}, :public => true)
     settings(:default => {
                'welcome_text_fr' => ''
              })
