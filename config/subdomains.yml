@@ -1,26 +1,9 @@
-# Mapping of subdomains to languages
-#
-# The same domain can appear under multiple locales.
-# the first locale a domain appears under will be the default 
-# locale for that domain if no other indicators are provided.
-#
-# Likewise, a single locale can have multiple domain aliases.
-# The first one listed will be considered canonical.
+# Mapping subdomains to locales
+# The first subdomain listed will be considered canonical
 
-locales_subdomains:
-  en: 
-    - 'tbs-sct.ircan-rican' 
-    - 'ircan'
-  fr: 
-    - 'sct-tbs.rican-ircan'
-    - 'rican'
-
-subdomains_locales:
-  - 'tbs-sct.ircan-rican':
-    - en
-  - 'sct-tbs.rican-ircan':
-    - fr
-  - 'ircan':
-    - en
-  - 'rican':
-    - fr
+en: 
+  - 'tbs-sct.ircan-rican' 
+  - 'ircan'
+fr: 
+  - 'sct-tbs.rican-ircan'
+  - 'rican'

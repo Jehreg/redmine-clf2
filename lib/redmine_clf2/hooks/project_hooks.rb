@@ -1,4 +1,4 @@
-module Clf2
+module RedmineClf2
   module Hooks
     class ProjectHooks < Redmine::Hook::ViewListener
       # :project

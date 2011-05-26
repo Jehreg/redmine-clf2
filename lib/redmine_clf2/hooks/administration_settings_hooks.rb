@@ -1,4 +1,4 @@
-module Clf2
+module RedmineClf2
   module Hooks
     class AdministrationSettingHooks < Redmine::Hook::ViewListener
       def view_settings_general_form(context={})
