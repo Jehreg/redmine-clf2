@@ -121,6 +121,18 @@ module RedmineClf2
 
         set_language_if_valid(params[:lang].to_s)
       end
+
+      # Sets the logged in user
+      def logged_user=(user)
+        reset_session
+        if user && user.is_a?(User)
+          User.current = user
+          session[:user_id] = user.id
+        else
+          User.current = User.anonymous
+        end
+        session[:language] = locale_from_subdomain
+      end
     end # InstanceMethods
   end
 end
