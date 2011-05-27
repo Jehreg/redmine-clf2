@@ -9,8 +9,11 @@ module RedmineClf2
         base.class_eval do
           unloadable
           helper :clf2
-          cattr_accessor :locales_subdomains
+          cattr_accessor :subdomains
           load_clf2_subdomains_file
+          alias_method_chain :set_localization, :clf_mods
+          alias_method_chain :logged_user=, :clf_mods
+          helper_method :canonical_url
         end
       end
     end
@@ -45,9 +48,7 @@ module RedmineClf2
       def load_clf2_subdomains_file
         subdomains_file = File.join(Rails.plugins['redmine_clf2'].directory,'config','subdomains.yml')
         if File.exists?(subdomains_file)
-          data = YAML::load(File.read(subdomains_file))
-
-          self.locales_subdomains = data
+          self.subdomains = YAML::load(File.read(subdomains_file))
         else
           logger.error "CLF2 subdomain file not found at #{domain_file}. Subdomain specific languages will not be used."
         end
@@ -57,21 +58,24 @@ module RedmineClf2
     # Additional InstanceMethods
     module InstanceMethods
       # Override this method to determine the locale from the URL
-      def set_localization
+      def set_localization_with_clf_mods
         if request.get? && canonical_url != request.url
           head :moved_permanently, :location => canonical_url 
         end
 
         request.path == '/' ?
           session[:language] ||= params[:lang] :
-          session[:language] = locale_from_url 
+          session[:language] = locale_from_url
 
         set_language_if_valid(locale_from_url) 
       end
 
       # Override this method to ensure that session[:language] is preserved on login/logout
-      def logged_user=(user)
-        reset_session
+      def logged_user_with_clf_mods=(user)
+        # reset_session is being called twice for some reason
+        # this shouldn't be a problem, but unfortunately, in 2.3.11, it is:
+        # https://github.com/rails/rails/pull/198
+        reset_session if session.respond_to?(:destroy)
         if user && user.is_a?(User)
           User.current = user
           session[:user_id] = user.id
@@ -81,26 +85,14 @@ module RedmineClf2
         session[:language] = locale_from_url
       end
 
-      private
+      def canonical_url(locale = nil)
+        locale ||= locale_from_url
 
-      def locale_from_url
-        # If an explicit lang parameter is provided, it takes precedence over the subdomain
-        if params[:lang] && I18n.available_locales.include?(params[:lang])
-          return params[:lang]
-        end
-
-        # Otherwise we take the first locale in config/subdomains.yml 
-        # that has a subdomain matching the requested one
-        ls = self.locales_subdomains
-        ls.keys.find{|locale| ls[locale].select{|s| s.split(".") == request.subdomains.last(s.size)}.any?}
-      end
-
-      def canonical_url
         # Find the canonical subdomains for the current locale
         # as defined in config/subdomains.yml
-        canonical_subdomains = (self.locales_subdomains.keys.include?(locale_from_url) ? 
-          self.locales_subdomains[locale_from_url] : 
-          self.locales_subdomains.values.flatten).first.split(".")
+        canonical_subdomains = (self.subdomains.keys.include?(locale) ? 
+          self.subdomains[locale] : 
+          self.subdomains.values.flatten).first.split(".")
 
         # Preserve additional subdomains if they exist
         number_of_additional_subdomains = [request.subdomains.size - canonical_subdomains.size, 0].max
@@ -117,6 +109,22 @@ module RedmineClf2
         url.sub(request.subdomains.join("."), (canonical_subdomains).join("."))
       end
 
+      private
+
+      def locale_from_url
+        # If an explicit lang parameter is provided, it takes precedence over the subdomain
+        if params[:lang] && I18n.available_locales.include?(params[:lang])
+          return params[:lang]
+        end
+
+        # Otherwise we take the first locale in config/subdomains.yml 
+        # that has a subdomain matching the requested one
+        self.subdomains.keys.find{|locale| 
+          self.subdomains[locale].select{|subdomain| 
+            subdomain.split(".") == request.subdomains.last(subdomain.size)
+          }.any?
+        }
+      end
     end # InstanceMethods
   end
 end
