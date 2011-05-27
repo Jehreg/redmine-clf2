@@ -7,6 +7,7 @@ module RedmineClf2
         base.send(:include, InstanceMethods)
 
         base.class_eval do
+          unloadable
           helper :clf2
           cattr_accessor :locales_subdomains
           load_clf2_subdomains_file
@@ -38,7 +39,7 @@ module RedmineClf2
         return self.filter_chain.collect(&:method).include?(filter)
       end
 
-      # Load the clf2_subdomains.yml file to configure the subdomain
+      # Load the subdomains.yml file to configure the subdomain
       # to language mapping.  In development mode this will be
       # reloaded with each request but in production, it will be cached.
       def load_clf2_subdomains_file
@@ -55,74 +56,20 @@ module RedmineClf2
     
     # Additional InstanceMethods
     module InstanceMethods
-      def contact
-        url = '/projects/ircan-initiative/wiki/Frequently_Asked_Questions'
-        head :moved_permanently, :location => url 
-      end
-
-      def help
-        url = '/projects/help-aide'
-        head :moved_permanently, :location => url 
-      end
-
-      def strip_lang_parameter(url)
-        return url unless params[:lang]
-
-        if I18n.available_locales.include?(params[:lang].to_sym)
-          session[:language] = params[:lang]
-        end
-
-        url = url.sub(request.host, canonical_host(params[:lang].to_sym))
-        url = url.sub(/\?.*/, '')
-
-        query_string = request.query_string.sub(/&lang(\=[^&]*)?(?=&|$)|^lang(\=[^&]*)?(&|$)/, '')
-        url = url + "?#{query_string}" unless query_string.empty?
-        return url
-      end
-
-      def canonical_url(locale)
-        request.url.sub(request.host, canonical_host(locale))
-      end
-
-      def use_canonical_domain(url, locale = nil)
-        locale ||= locale_from_subdomain
-        url.sub(request.host, canonical_host(locale))
-      end
-
-      def canonical_host(locale)
-        if self.locales_subdomains.keys.include?(locale.to_s)
-          canonical_subdomains = self.locales_subdomains[locale.to_s].first.split(".")
-        else
-          canonical_subdomains = self.locales_subdomains.values.flatten.first.split(".")
-        end
-
-        other_subdomains = request.subdomains.take(request.subdomains.size - canonical_subdomains.size)
-        top_level_domains = request.domain.split(".")
-
-        (other_subdomains + canonical_subdomains + top_level_domains).join(".")
-      end
-
-      def locale_from_subdomain
-        ls = self.locales_subdomains
-        d = request.subdomains
-        ls.keys.find{|k| ls[k].select{|s| s.split(".") == d.last(s.size)}.any?}
-      end
-
+      # Override this method to determine the locale from the URL
       def set_localization
-        url = use_canonical_domain(request.url)
-        url = strip_lang_parameter(url) 
-
-        if request.get? && url != request.url
-          head :moved_permanently, :location => url 
+        if request.get? && canonical_url != request.url
+          head :moved_permanently, :location => canonical_url 
         end
 
-        params[:lang] ||= locale_from_subdomain
-        session[:language] = params[:lang] unless request.path == '/'
+        request.path == '/' ?
+          session[:language] ||= params[:lang] :
+          session[:language] = locale_from_url 
 
-        set_language_if_valid(params[:lang].to_s)
+        set_language_if_valid(locale_from_url) 
       end
 
-      # Sets the logged in user
+      # Override this method to ensure that session[:language] is preserved on login/logout
       def logged_user=(user)
         reset_session
         if user && user.is_a?(User)
@@ -131,8 +78,45 @@ module RedmineClf2
         else
           User.current = User.anonymous
         end
-        session[:language] = locale_from_subdomain
+        session[:language] = locale_from_url
       end
+
+      private
+
+      def locale_from_url
+        # If an explicit lang parameter is provided, it takes precedence over the subdomain
+        if params[:lang] && I18n.available_locales.include?(params[:lang])
+          return params[:lang]
+        end
+
+        # Otherwise we take the first locale in config/subdomains.yml 
+        # that has a subdomain matching the requested one
+        ls = self.locales_subdomains
+        ls.keys.find{|locale| ls[locale].select{|s| s.split(".") == request.subdomains.last(s.size)}.any?}
+      end
+
+      def canonical_url
+        # Find the canonical subdomains for the current locale
+        # as defined in config/subdomains.yml
+        canonical_subdomains = (self.locales_subdomains.keys.include?(locale_from_url) ? 
+          self.locales_subdomains[locale_from_url] : 
+          self.locales_subdomains.values.flatten).first.split(".")
+
+        # Preserve additional subdomains if they exist
+        number_of_additional_subdomains = [request.subdomains.size - canonical_subdomains.size, 0].max
+        additional_subdomains = request.subdomains.take(number_of_additional_subdomains)
+        canonical_subdomains.unshift(additional_subdomains) if additional_subdomains.any?
+
+        # Strip the lang parameter out of the query string if 
+        # it's been provided, but leave the other parameters
+        query_string = request.query_string.sub(/&lang(\=[^&]*)?(?=&|$)|^lang(\=[^&]*)?(&|$)/, '')
+        url = request.url.sub(/\?.*/, '')
+        url += "?#{query_string}" unless query_string.empty?
+
+        # Replace the provided subdomains with the canonical ones
+        url.sub(request.subdomains.join("."), (canonical_subdomains).join("."))
+      end
+
     end # InstanceMethods
   end
 end
