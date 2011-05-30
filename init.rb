@@ -1,6 +1,6 @@
 require 'redmine'
 
-unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_w3h)
+unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_clf2)
   Redmine::Plugin.register :redmine_clf2 do
     name 'Redmine CLF2 plugin'
     author 'Patrick Naubert'
@@ -45,6 +45,10 @@ Dispatcher.to_prepare :redmine_clf2_patches do
   require_dependency 'settings_helper'
   require 'redmine_clf2/patches/settings_helper_patch'
   SettingsHelper.send(:include, RedmineClf2::Patches::SettingsHelperPatch)
+
+  require_dependency 'welcome_controller'
+  require 'redmine_clf2/patches/welcome_controller_patch'
+  WelcomeController.send(:include, RedmineClf2::Patches::WelcomeControllerPatch)
 end
 
 require 'redmine_clf2/hooks/administration_settings_hooks'

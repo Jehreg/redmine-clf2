@@ -57,6 +57,16 @@ module RedmineClf2
     
     # Additional InstanceMethods
     module InstanceMethods
+      def contact
+        url = '/projects/ircan-initiative/wiki/Frequently_Asked_Questions'
+        head :moved_permanently, :location => url 
+      end
+
+      def help
+        url = '/projects/help-aide'
+        head :moved_permanently, :location => url 
+      end
+
       # Override this method to determine the locale from the URL
       def set_localization_with_clf_mods
         if request.get? && canonical_url != request.url
@@ -72,9 +82,6 @@ module RedmineClf2
 
       # Override this method to ensure that session[:language] is preserved on login/logout
       def logged_user_with_clf_mods=(user)
-        # reset_session is being called twice for some reason
-        # this shouldn't be a problem, but unfortunately, in 2.3.11, it is:
-        # https://github.com/rails/rails/pull/198
         reset_session if session.respond_to?(:destroy)
         if user && user.is_a?(User)
           User.current = user
@@ -113,7 +120,7 @@ module RedmineClf2
 
       def locale_from_url
         # If an explicit lang parameter is provided, it takes precedence over the subdomain
-        if params[:lang] && I18n.available_locales.include?(params[:lang])
+        if params[:lang] && I18n.available_locales.include?(params[:lang].to_sym)
           return params[:lang]
         end
 
@@ -128,3 +135,4 @@ module RedmineClf2
     end # InstanceMethods
   end
 end
+
