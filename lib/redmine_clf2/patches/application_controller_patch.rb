@@ -9,11 +9,12 @@ module RedmineClf2
         base.class_eval do
           unloadable
           helper :clf2
-          cattr_accessor :subdomains
+          cattr_accessor :subdomains, :tld_length
           load_clf2_subdomains_file
           alias_method_chain :set_localization, :clf_mods
           alias_method_chain :logged_user=, :clf_mods
           helper_method :canonical_url
+          self.tld_length = 2
         end
       end
     end
@@ -69,13 +70,19 @@ module RedmineClf2
 
       # Override this method to determine the locale from the URL
       def set_localization_with_clf_mods
-        if request.get? && canonical_url != request.url
-          head :moved_permanently, :location => canonical_url 
+        begin
+          ActionController::Base.session_options[:domain] = request.domain(self.tld_length)
+        rescue
+          ActionController::Base.session_options = {:domain => request.domain(self.tld_length)}
         end
 
         request.path == '/' ?
           session[:language] ||= params[:lang] :
           session[:language] = locale_from_url
+
+        if request.get? && canonical_url != request.url
+          head :moved_permanently, :location => canonical_url 
+        end
 
         set_language_if_valid(locale_from_url) 
       end
@@ -97,13 +104,15 @@ module RedmineClf2
 
         # Find the canonical subdomains for the current locale
         # as defined in config/subdomains.yml
-        canonical_subdomains = (self.subdomains.keys.include?(locale) ? 
-          self.subdomains[locale] : 
-          self.subdomains.values.flatten).first.split(".")
+        canonical_subdomains = self.subdomains.keys.include?(locale) ? 
+          self.subdomains[locale].first.split(".") : 
+          self.subdomains.values.flatten.first.split(".")
+        canonical_domain = canonical_subdomains.pop
+
+        number_of_additional_subdomains = [request.subdomains(self.tld_length).size - canonical_subdomains.size, 0].max
 
         # Preserve additional subdomains if they exist
-        number_of_additional_subdomains = [request.subdomains.size - canonical_subdomains.size, 0].max
-        additional_subdomains = request.subdomains.take(number_of_additional_subdomains)
+        additional_subdomains = request.subdomains(self.tld_length).take(number_of_additional_subdomains)
         canonical_subdomains.unshift(additional_subdomains) if additional_subdomains.any?
 
         # Strip the lang parameter out of the query string if 
@@ -113,7 +122,7 @@ module RedmineClf2
         url += "?#{query_string}" unless query_string.empty?
 
         # Replace the provided subdomains with the canonical ones
-        url.sub(request.subdomains.join("."), (canonical_subdomains).join("."))
+        url.sub(request.subdomains(self.tld_length).push(request.domain(self.tld_length).split(".").first).join("."), (canonical_subdomains.push(canonical_domain)).join("."))
       end
 
       private
@@ -127,9 +136,9 @@ module RedmineClf2
         # Otherwise we take the first locale in config/subdomains.yml 
         # that has a subdomain matching the requested one
         self.subdomains.keys.find{|locale| 
-          self.subdomains[locale].select{|subdomain| 
-            subdomain.split(".") == request.subdomains.last(subdomain.size)
-          }.any?
+          self.subdomains[locale].find{|subdomain| 
+            subdomain.split(".").last == request.domain(self.tld_length).split(".").first
+          }
         }
       end
     end # InstanceMethods
