@@ -19,7 +19,9 @@
 	<div id="cn-centre-col-gap"></div>
   <div id="cn-centre-col" role="main"><div id="cn-centre-col-inner"><div id="content">
     <div class="contextual">
-      <%= render_project_jump_box %>
+      <% if User.current.logged? %>
+        <%= render_project_jump_box %>
+      <% end %>
     </div>
     <%= yield %>
   </div></div></div>
