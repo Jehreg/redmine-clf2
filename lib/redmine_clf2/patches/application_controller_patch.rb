@@ -13,7 +13,7 @@ module RedmineClf2
           load_clf2_subdomains_file
           alias_method_chain :set_localization, :clf_mods
           alias_method_chain :logged_user=, :clf_mods
-          helper_method :canonical_url
+          helper_method :change_locale_link
           self.tld_length = 2
         end
       end
@@ -76,9 +76,9 @@ module RedmineClf2
           ActionController::Base.session_options = {:domain => request.domain(self.tld_length)}
         end
 
-        request.path == '/' ?
-          session[:language] ||= params[:lang] :
-          session[:language] = locale_from_url
+        if params[:lang]
+          session[:language] = params[:lang]
+        end
 
         if request.get? && canonical_url != request.url
           head :moved_permanently, :location => canonical_url 
@@ -125,6 +125,10 @@ module RedmineClf2
         url.sub(request.subdomains(self.tld_length).push(request.domain(self.tld_length).split(".").first).join("."), (canonical_subdomains.push(canonical_domain)).join("."))
       end
 
+      def change_locale_link(locale)
+        request.path + "?#{request.query_string}&lang=#{locale}"
+      end
+
       private
 
       def locale_from_url
@@ -135,11 +139,17 @@ module RedmineClf2
 
         # Otherwise we take the first locale in config/subdomains.yml 
         # that has a subdomain matching the requested one
-        self.subdomains.keys.find{|locale| 
+        locales = self.subdomains.keys.select{|locale| 
           self.subdomains[locale].find{|subdomain| 
             subdomain.split(".").last == request.domain(self.tld_length).split(".").first
           }
         }
+
+        if locales.length > 1 && session[:language]
+          session[:language]
+        else
+          locales.first
+        end
       end
     end # InstanceMethods
   end
