@@ -6,7 +6,7 @@ en:
   label_app_title: Extranet Environment
   label_powered_by: Free Software at Work
   field_description_fr: French Description
-  field_description: English Description
+  field_description: Description
   field_name_fr: French Project Name
   field_name : English Project Name
   setting_welcome_text: English Welcome Text
