@@ -107,9 +107,9 @@ module RedmineClf2
         canonical_subdomains = self.subdomains.keys.include?(locale) ? 
           self.subdomains[locale].first.split(".") : 
           self.subdomains.values.flatten.first.split(".")
-        canonical_domain = canonical_subdomains.pop
 
-        number_of_additional_subdomains = [request.subdomains(self.tld_length).size - canonical_subdomains.size, 0].max
+        difference = request.subdomains(self.tld_length).size - canonical_subdomains.size
+        number_of_additional_subdomains = [difference, 0].max
 
         # Preserve additional subdomains if they exist
         additional_subdomains = request.subdomains(self.tld_length).take(number_of_additional_subdomains)
@@ -121,8 +121,16 @@ module RedmineClf2
         url = request.url.sub(/\?.*/, '')
         url += "?#{query_string}" unless query_string.empty?
 
+        return url if request.domain(self.tld_length).nil?
+
+        current_domain = request.subdomains(self.tld_length)
+        if self.tld_length > 1
+          first_domain = request.domain(self.tld_length).split(".").first
+          current_domain = current_domain.push(first_domain)
+        end
+
         # Replace the provided subdomains with the canonical ones
-        url.sub(request.subdomains(self.tld_length).push(request.domain(self.tld_length).split(".").first).join("."), (canonical_subdomains.push(canonical_domain)).join("."))
+        url.sub(current_domain.join("."), canonical_subdomains.join("."))
       end
 
       def change_locale_link(locale)
@@ -137,13 +145,17 @@ module RedmineClf2
           return params[:lang]
         end
 
-        # Otherwise we take the first locale in config/subdomains.yml 
-        # that has a subdomain matching the requested one
-        locales = self.subdomains.keys.select{|locale| 
-          self.subdomains[locale].find{|subdomain| 
-            subdomain.split(".").last == request.domain(self.tld_length).split(".").first
+        if request.domain(self.tld_length).nil?
+          locales = self.subdomains.keys
+        else
+          # Find the first locale in config/subdomains.yml 
+          # that has a subdomain matching the requested one
+          locales = self.subdomains.keys.select{|locale| 
+            self.subdomains[locale].find{|subdomain| 
+              subdomain.split(".").last == request.domain(self.tld_length).split(".").first
+            }
           }
-        }
+        end
 
         if locales.length > 1 && session[:language]
           session[:language]
