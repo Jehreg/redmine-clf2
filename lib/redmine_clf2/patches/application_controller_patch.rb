@@ -112,7 +112,7 @@ module RedmineClf2
         number_of_additional_subdomains = [difference, 0].max
 
         # Preserve additional subdomains if they exist
-        additional_subdomains = request.subdomains(self.tld_length).take(number_of_additional_subdomains)
+        additional_subdomains = request.subdomains(self.tld_length).first(number_of_additional_subdomains)
         canonical_subdomains.unshift(additional_subdomains) if additional_subdomains.any?
 
         # Strip the lang parameter out of the query string if 
