@@ -1,0 +1,12 @@
+<div id="cn-right-col-gap"></div>
+<div id="cn-right-col" role="complementary"><div id="cn-right-col-inner">
+  <section>
+    <h2>Contenu supplémentaire (colonne droite)</h2>
+    <div class="cn-right-col-default">
+      <nav role="navigation">
+        <%= yield :sidebar %>
+        <%= call_hook :view_layouts_base_sidebar %>
+      </nav>
+    </div>
+  </section>
+</div></div>

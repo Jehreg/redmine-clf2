@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+Terms and conditions of use: http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Terms
+Conditions régissant l'utilisation : http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Conditions
+*/
+#cn-body-inner-1col {margin: 0 auto; width: 760px; min-width: 12.00em;}
+
+/*** Expandable page CSS (IE6-specific CSS in theme-clf2-nsi2-ie6.css) / Le CSS pour une page extensible (le CSS pour IE6 se trouve dans theme-clf2-nsi2-ie6.css ***/
+/* #cn-body-inner-1col {padding: 0; width: auto;} */
+
+/* Hide hidden heading elements / Cacher les éléments d'en-tête invisibles */
+#cn-body-inner-1col h1, #cn-in-pd h3 {position: absolute; left: -9000px; font-size: 10%;}
+
+#cn-skip-head li span {display: block;}
+#cn-skip-head a:hover, #cn-skip-head a:focus, #cn-skip-head a:active {background-color: #363;}
+#cn-head {float: left;}
+#cn-sig {float: left; width: 50%; min-width: 300px;}
+#cn-wmms {float: right; text-align: right; width: 49.8%; min-width: 100px;}
+
+#cn-centre-col-inner h1 {margin-top: 0;}
+#cn-left-msg, #cn-right-msg {width: 49%;}
+#cn-left-msg {float: left;}
+#cn-right-msg {float: right;}
+
+#cn-foot {height: 4.2em;}
+#cn-in-pd {border-top: 15px solid #363;}
+#cn-in-pd ul {list-style-type: none; margin: -2px 0 0 -40px;}
+#cn-in-pd ul li {width: 48%; margin-top: 5px;}
+#cn-inotices-link-left {float: left;}
+#cn-inotices-link-right {float: right; text-align: right;}

@@ -1,0 +1,34 @@
+<!-- Primary navigation (left column) begins / Début de la navigation principale (colonne gauche) -->
+<div id="cn-left-col-gap"></div>
+<div id="cn-left-col"><div id="cn-left-col-inner">
+<section>
+  <h2 id="cn-nav">Navigation principale (colonne gauche)</h2>
+  <div class="cn-left-col-default">
+  <nav role="navigation">
+    <% unless User.current.logged? %>
+      <section>
+        <h3><acronym title="Ressources Intellectuelles Canada">RICan</acronym></h3>
+        <ul>
+          <li><a title="Enregistrer &lt; Ressources Intellectuelles Canada" href="/account/register">Enregistrer</a></li>
+          <li><a title="Connecter &lt; Ressources Intellectuelles Canada" href="/login">Connecter</a></li>
+        </ul>
+      </section>
+    <% end %>
+    <section>
+      <%= render_clf_menu :top_menu %>
+    </section>
+    <section>
+      <%= render_clf_main_menu(@project) %>
+    </section>
+    <section>
+      <h3 id="cn-pd-link">Divulgation proactive</h3>
+      <ul id="cn-pd-ul">
+        <li><a href="http://www.tbs-sct.gc.ca/pd-dp/index-fra.asp">Divulgation proactive</a></li>
+      </ul>
+    </section>
+  </nav>
+  </div>
+</section>
+</div></div>
+<!-- Primary navigation (left column) ends / Fin de la navigation principale (colonne gauche) -->
+<div id="cn-left-col-gap"></div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= render :partial => 'layouts/head' %>
+</head>
+<body>
+<!-- Three column layout begins / Début de la mise en page de trois colonnes -->
+<div id="cn-body-inner-3col">
+  <!-- Skip header begins / Début du saut de l'en-tête -->
+  <%= render :partial => 'layouts/skip_header' %>
+  <!-- Skip header ends / Fin du saut de l'en-tête -->
+
+  <!-- Header begins / Début de l'en-tête -->
+  <%= render :partial => 'layouts/header' %>
+  <!-- Header ends / Fin de l'en-tête -->
+
+	<div id="cn-cols">
+    <!-- Main content begins / Début du contenu principal --> 
+    <div id="cn-centre-col-gap"></div>
+    <div id="cn-centre-col" role="main"><div id="cn-centre-col-inner"><div id="content">
+      <div class="contextual">
+        <% if User.current.logged? %>
+          <%= render_project_jump_box %>
+        <% end %>
+      </div>
+      <%= yield %>
+    </div></div></div>
+    <!-- Main content ends / Fin du contenu principal --> 
+
+    <!-- Primary navigation (left column) begins / Début de la navigation principale (colonne gauche) -->
+    <%= render :partial => 'layouts/left_nav' %>
+    <!-- Primary navigation (left column) ends / Fin de la navigation principale (colonne gauche) -->
+
+    <!-- Supplemental content (right column) begins / Début du contenu supplémentaire (colonne droite) -->
+    <%= render :partial => 'layouts/right_nav' %>
+    <!-- Supplemental content (right column) ends / Fin du contenu supplémentaire (colonne droite) -->
+  </div>
+
+  <%= render :partial => 'layouts/footer' %>
+</div>
+<!-- Three column layout ends / Fin de la mis en page de trois colonnes -->
+</body>
+</html>

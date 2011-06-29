@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+Terms and conditions of use: http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Terms
+Conditions régissant l'utilisation : http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Conditions
+*/
+#cn-body-inner-1col {width: auto;}
+body {margin: 0 auto; width: 780px;}
+
+/*** Expandable page CSS / Le CSS pour une page extensible ***/
+/* body {width: auto;} */
+
+#cn-left-msg, #cn-right-msg {padding-bottom: 10px;}
+#cn-foot {position: absolute; height: 1000em; border: none; border-left: 10px solid #FFF; border-right: 10px solid #FFF; margin-left: -10px;}
+#cn-foot-inner {position: absolute;}
+#cn-in-pd {border-top-width: 16px; margin-top: -1px;}
+#cn-pd-ul {padding-left: 0;}
+#cn-in-pd ul li {width: 47%;}

@@ -1,0 +1,33 @@
+<!-- Primary navigation (left column) begins / Début de la navigation principale (colonne gauche) -->
+<div id="cn-left-col-gap"></div>
+<div id="cn-left-col"><div id="cn-left-col-inner">
+<section>
+  <h2 id="cn-nav">Primary navigation (left column)</h2>
+  <div class="cn-left-col-default">
+  <nav role="navigation">
+    <% unless User.current.logged? %>
+      <section>
+        <h3><acronym title="Intellectual Resources Canada">IRCan</acronym></h3>
+        <ul>
+            <li><a title="Register &lt; Intellectual Resources Canada" href="/account/register">Register</a></li>
+            <li><a title="Login &lt; Intellectual Resources Canada" href="/login">Login</a></li>
+        </ul>
+      </section>
+    <% end %>
+    <section>
+      <%= render_clf_menu :top_menu %>
+    </section>
+    <section>
+      <%= render_clf_main_menu(@project) %>
+    </section>
+    <section>
+      <h3 id="cn-pd-link">Proactive Disclosure</h3>
+      <ul id="cn-pd-ul">
+        <li><a href="http://www.tbs-sct.gc.ca/pd-dp/index-eng.asp">Proactive Disclosure</a></li>
+      </ul>
+    </section>
+  </nav>
+  </div>
+</section>
+</div></div>
+<!-- Primary navigation (left column) ends / Fin de la navigation principale (colonne gauche) -->

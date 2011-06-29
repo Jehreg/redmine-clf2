@@ -1,0 +1,5 @@
+<% if (yield :sidebar) =~ /\S/  %>
+  <%= render :partial => 'layouts/three_col' %>
+<% else %>
+  <%= render :partial => 'layouts/two_col' %>
+<% end %>

@@ -4,9 +4,6 @@ module Clf2Helper
   def render_clf_menu(menu, project=nil, options = {})
     # Default options
     options = {
-      :ul_class => 'nav',
-      :li_class => 'menucontent',
-      :menulink_class => 'menulink',
       :title => :clf2_text_top_menu
     }.merge(options)
 
@@ -15,38 +12,21 @@ module Clf2Helper
     menu_items_for(menu, project) do |menu_node|
       caption, url, selected = extract_node_details(menu_node, project)
 
-      links << content_tag('li', 
-                           link_to(h(caption),
-                                   url,
-                                   menu_node.html_options(:selected => selected).merge(:class => options[:menulink_class])),
-                           :class => options[:li_class])
+      links << content_tag('li', link_to(
+        h(caption),
+        url,
+        menu_node.html_options(:selected => selected)))
     end
+
+    if menu == :top_menu
+      links << content_tag('li', link_to(l(:label_logout), '/logout')) if User.current.logged?
+    end
+
     if links.empty?
       return nil
     else
-      inner_menu = content_tag('ul',
-                               links.join("\n"),
-                               :class => options[:ul_class])
-
-      return outer_clf_menu(inner_menu, options[:title], options)
+      return content_tag(:h3, l(options[:title])) + content_tag(:ul, content_tag(:li, links.join("\n")))
     end
-  end
-
-  # Renders the outer CLF menu for inner_html and a title.
-  def outer_clf_menu(inner_html, title, options = {})
-    # Default options
-    options = {
-      :ul_class => 'nav',
-      :title => :clf2_text_top_menu
-    }.merge(options)
-
-    content_tag(:ul,
-                content_tag(:li,
-                            content_tag(:h2,
-                                        l(title),
-                                        :class => options[:ul_class]) +
-                            inner_html),
-                :class => options[:ul_class])
   end
 
   # Wraps the Redmine core's render_main_main but using the CLF
@@ -68,5 +48,32 @@ module Clf2Helper
     return if text == nil
     words = text.split
     words[0..(length-1)].join(' ') + (words.length > length ? end_string : '')
+  end
+
+  def breadcrumbs 
+    if @project.nil? || @project.new_record?
+      concat('<li>&nbsp;</li>')
+    else
+      projects = @project.root? ? [@project] : (@project.ancestors.visible.all + [@project])
+      projects.each_with_index do |p,i|
+        separator = i == (projects.length - 1) ? '' : '&#160;&#62;'
+        concat("<li>#{link_to_project(p, {:jump => current_menu_item}, :rel => ("up" *  (projects.length - i))) }#{separator}</li>")
+      end
+    end
+  end
+
+  def project_tree_options_for_select(projects, options = {})
+    s = ''
+    projects.each do |project|
+      tag_options = {:value => project.id}
+      if project == options[:selected] || (options[:selected].respond_to?(:include?) && options[:selected].include?(project))
+        tag_options[:selected] = 'selected'
+      else
+        tag_options[:selected] = nil
+      end
+      tag_options.merge!(yield(project)) if block_given?
+      s << content_tag('option', h(project), tag_options)
+    end
+    s
   end
 end

@@ -1,0 +1,54 @@
+<meta charset="utf-8" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+
+<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+Terms and conditions of use: http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Terms
+Conditions régissant l'utilisation : http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Conditions
+-->
+
+<!-- Title begins / Début du titre -->
+<title><%= t(:app_title) %></title>
+<!-- Title ends / Fin du titre -->
+
+<!-- Favicon (optional) begins / Début du favicon (optionnel) -->
+<!-- <link rel="shortcut icon" href="images/favicon.ico" /> -->
+<!-- Favicon (optional) ends / Find du favicon (optionnel) -->
+
+<!-- Meta-data begins / Début des métadonnées -->
+<meta name="dcterms.description" content="<%= t(:app_description) %>" />
+<meta name="description" content="<%= t(:app_description) %>" />
+<meta name="keywords" content="<%= t(:app_keywords) %>" />
+<meta name="dcterms.creator" title="<%= t(:app_creator_title) %>" content="<%= t(:app_creator) %>" />
+<meta name="dcterms.title" content="<%= t(:app_title) %>" />
+<meta name="dcterms.issued" title="W3CDTF" content="2008-12-19" />
+<meta name="dcterms.modified" title="W3CDTF" content="2011-03-23" />
+<meta name="dcterms.subject" title="scheme" content="<%= t(:app_subject) %>" />
+<meta name="dcterms.language" title="ISO639-2" content="eng" />
+<!-- Meta-data ends / Fin des métadonnées -->
+
+<%= stylesheet_link_tag 'application', :media => 'screen,print' %>
+<!-- WET scripts/CSS begin / Début des scripts/CSS de la BOEW --><!--[if IE 6]><![endif]-->
+<%= stylesheet_link_tag 'base', :media => 'screen,print', :plugin => 'redmine_clf2' %>
+<!--[if IE 8]><%= stylesheet_link_tag 'base-ie8', :media => 'screen,print', :plugin => 'redmine_clf2' %><![endif]-->
+<!--[if IE 7]><%= stylesheet_link_tag 'base-ie7', :media => 'screen,print', :plugin => 'redmine_clf2' %><![endif]-->
+<!--[if lte IE 6]><%= stylesheet_link_tag 'base-ie6', :media => 'screen,print', :plugin => 'redmine_clf2' %><![endif]-->
+<%= stylesheet_link_tag 'util', :media => 'screen,print', :plugin => 'redmine_clf2' %>
+<!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
+<%= stylesheet_link_tag 'theme-clf2-nsi2', :media => 'screen,print', :plugin => 'redmine_clf2' %>
+<!--[if IE 7]><%= stylesheet_link_tag 'theme-clf2-nsi2-ie7', :media => 'screen,print', :plugin => 'redmine_clf2' %><![endif]-->
+<!--[if lte IE 6]><%= stylesheet_link_tag 'theme-clf2-nsi2-ie6', :media => 'screen,print', :plugin => 'redmine_clf2' %><![endif]-->
+<!-- clf2-nsi2 theme ends / Fin du thème clf2-nsi2 -->
+<!-- WET scripts/CSS end / Fin des scripts/CSS de la BOEW -->
+
+<%= stylesheet_link_tag 'base-institution', :media => 'screen,print', :plugin => 'redmine_clf2' %>
+
+<!-- WET print CSS begins / Début du CSS de la BOEW pour l'impression -->
+<%= stylesheet_link_tag 'pf-if', :media => 'print', :plugin => 'redmine_clf2' %>
+<!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
+<%= stylesheet_link_tag 'pf-if-theme-clf2-nsi2', :media => 'print', :plugin => 'redmine_clf2' %>
+<!-- clf2-nsi2 theme ends / Fin du thème clf2-nsi2 -->
+<!-- WET print CSS ends / Fin du CSS de la BOEW pour l'impression -->
+
+<%= javascript_include_tag :defaults %>
+<%= call_hook :view_layouts_base_html_head %>
+<%= yield :header_tags -%>
