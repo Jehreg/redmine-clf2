@@ -14,8 +14,7 @@ module RedmineClf2
     module InstanceMethods
       def index_with_clf_mods
         if session[:language]
-          @news = News.latest User.current
-          @projects = Project.latest User.current
+          @news = News.latest(User.current).select{|n| n.project.name_ == 'IRCan Franchise of TBS'}
         else
           render :action => 'welcome', :layout => 'wp-pa' 
         end
