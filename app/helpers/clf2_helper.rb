@@ -62,6 +62,16 @@ module Clf2Helper
     end
   end
 
+  def page_title
+    unless @project.nil? || @project.new_record?
+      projects = @project.root? ? [@project] : (@project.ancestors.visible.all + [@project])
+      projects.each_with_index do |p,i|
+        concat(p.to_s + ' - ')
+      end
+      concat(t(:app_title))
+    end
+  end
+
   def project_tree_options_for_select(projects, options = {})
     s = ''
     projects.each do |project|
