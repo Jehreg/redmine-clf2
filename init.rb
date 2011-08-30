@@ -13,6 +13,8 @@ unless Redmine::Plugin.registered_plugins.keys.include?(:redmine_clf2)
              })
 
     menu :top_menu, :my_account, '/my/account', :caption => :label_my_account
+    delete_menu_item :top_menu, :help
+    menu :top_menu, :help, '/projects/help-aide'
   end
 end
 
