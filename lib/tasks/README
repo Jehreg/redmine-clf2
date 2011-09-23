@@ -1,0 +1,3 @@
+To remove accounts that have been sitting in the approval queue for a long time:
+cd /var/www/rails_apps/chili
+RAILS_ENV=production rake --trace redmine:spam_accounts_removal
