@@ -51,9 +51,9 @@ module Clf2Helper
   end
 
   def breadcrumbs 
-    if @project.nil? || @project.new_record?
-      concat('<li>&nbsp;</li>')
-    else
+    concat("<li>#{link_to(t(:label_home), root_path)}</li>")
+    unless @project.nil? || @project.new_record?
+      concat("<li>&#62; #{link_to(t(:label_project_plural), projects_path)}&#160;&#62;</li>")
       projects = @project.root? ? [@project] : (@project.ancestors.visible.all + [@project])
       projects.each_with_index do |p,i|
         separator = i == (projects.length - 1) ? '' : '&#160;&#62;'
@@ -68,8 +68,8 @@ module Clf2Helper
       projects.each_with_index do |p,i|
         concat(p.to_s + ' - ')
       end
-      concat(t(:app_title))
     end
+    concat(t(:app_title))
   end
 
   def project_tree_options_for_select(projects, options = {})
