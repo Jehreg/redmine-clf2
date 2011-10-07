@@ -23,6 +23,9 @@
           <%= render_project_jump_box %>
         <% end %>
       </div>
+      <% unless @project.nil? || @project.new_record? %>
+        <h2><%= @project.to_s %></h2>
+      <% end %>
       <%= yield %>
     </div></div></div>
     <!-- Main content ends / Fin du contenu principal --> 
