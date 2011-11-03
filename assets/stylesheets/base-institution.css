@@ -30,3 +30,5 @@ div.colLayout {
 	background-color: #FFF;
 	height: 100%;
 }
+
+h1.project_title { font-size: 28px; border-bottom: 1px solid #BBB; }
