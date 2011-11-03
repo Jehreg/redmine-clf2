@@ -24,7 +24,7 @@
         <% end %>
       </div>
       <% unless @project.nil? || @project.new_record? %>
-        <h2><%= @project.to_s %></h2>
+        <h1 class="project_title"><%= @project.to_s %></h1>
       <% end %>
       <%= yield %>
     </div></div></div>
