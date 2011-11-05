@@ -1,8 +1,0 @@
-# Mapping subdomains to locales
-# The first subdomain listed will be considered canonical
-en: 
-  - 'ircan-rican' 
-  - 'ircan' 
-fr: 
-  - 'rican-ircan'
-  - 'rican'
