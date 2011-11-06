@@ -51,7 +51,7 @@ module RedmineClf2
         if File.exists?(subdomains_file)
           self.subdomains = YAML::load(File.read(subdomains_file))
         else
-          logger.error "CLF2 subdomain file not found at #{domain_file}. Subdomain specific languages will not be used."
+          logger.error "CLF2 subdomain file not found at #{subdomains_file}. Subdomain specific languages will not be used."
         end
       end
     end
