@@ -54,3 +54,27 @@ fr:
   app_creator_title: Titres des institutions fédérales
   app_url: sct-tbs.rican.gc.ca
   app_subject: Termes de sujet en français
+
+  number:
+      format:
+        precision: 3
+        separator: '.'
+        delimiter: ','
+      currency:
+        format:
+          unit: '$'
+          precision: 2
+          format: '%u%n'
+      human:
+        format:
+          precision: 2
+        storage_units:
+          format: "%n %u"
+          units:
+            byte:
+              one: "octet"
+              other: "octet"
+            kb: "ko"
+            mb: "Mo"
+            gb: "Go"
+            tb: "To"
