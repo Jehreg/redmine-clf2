@@ -1,8 +1,8 @@
 /* CLF2 OVERRIDES */
 #cn-skip-head a:hover, #cn-skip-head a:focus, #cn-skip-head a:active {background-color: #CC9; color: #000;}
-#cn-banner, #cn-banner-eng, #cn-banner-fra {background: #eee url('../images/banner.png') no-repeat;}
+#cn-banner, #cn-banner-eng, #cn-banner-fra {background: #eee url('../images/banner.png') no-repeat; height: 80px;}
 #cn-banner #cn-banner-text, #cn-banner-eng #cn-banner-text, #cn-banner-fra #cn-banner-text {color: #000;}
-#cn-banner p, #cn-banner-eng p, #cn-banner-fra p {color: #000;}
+#cn-banner p, #cn-banner-eng p, #cn-banner-fra p {color: #000; padding: 0; margin: 0; line-height: 24px; }
 .cn-left-col-default h3 {background-color: #CC9;}
 .cn-left-col-default h3, .cn-left-col-default h3 a:link, .cn-left-col-default h3 a:visited, .cn-right-col-default h3, .cn-right-col-default h3 a:link, .cn-right-col-default h3 a:visited {color: #000;}
 .cn-left-col-default #cn-search-box #cn-search, .cn-search-box .cn-search {border: 1px solid #CC9;}
@@ -20,12 +20,35 @@
 .nodata, .warning {background-color: #eee; border-color: #cc9;}
 .contextual input, .contextual select { font-size: 12px; margin-top: -5px; }
 * html .contextual input, * html .contextual select {margin-top: auto;}
-#content { width: auto; background-color: auto; margin: 0; border-right: auto; padding: 0; padding-right: 10px; z-index: auto; }
+#content { width: auto; background-color: auto; margin: 0; border-right: auto; padding: 0; padding-right: 10px; z-index: auto; border: 0; font-size: 13px; }
 * html #content{ width: auto; padding-left: auto; margin-top: 0; padding: auto;}
 html>body #content { min-height: none; } 
 * html body #content { height: auto; } /* IE */
+body {
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+  font-size: 80%;
+}
 div#context-menu { margin-top: -200px; }
+a, a:link, a:visited {
+  color: #2A5685;
+  font-weight: normal;
+}
+li a.home {
+  text-indent: 0;
+  background: none;
+  width: auto;
+  height: auto;
+}
 
+li a.help {
+  text-indent: 0;
+  background: none;
+  width: auto;
+  height: auto;
+}
+li a.help:hover {
+  background: none;
+}
 div.colLayout {
 	background-color: #FFF;
 	height: 100%;
