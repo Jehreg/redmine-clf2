@@ -80,3 +80,8 @@ a.cn-linkdesc {position: relative; z-index: 24; overflow: hidden;}
 a.cn-linkdesc:hover, a.cn-linkdesc:focus, a.cn-linkdesc:active {z-index: 25; outline: 0; text-decoration: none; overflow: visible;}
 a.cn-linkdesc span span {position: absolute; left: -9000px; width: 0;}
 a.cn-linkdesc:hover span span, a.cn-linkdesc:focus span span, a.cn-linkdesc:active span span {position: absolute; top: 2em; left: 2.2em; width: auto; white-space: nowrap; border: 1px solid InfoText; background: InfoBackground; color: InfoText; font: message-box; padding: 2px 4px; text-align: left;}
+
+li a.home { text-indent: 0em; width: auto; height: auto; background: none; }
+li a.home:hover { text-indent: 0em; width: auto; height: auto; background: none; }
+li a.help { text-indent: 0em; width: auto; height: auto; background: none; }
+li a.help:hover { text-indent: 0em; width: auto; height: auto; background: none; }
