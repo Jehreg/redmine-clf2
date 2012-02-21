@@ -26,7 +26,25 @@ Conditions régissant l'utilisation : http://www.ircan.gc.ca/projects/gcwwwtempl
 <meta name="dcterms.language" title="ISO639-2" content="eng" />
 <!-- Meta-data ends / Fin des métadonnées -->
 
-<%= stylesheet_link_tag 'application', :media => 'screen,print' %>
+<%= favicon %>
+<%= stylesheet_link_tag 'smoothness/jquery-ui', :media => 'all' %>
+<%= stylesheet_link_tag 'application', :media => 'all' %>
+<%= stylesheet_link_tag 'print', :media => 'print' %>
+<%= stylesheet_link_tag 'rtl', :media => 'all' if l(:direction) == 'rtl' %>
+<!--[if lte IE 6]><%= stylesheet_link_tag 'ie6', :media => 'all' %><![endif]-->
+<!--[if lte IE 7]><%= stylesheet_link_tag 'ie7', :media => 'all' %><![endif]-->
+<!--[if gte IE 8]><![endif]-->
+
+<%= javascript_include_tag 'jquery.min.js' %>
+<%= javascript_include_tag 'jquery-ui.min.js' %>
+<%= javascript_include_tag 'jquery.menu_expand.js' %>
+<%= javascript_tag('jQuery.noConflict();') %>
+<%= javascript_heads %>
+<%= stylesheet_link_tag 'jstoolbar' %>
+<%= call_hook :view_layouts_base_html_head %>
+<%= heads_for_theme %>
+<% heads_for_wiki_formatter %>
+
 <!-- WET scripts/CSS begin / Début des scripts/CSS de la BOEW --><!--[if IE 6]><![endif]-->
 <%= stylesheet_link_tag 'base', :media => 'screen,print', :plugin => 'redmine_clf2' %>
 <!--[if IE 8]><%= stylesheet_link_tag 'base-ie8', :media => 'screen,print', :plugin => 'redmine_clf2' %><![endif]-->
