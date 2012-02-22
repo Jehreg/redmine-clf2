@@ -11,6 +11,8 @@ fr:
   field_name_fr: Nom Francophone du projet
   field_name : Nom Anglophone du projet
   text_report_a_problem: Signaler un problème
+  text_registration_instructions: "Pour se prémunir contre le spam, toutes les applications de compte sont vérifiés manuellement par les administrateurs RICan. Le processus d'approbation peut prendre jusqu'à 24 heures. Pour en savoir plus, s'il vous plaît visitez notre <a href='/projects/ircan-initiative/wiki/How_can_I_register_with_IRCan'>page d'inscription en compte et processus d'activation</a>."
+  notice_account_invalid_creditentials: "Échec de la connexion. Soit vous avez fourni un nom d'utilisateur ou mot de passe incorrect ou votre compte n'a pas encore été activé par un administrateur RICan. S'il vous plaît visitez notre <a href='/projects/ircan-initiative/wiki/How_can_I_register_with_IRCan'>page d'inscription en compte et processus d'activation</a>."
   setting_welcome_text: "Texte d'accueil anglophone"
   setting_welcome_text_fr: "Texte d'accueil francophone"
   #
