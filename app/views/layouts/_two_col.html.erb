@@ -26,6 +26,7 @@
     <% unless @project.nil? || @project.new_record? %>
       <h1 class="project_title"><%= @project.to_s %></h1>
     <% end %>
+    <%= render_flash_messages %>
     <%= yield %>
   </div></div></div>
 	<!-- Main content ends / Fin du contenu principal --> 
