@@ -12,6 +12,8 @@ en:
   setting_welcome_text: English Welcome Text
   setting_welcome_text_fr: French Welcome Text
   text_report_a_problem: Report a Problem
+  text_registration_instructions: "To guard against spam, all account applications are manually verified by IRCan administrators.  The approval process can take up to 24 hours.  To learn more, please visit our <a href='/projects/ircan-initiative/wiki/How_can_I_register_with_IRCan'>account registration and activation process</a> page."
+  notice_account_invalid_creditentials: "Login failed.  Either you provided an incorrect username or password, or your account has not yet been activated by an IRCan administrator.  Please visit our <a href='/projects/ircan-initiative/wiki/How_can_I_register_with_IRCan'>account registration and activation process</a> page."
   #
   # Rename all language strings in the core Redmine:
   #
