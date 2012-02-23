@@ -11,6 +11,7 @@ module RedmineClf2
           helper :clf2
           helper_method :change_locale_link
           alias_method_chain :set_localization, :clf_mods
+          alias_method_chain :logged_user=, :clf_mods
         end
       end
     end
@@ -74,6 +75,20 @@ module RedmineClf2
         end
         lang ||= Setting.default_language
         set_language_if_valid(lang)
+      end
+
+      # Override this method to ensure that session[:language] is preserved on login/logout
+      def logged_user_with_clf_mods=(user)
+        lang = session[:lang]
+        reset_session
+        session[:lang] = lang
+
+        if user && user.is_a?(User)
+          User.current = user
+          session[:user_id] = user.id
+        else
+          User.current = User.anonymous
+        end
       end
     end # InstanceMethods
   end
