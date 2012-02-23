@@ -21,7 +21,7 @@ Conditions régissant l'utilisation : http://tbs-sct.ircan.gc.ca/projects/gcwwwt
 .cn-left-col-default #cn-search-box #cn-search-submit, .cn-search-box .cn-search-submit {overflow: visible; padding: 0 8px;}
 .cn-left-col-default h3 a:hover, .cn-left-col-default h3 a:active, .cn-left-col-default h3 a:focus, .cn-right-col-default h3 a:hover, .cn-right-col-default h3 a:active, .cn-right-col-default h3 a:focus {zoom: 1;}
 .cn-right-col-default h3 + div p {margin-top: 1em; margin-bottom: 1em;}
-.cn-right-col-default {margin-bottom: -10px;}
+.cn-right-col-default {margin-bottom: -3px;}
 
 #cn-pd-ul li {margin-left: -40px;}
 #cn-toppage-foot, #cn-in-pd-links {width: 28%;}
