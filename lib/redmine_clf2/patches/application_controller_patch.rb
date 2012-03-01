@@ -78,6 +78,7 @@ module RedmineClf2
 
         if params[:lang]
           session[:language] = params[:lang]
+          logger.info "CLF2 forcing session language to #{session[:language]}"
         end
 
         if request.get? && canonical_url != request.url
