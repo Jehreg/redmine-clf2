@@ -59,6 +59,14 @@ module RedmineClf2
 
       def set_localization_with_clf_mods
         lang = nil
+	if params[:lang].present?
+		# WET uses ISO639-2, but Chiliproject/Redmine uses ISO639-1
+		if params[:lang] == "eng"
+			params[:lang] = "en"
+		elsif params[:lang] == "fra"
+			params[:lang] = "fr"
+		end
+	end
         if params[:lang].present?
           lang = session[:lang] = params[:lang]
         elsif session[:lang].present?
