@@ -1,0 +1,22 @@
+From 491346cf0301da7e24176109fcc26bbb91794fd6 Mon Sep 17 00:00:00 2001
+From: Patrick Naubert <patrickn@xelerance.com>
+Date: Wed, 18 Jan 2012 15:55:27 -0500
+Subject: [PATCH] Reduce the interval for crawling bots to reduce the load (commit by sdeziel)
+
+---
+ app/views/welcome/robots.rhtml |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+diff --git a/app/views/welcome/robots.rhtml b/app/views/welcome/robots.rhtml
+index c6e206b..5b0047b 100644
+--- a/app/views/welcome/robots.rhtml
++++ b/app/views/welcome/robots.rhtml
+@@ -1,4 +1,5 @@
+ User-agent: *
++Crawl-delay: 10
+ <% @projects.each do |p| -%>
+ Disallow: /projects/<%= p.to_param %>/repository
+ Disallow: /projects/<%= p.to_param %>/issues
+-- 
+1.7.0.4
+

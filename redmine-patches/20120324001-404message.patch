@@ -1,0 +1,51 @@
+From ecc39de71402fa201c604d13328cc77fe4936e38 Mon Sep 17 00:00:00 2001
+From: Patrick Naubert <patrickn@xelerance.com>
+Date: Wed, 18 Jan 2012 15:54:08 -0500
+Subject: [PATCH] refs #4395: Change error 404 and 500 to show IRCan instead of ChiliProject (commit by sdeziel)
+
+---
+ public/404.html |    2 +-
+ public/500.html |    6 +++---
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/public/404.html b/public/404.html
+index 7594fa7..b38aa9a 100644
+--- a/public/404.html
++++ b/public/404.html
+@@ -1,7 +1,7 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+ <html>
+-<title>ChiliProject 404 error</title>
++<title>IRCan 404 error</title>
+ <style>
+ body{
+ font-family: Trebuchet MS,Georgia,"Times New Roman",serif;
+diff --git a/public/500.html b/public/500.html
+index 8897422..bc2f36e 100644
+--- a/public/500.html
++++ b/public/500.html
+@@ -1,7 +1,7 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+ <html>
+-<title>ChiliProject 500 error</title>
++<title>IRCan 500 error</title>
+ <style>
+ body{
+ font-family: Trebuchet MS,Georgia,"Times New Roman",serif;
+@@ -18,9 +18,9 @@ font-size:0.8em;
+ <body>
+   <h1>Internal error</h1>
+   <p>An error occurred on the page you were trying to access.<br />
+-  If you continue to experience problems please contact your ChiliProject administrator for assistance.</p>
++  If you continue to experience problems please contact your IRCan administrator for assistance.</p>
+ 
+-  <p>If you are the ChiliProject administrator, check your log files for details about the error.</p>
++  <p>If you are the IRCan administrator, check your log files for details about the error.</p>
+   <p><a href="javascript:history.back()">Back</a></p>
+ </body>
+ </html>
+-- 
+1.7.0.4
+
