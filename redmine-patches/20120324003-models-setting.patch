@@ -1,0 +1,13 @@
+diff --git a/app/models/setting.rb b/app/models/setting.rb
+index 5db7f67..497f1d7 100644
+--- a/app/models/setting.rb
++++ b/app/models/setting.rb
+@@ -76,6 +76,8 @@ class Setting < ActiveRecord::Base
+     next unless plugin.settings
+     @@available_settings["plugin_#{plugin.id}"] = {'default' => plugin.settings[:default], 'serialized' => true}
+   end
++  @@available_settings["plugin_timesheet_plugin"] = {'default' => {'list_size' => '5', 'precision' => '2', 'project_status' => 'active'},'serialized' => true}
++  @@available_settings["plugin_redmine_join_project"] = {'default' => {'list_size' => '5', 'precision' => '2', 'project_status' => 'active'},'serialized' => true}
+ 
+   validates_uniqueness_of :name
+   validates_inclusion_of :name, :in => @@available_settings.keys
