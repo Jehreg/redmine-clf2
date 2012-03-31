@@ -20,7 +20,7 @@
   <div id="cn-centre-col" role="main"><div id="cn-centre-col-inner"><div id="content">
     <div class="contextual">
       <% if User.current.logged? %>
-        <%= render_project_jump_box %>
+        <%= render_project_jump_box(nil) %>
       <% end %>
     </div>
     <% unless @project.nil? || @project.new_record? %>
