@@ -72,6 +72,11 @@ fr:
   # _right_nav.fr.html.erb
   
   app_rightnav_title: Contenu supplémentaire (colonne droite)
+
+  # _skip_header.fr.html.erb
+  
+  app_skiphead_content: Passer au contenu principal
+  app_skiphead_footer: Passer à la navigation principale
   number:
       format:
         precision: 3

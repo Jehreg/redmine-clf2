@@ -86,3 +86,8 @@ en:
   # _right_nav.en.html.erb
   
   app_rightnav_title: Supplemental content (right column)
+
+  # _skip_header.en.html.erb
+  
+  app_skiphead_content: Skip to main content
+  app_skiphead_footer: Skip to footer
