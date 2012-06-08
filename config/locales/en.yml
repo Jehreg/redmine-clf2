@@ -122,3 +122,15 @@ en:
   app_multi_foot_title: Footer
   app_multi_foot_notice_en: Important Notices
   app_multi_foot_notice_fr: Avis importants
+
+  # wp-pa.en.html.erb
+  
+  app_wppa_skip_content_en: Skip to main content
+  app_wppa_skip_content_fr: Passer au contenu principal
+  app_wppa_skip_footer_en: Skip to footer
+  app_wppa_skip_footer_fr: Passer au pied de page
+  app_wppa_foot_title: Footer
+  app_wppa_foot_notice_en: Important Notices
+  app_wppa_foot_notice_en_url: "http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-eng.asp"
+  app_wppa_foot_notice_fr: Avis importants
+  app_wppa_foot_notice_fr_url: "http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-fra.asp"

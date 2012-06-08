@@ -10,7 +10,7 @@
   -->
 
   <!-- Title begins / Début du titre -->
-  <title><%= t(:app_title, :locale => :fr) %> / <%= t(:app_title, :locale => :en) %></title>
+  <title><%= l(:app_title, :locale => :fr) %> / <%= l(:app_title, :locale => :en) %></title>
   <!-- Title ends / Fin du titre -->
 
   <!-- Favicon (optional) begins / Début du favicon (optionnel) -->
@@ -63,8 +63,8 @@
 	<div id="cn-skip-head">
 	<nav>
 		<ul id="cn-tphp">
-			<li id="cn-sh-link-1"><a href="#cn-cont">Passer au contenu principal / <span lang="en">Skip to main content</span></a></li>
-			<li id="cn-sh-link-2"><a href="#cn-nav">Passer au pied de page / <span lang="en">Skip to footer</span></a></li>
+			<li id="cn-sh-link-1"><a href="#cn-cont"><%= l(:app_wppa_skip_content_fr) %> / <span lang="en"><%= l(:app_wppa_skip_content_en) %></span></a></li>
+			<li id="cn-sh-link-2"><a href="#cn-nav"><%= l(:app_wppa_skip_footer_fr) %> / <span lang="en"><%= l(:app_wppa_skip_footer_en) %></span></a></li>
 		</ul>
 	</nav>
 	</div>
@@ -91,11 +91,11 @@
 	<!-- Footer begins / Début du pied de page --> 
 	<div id="cn-foot"><div id="cn-foot-inner">
 	<footer>
-		<h2 id="cn-nav">Pied de page</h2>
+		<h2 id="cn-nav"><%= l(:app_wppa_foot_title) %></h2>
 <!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
 		<ul id="cn-in-links">
-			<li><a href="http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-fra.asp" rel="license">Avis importants</a></li>
-			<li lang="en"><a href="http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-eng.asp" rel="license">Important Notices</a></li>
+			<li><a href="<%= l(:app_wppa_foot_notice_fr_url) %>" rel="license"><%= l(:app_wppa_foot_notice_fr) %></a></li>
+			<li lang="en"><a href="<%= l(:app_wppa_foot_notice_url_en) %>" rel="license"><%= l(:app_wppa_foot_notice_en) %></a></li>
 		</ul>
 <!-- clf2-nsi2 theme ends / Fin du thème clf2-nsi2 -->
 	</footer>
