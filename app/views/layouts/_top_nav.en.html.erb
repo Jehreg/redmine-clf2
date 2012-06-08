@@ -1,13 +1,13 @@
 <!-- Common menu bar begins / Début de la barre de menu commune -->
 <div id="cn-cmb">
-  <h2>Common menu bar</h2>
+  <h2><%= l(:app_topnav_title) %></h2>
   <ul>
     <li id="cn-cmb1"><a href="<%= change_locale_link("fr") %>" lang="fr" title="Français - Version française de cette page">Français</a></li>
-    <li id="cn-cmb2"><a href="/" title="Home - Main page of the Web site">Home</a></li>
-    <li id="cn-cmb3"><a href="/contact" title="Contact Us - Important contact information">Contact Us</a></li>
-    <li id="cn-cmb4"><a href="/help" title="Help - Information about using the Web site">Help</a></li>
-    <li id="cn-cmb5"><a rel="search" href="/search" title="Search - Search the Web site">Search</a></li>
     <li id="cn-cmb6"><a rel="external" href="http://www.canada.gc.ca/home.html" title="canada.gc.ca - Government of Canada Web site">canada.gc.ca</a></li>
+    <li id="cn-cmb2"><a href="/" title="<%= l(:app_topnav_home_alt) %>"><%= l(:app_topnav_home) %></a></li>
+    <li id="cn-cmb3"><a href="/contact" title="<%= l(:app_topnav_contact_alt) %>"><%= l(:app_topnav_contact) %></a></li>
+    <li id="cn-cmb4"><a href="/help" title="<%= l(:app_topnav_help_alt) %>"><%= l(:app_topnav_help) %></a></li>
+    <li id="cn-cmb5"><a rel="search" href="/search" title="<%= l(:app_topnav_search_alt) %>"><%= l(:app_topnav_search) %></a></li>
   </ul>
 </div>
 <!-- Common menu bar ends / Fin de la barre de menu commune -->

@@ -77,6 +77,18 @@ fr:
   
   app_skiphead_content: Passer au contenu principal
   app_skiphead_footer: Passer à la navigation principale
+
+  #_top_nav.fr.html.erb 
+  
+  app_topnav_title: Barre de menu commune
+  app_topnav_home: Accueil
+  app_topnav_home_alt: Accueil - Page principale du site Web
+  app_topnav_contact: Contactez-nous
+  app_topnav_contact_alt: Contactez-nous - Coordonnées importantes
+  app_topnav_help: Aide 
+  app_topnav_help_alt: "Aide - Renseignements sur la façon d'utiliser le site Web"
+  app_topnav_search: Recherche
+  app_topnav_search_alt: Recherche - Recherche dans le site Web
   number:
       format:
         precision: 3

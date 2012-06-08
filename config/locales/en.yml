@@ -91,3 +91,15 @@ en:
   
   app_skiphead_content: Skip to main content
   app_skiphead_footer: Skip to footer
+ 
+  #_top_nav.en.html.erb 
+  
+  app_topnav_title: Common menu bar
+  app_topnav_home: Home
+  app_topnav_home_alt: Home - Main page of the Web site
+  app_topnav_contact: Contact Us
+  app_topnav_contact_alt: Contact Us - Important contact information
+  app_topnav_help: Help
+  app_topnav_help_alt: Help - Information about using the Web site
+  app_topnav_search: Search
+  app_topnav_search_alt: Search - Search the Web site
