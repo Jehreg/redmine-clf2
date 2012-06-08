@@ -82,3 +82,7 @@ en:
   app_leftnav_disclose_title: Proactive Disclosure
   app_leftnav_disclose: Proactive Disclosure
   app_leftnav_disclose_url: "http://www.tbs-sct.gc.ca/pd-dp/gr-rg/index-eng.asp"
+
+  # _right_nav.en.html.erb
+  
+  app_rightnav_title: Supplemental content (right column)

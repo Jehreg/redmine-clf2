@@ -57,6 +57,9 @@ fr:
   app_url: www.ircan-rican.gc.ca
   app_subject: Termes de sujet en français
 
+  # _right_nav.fr.html.erb
+  
+  app_rightnav_title: Contenu supplémentaire (colonne droite)
   number:
       format:
         precision: 3
