@@ -57,6 +57,18 @@ fr:
   app_url: www.ircan-rican.gc.ca
   app_subject: Termes de sujet en français
 
+ # _left_nav.fr.html.erb
+ 
+ app_leftnav_title: Navigation principale (colonne gauche)
+ app_leftnav_men_title: RICan
+ app_leftnav_men_title_alt: Ressources Intellectuelles Canada
+ app_leftnav_men_reg: Enregistre
+ app_leftnav_men_reg_alt: Enregistrer &lt; Ressources Intellectuelles Canada
+ app_leftnav_men_login: Enregistrer
+ app_leftnav_men_login_alt: Connecter &lt; Ressources Intellectuelles Canada
+ app_leftnav_disclose_title: Divulgation proactive
+ app_leftnav_disclose: Divulgation proactive
+ app_leftnav_disclose_url: "http://www.tbs-sct.gc.ca/pd-dp/gr-rg/index-fra.asp"
   # _right_nav.fr.html.erb
   
   app_rightnav_title: Contenu supplémentaire (colonne droite)
