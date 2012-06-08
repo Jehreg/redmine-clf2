@@ -54,7 +54,7 @@ en:
   app_keywords: TBS, Franchise, Intellectual, Resources, Canada, Proof-of-Concept, Environment, issue, bug, tracker
   app_creator: Government of Canada, Treasury Board of Canada, Secretariat, Treasury Board of Canada Secretariat, Chief Information Officer Branch, Information Technology, Intellectual Resources Canada
   app_creator_title: Titles of Federal Organizations
-  app_url: tbs-sct.ircan.gc.ca
+  app_url: www.ircan-rican.gc.ca
   app_subject: English subject terms
 
   # Other Strings
@@ -68,3 +68,4 @@ en:
   app_footer_page_license_alt: License Information
   app_footer_page_license: Important Notices
 
+  app_header_breadcrumb: Breadcrumb

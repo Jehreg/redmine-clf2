@@ -7,8 +7,8 @@
   <!-- Banner begins / Début de la bannière -->
   <div id="cn-leaf"></div>
   <div id="cn-banner" role="banner">
-    <p id="cn-banner-text"><%= t(:app_title) %></p>
-    <p><!-- <%= t(:app_url) %> -->www.ircan-rican.gc.ca</p>
+    <p id="cn-banner-text"><%= l(:app_title) %></p>
+    <p><%= l(:app_url) %></p>
   </div>
   <!-- Banner ends / Fin de la bannière -->
 
@@ -17,7 +17,7 @@
 
     <!-- Breadcrumb begins / Début du fil d'Ariane -->
     <div id="cn-bcrumb">
-      <h2>Breadcrumb</h2>
+      <h2><%= l(:app_header_breadcrumb) %></h2>
       <ol>
         <% breadcrumbs %>
       </ol>
