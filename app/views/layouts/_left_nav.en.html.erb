@@ -2,15 +2,15 @@
 <div id="cn-left-col-gap"></div>
 <div id="cn-left-col"><div id="cn-left-col-inner">
 <section>
-  <h2 id="cn-nav">Primary navigation (left column)</h2>
+  <h2 id="cn-nav"><%= t(:app_leftnav_title) %></h2>
   <div class="cn-left-col-default">
   <nav role="navigation">
     <% unless User.current.logged? %>
       <section>
-        <h3><acronym title="Intellectual Resources Canada">IRCan</acronym></h3>
+        <h3><acronym title="<%= t(:app_leftnav_men_title_alt) %>"><%= t(:app_leftnav_men_title) %></acronym></h3>
         <ul>
-            <li><a title="Register &lt; Intellectual Resources Canada" href="/account/register">Register</a></li>
-            <li><a title="Login &lt; Intellectual Resources Canada" href="/login">Login</a></li>
+            <li><a title="<%= t(:app_leftnav_men_reg_alt) %>" href="/account/register"><%= t(:app_leftnav_men_reg) %></a></li>
+            <li><a title="<%= t(:app_leftnav_men_login_alt) %>" href="/login"><%= t(:app_leftnav_men_login_alt) %></a></li>
         </ul>
       </section>
     <% end %>
@@ -21,9 +21,9 @@
       <%= render_clf_main_menu(@project) %>
     </section>
     <section>
-      <h3 id="cn-pd-link">Proactive Disclosure</h3>
+      <h3 id="cn-pd-link"><%= t(:app_leftnav_disclose_title) %></h3>
       <ul id="cn-pd-ul">
-        <li><a href="http://www.tbs-sct.gc.ca/pd-dp/gr-rg/index-eng.asp">Proactive Disclosure</a></li>
+        <li><a href="<%= t(:app_leftnav_disclose_url) %>"><%= t(:app_leftnav_disclose) %></a></li>
       </ul>
     </section>
   </nav>

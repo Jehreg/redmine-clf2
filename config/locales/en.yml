@@ -69,3 +69,16 @@ en:
   app_footer_page_license: Important Notices
 
   app_header_breadcrumb: Breadcrumb
+
+  # _left_nav.en.html.erb
+  
+  app_leftnav_title: Primary navigation (left column)
+  app_leftnav_men_title: IRCan
+  app_leftnav_men_title_alt: Intellectual Resources Canada
+  app_leftnav_men_reg: Register
+  app_leftnav_men_reg_alt: Register &lt; Intellectual Resources Canada
+  app_leftnav_men_login: Login
+  app_leftnav_men_login_alt: Login &lt; Intellectual Resources Canada
+  app_leftnav_disclose_title: Proactive Disclosure
+  app_leftnav_disclose: Proactive Disclosure
+  app_leftnav_disclose_url: "http://www.tbs-sct.gc.ca/pd-dp/gr-rg/index-eng.asp"
