@@ -5,13 +5,13 @@
 <!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
   <div id="cn-in-pd">			
     <dl id="cn-doc-dates" role="contentinfo">
-      <dt>Date Modified:</dt>
-      <dd><span><time>2010-08-09</time></span></dd>
+      <dt><%= l(:app_footer_dt_modified_label) %>:</dt>
+      <dd><span><time><%= l(:app_footer_dt_modified) %></time></span></dd>
     </dl>
-    <div id="cn-toppage-foot"><a href="#cn-tphp" title="Return to Top of Page">Top of Page</a></div>
+    <div id="cn-toppage-foot"><a href="#cn-tphp" title="<%= l(:app_footer_page_top_alt) %>"><%= l(:app_footer_page_top) %></a></div>
     <div id="cn-in-pd-links">
       <ul>
-        <li id="cn-inotices-link"><a href="#" rel="license">Important Notices</a></li>
+        <li id="cn-inotices-link"><a href="#" rel="license" title="<%= l(:app_footer_page_license_alt) %>"><%= l(:app_footer_page_license) %></a></li>
       </ul>
     </div>
   </div>
@@ -19,4 +19,3 @@
 </footer>
 </div></div>
 <!-- Footer ends / Fin du pied de page -->
-

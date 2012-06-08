@@ -56,3 +56,15 @@ en:
   app_creator_title: Titles of Federal Organizations
   app_url: tbs-sct.ircan.gc.ca
   app_subject: English subject terms
+
+  # Other Strings
+ 
+  # _footer.en.html.erb
+  
+  app_footer_dt_modified_label: Date Modified 
+  app_footer_dt_modified: "2010-08-09"
+  app_footer_page_top_alt: Return to Top of Page
+  app_footer_page_top: Top of Page
+  app_footer_page_license_alt: License Information
+  app_footer_page_license: Important Notices
+
