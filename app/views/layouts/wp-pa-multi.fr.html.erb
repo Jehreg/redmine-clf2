@@ -10,8 +10,8 @@
 	<div id="cn-skip-head">
 	<nav>
 		<ul id="cn-tphp">
-			<li id="cn-sh-link-1"><a href="#cn-cont">Passer au contenu principal / <span lang="en">Skip to main content</span></a></li>
-			<li id="cn-sh-link-2"><a href="#cn-nav">Passer au pied de page / <span lang="en">Skip to footer</span></a></li>
+			<li id="cn-sh-link-1"><a href="#cn-cont"><%= l(:app_multi_skip_content_fr) %> / <span lang="en"><%= l(:app_multi_skip_content_en) %></span></a></li>
+			<li id="cn-sh-link-2"><a href="#cn-nav"><%= l(:app_multi_skip_footer_fr) %> / <span lang="en"><%= l(:app_multi_skip_footer_en) %></span></a></li>
 		</ul>
 	</nav>
 	</div>
@@ -42,8 +42,8 @@
 		<div id="cn-msg-space" role="banner">
 			<div id="cn-upper-msg"></div>
 			<div id="cn-lower-msg">
-				<p id="cn-left-msg">Nom de l'institution</p>
-				<p id="cn-right-msg" lang="en">Name of Institution</p>
+				<p id="cn-left-msg"><%= l(:app_multi_msg_fr) %></p>
+				<p id="cn-right-msg" lang="en"><%= l(:app_multi_msg_en) %></p>
 			</div>
 		</div>
 		<!-- Message space ends / Fin de l'espace de message -->
@@ -55,11 +55,11 @@
 			</ul>
 			<div id="cn-wmms"><img src="images/wmms.gif" width="83" height="20" alt="Symbole du gouvernement du Canada / Symbol of the Government of Canada" title="Symbole du gouvernement du Canada / Symbol of the Government of Canada" /></div>
 			<ul id="cn-other-lang-links">
-				<li lang="de"><a href="#">Deutsch</a></li>
-				<li lang="es"><a href="#">Espa&#241;ol</a></li>
-				<li lang="it"><a href="#">Italiano</a></li>
-				<li lang="pt"><a href="#">Português</a></li>
-				<li lang="ru"><a href="#">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a></li>
+                                <li lang="de"><a href="#"><%= l(:app_multi_nav_de) %></a></li>
+                                <li lang="es"><a href="#"><%= l(:app_multi_nav_es) %></a></li>
+                                <li lang="it"><a href="#"><%= l(:app_multi_nav_it) %></a></li>
+                                <li lang="pt"><a href="#"><%= l(:app_multi_nav_pt) %></a></li>
+                                <li lang="ru"><a href="#"><%= l(:app_multi_nav_ru) %></a></li>
 			</ul>
 		</nav>
 <!-- clf2-nsi2 theme ends / Fin du thème clf2-nsi2 -->
@@ -71,11 +71,11 @@
 	<!-- Footer begins / Début du pied de page --> 
 	<div id="cn-foot"><div id="cn-foot-inner">
 	<footer>
-		<h2 id="cn-nav">Pied de page</h2>
+		<h2 id="cn-nav"><%= l(:app_multi_foot_title) %></h2>
 <!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
 		<ul id="cn-in-links">
-			<li><a href="#" rel="license">Avis importants</a></li>
-			<li lang="en"><a href="#" rel="license">Important Notices</a></li>
+			<li><a href="#" rel="license"><%= l(:app_multi_foot_notice_fr) %></a></li>
+			<li lang="en"><a href="#" rel="license"><%= l(:app_multi_notice_en) %></a></li>
 		</ul>
 <!-- clf2-nsi2 theme ends / Fin du thème clf2-nsi2 -->
 	</footer>

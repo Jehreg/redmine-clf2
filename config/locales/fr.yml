@@ -89,6 +89,22 @@ fr:
   app_topnav_help_alt: "Aide - Renseignements sur la façon d'utiliser le site Web"
   app_topnav_search: Recherche
   app_topnav_search_alt: Recherche - Recherche dans le site Web
+  
+#wp-pa-multi.en.html.erb
+
+
+app_multi_msg_en: Name of Institution
+app_multi_msg_fr: "Nom de l'institution"
+
+app_multi_nav_de: Deutsch
+app_multi_nav_es: "Espa&#241;o"
+app_multi_nav_it: Italiano
+app_multi_nav_pt: Português
+app_multi_nav_ru: "&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081"
+
+app_multi_foot_title: Pied de page
+app_multi_foot_notice_en: Important Notices
+app_multi_foot_notice_fr: Avis importants
   number:
       format:
         precision: 3
