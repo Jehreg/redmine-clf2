@@ -134,3 +134,10 @@ en:
   app_wppa_foot_notice_en_url: "http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-eng.asp"
   app_wppa_foot_notice_fr: Avis importants
   app_wppa_foot_notice_fr_url: "http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-fra.asp"
+
+  # welcome.en.html.erb
+  
+  app_welcome_nav_en: English
+  app_welcome_nav_en_alt: English - English version of the Web site
+  app_welcome_nav_fr: Français
+  app_welcome_nav_fr_alt: Français - Version française de ce site Web
