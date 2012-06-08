@@ -70,9 +70,7 @@ en:
 
   # _header.en.html.erb
   
-  app_header_img_src: sig-eng.gif
   app_header_img_alt: Government of Canada 
-  app_header_img_wmms_src: wmms.gif
   app_header_img_wmms_alt: Symbol of the Government of Canada
   app_header_breadcrumb: Breadcrumb
 

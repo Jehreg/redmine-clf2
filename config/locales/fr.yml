@@ -71,7 +71,6 @@ fr:
 
   # _header.fr.html.erb
  
-  app_header_img_src: sig-fra.gif 
   app_header_img_alt: Gouvernement du Canada
   app_header_img_wmms_src: Symbole du gouvernement du Canada
   app_header_img_wmms_alt: Symbole du gouvernement du Canada
