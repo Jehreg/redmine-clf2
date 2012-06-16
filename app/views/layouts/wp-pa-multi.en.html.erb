@@ -33,7 +33,7 @@
 	<section>
 		<!-- Content title begins / Début du titre du contenu -->
 		<header>
-			<h1 id="cn-cont">Welcome page (outside Quebec) - <abbr title="Common Look and Feel">CLF</abbr> 2.0 Theme - HTML5 - Web Experience Toolkit (WET) / <span lang="fr">Page d'accueil (hors de Québec) - Thème <abbr title="Normalisation des sites Internet">NSI</abbr> 2.0 - HTML5 - Boîte à outils de l'expérience Web (BOEW)</span></h1>
+			<h1 id="cn-cont"><%= l(:app_multi_head_title_en_1) %> - <abbr title="<%= l(:app_multi_head_title_en_abr_alt) %>"><%= l(:app_multi_head_title_en_abr) %></abbr> <%= l(:app_multi_head_title_en_2) %> / <span lang="fr"><%= l(:app_multi_head_title_fr_1) %>  <abbr title="%= l(:app_multi_head_title_fr_abr_alt) %>"><%= l(:app_multi_head_title_fr_abr) %></abbr> <%= l(:app_multi_head_title_fr_2) %></span></h1>
 		</header>
 		<!-- Content Title ends / Fin du titre du contenu -->		
 		
@@ -50,8 +50,8 @@
 
 		<nav role="navigation">
 			<ul id="cn-ef-lang-links">
-				<li><a href="3col-theme-clf2-nsi2-eng.html" title="English - English version of the Web site">English</a></li>
-				<li lang="fr"><a href="3col-theme-clf2-nsi2-fra.html" title="Français - Version française de ce site Web">Français</a></li>
+				<li><a href="<%= l(:app_multi_nav_en_url) %>" title="<%= l(:app_multi_nav_en_alt) %>"><%= l(:app_multi_nav_en) %></a></li>
+				<li lang="fr"><a href="<%= l(:app_multi_nav_fr_url) %>" title="<%= l(:app_multi_nav_fr_alt) %>"><%= l(:app_multi_nav_fr) %></a></li>
 			</ul>
 			<div id="cn-wmms"><img src="images/logo-top-right.gif" width="83" height="20" alt="<%= l(:app_multi_nav_img_alt) %>" title="<%= l(:app_multi_nav_img_alt) %>" /></div>
 			<ul id="cn-other-lang-links">
