@@ -77,18 +77,18 @@ fr:
   app_header_img_wmms_alt: Symbole du gouvernement du Canada
   app_header_breadcrumb: "Fil d'Ariane"
   
- # _left_nav.fr.html.erb
+  # _left_nav.fr.html.erb
  
- app_leftnav_title: Navigation principale (colonne gauche)
- app_leftnav_men_title: RICan
- app_leftnav_men_title_alt: Ressources Intellectuelles Canada
- app_leftnav_men_reg: Enregistre
- app_leftnav_men_reg_alt: Enregistrer &lt; Ressources Intellectuelles Canada
- app_leftnav_men_login: Enregistrer
- app_leftnav_men_login_alt: Connecter &lt; Ressources Intellectuelles Canada
- app_leftnav_disclose_title: Divulgation proactive
- app_leftnav_disclose: Divulgation proactive
- app_leftnav_disclose_url: "http://www.tbs-sct.gc.ca/pd-dp/gr-rg/index-fra.asp"
+  app_leftnav_title: Navigation principale (colonne gauche)
+  app_leftnav_men_title: MonSite
+  app_leftnav_men_title_alt: MonSite
+  app_leftnav_men_reg: Enregistre
+  app_leftnav_men_reg_alt: Enregistrer &lt; MonSite
+  app_leftnav_men_login: Enregistrer
+  app_leftnav_men_login_alt: Connecter &lt; MonSite
+  app_leftnav_disclose_title: Divulgation proactive
+  app_leftnav_disclose: Divulgation proactive
+  app_leftnav_disclose_url: "http://www.tbs-sct.gc.ca/pd-dp/gr-rg/index-fra.asp"
 
   # _right_nav.fr.html.erb
   
@@ -117,71 +117,71 @@ fr:
   app_topnav_external_url: "http://www.canada.gc.ca/accueil.html"
   app_topnav_external_alt: canada.gc.ca - Site Web du gouvernement du Canada
   
-#wp-pa-multi.en.html.erb
+  #wp-pa-multi.en.html.erb
 
-app_multi_skip_content_en: Skip to main content
-app_multi_skip_content_fr: Passer au contenu principal
-app_multi_skip_footer_en: Skip to footer
-app_multi_skip_footer_fr: Passer au pied de page
-app_multi_head_img_src: "images/sig-fra.gif"
-app_multi_head_img_alt: Gouvernement du Canada / Government of Canada
+  app_multi_skip_content_en: Skip to main content
+  app_multi_skip_content_fr: Passer au contenu principal
+  app_multi_skip_footer_en: Skip to footer
+  app_multi_skip_footer_fr: Passer au pied de page
+  app_multi_head_img_src: "images/sig-fra.gif"
+  app_multi_head_img_alt: Gouvernement du Canada / Government of Canada
 
-app_multi_head_title_en_1: Welcome page (outside Quebec)
-app_multi_head_title_en_abr: CLF
-app_multi_head_title_en_abr_alt: Common Look and Feel
-app_multi_head_title_en_2: 2.0 Theme - HTML5 - Web Experience Toolkit (WET)
+  app_multi_head_title_en_1: Welcome page (outside Quebec)
+  app_multi_head_title_en_abr: CLF
+  app_multi_head_title_en_abr_alt: Common Look and Feel
+  app_multi_head_title_en_2: 2.0 Theme - HTML5 - Web Experience Toolkit (WET)
 
-app_multi_head_title_fr_1: "Page d'accueil (hors de Québec) - Thème"
-app_multi_head_title_fr_abr: NSI
-app_multi_head_title_fr_abr_alt: Normalisation des sites Internet
-app_multi_head_title_fr_2: "2.0 - HTML5 - Boîte à outils de l'expérience Web (BOEW)"
+  app_multi_head_title_fr_1: "Page d'accueil (hors de Québec) - Thème"
+  app_multi_head_title_fr_abr: NSI
+  app_multi_head_title_fr_abr_alt: Normalisation des sites Internet
+  app_multi_head_title_fr_2: "2.0 - HTML5 - Boîte à outils de l'expérience Web (BOEW)"
 
-app_multi_msg_en: Name of Institution
-app_multi_msg_fr: "Nom de l'institution"
+  app_multi_msg_en: Name of Institution
+  app_multi_msg_fr: "Nom de l'institution"
 
-app_multi_nav_en: English
-app_multi_nav_en_url: 3col-theme-clf2-nsi2-eng.html
-app_multi_nav_en_alt: English - English version of the Web site
+  app_multi_nav_en: English
+  app_multi_nav_en_url: 3col-theme-clf2-nsi2-eng.html
+  app_multi_nav_en_alt: English - English version of the Web site
 
-app_multi_nav_fr: Name of Institution
-app_multi_nav_fr_url: 3col-theme-clf2-nsi2-fra.html
-app_multi_nav_fr_alt: Français - Version française de ce site Web
+  app_multi_nav_fr: Name of Institution
+  app_multi_nav_fr_url: 3col-theme-clf2-nsi2-fra.html
+  app_multi_nav_fr_alt: Français - Version française de ce site Web
 
-app_multi_nav_img_src: "images/wmms.gif"
-app_multi_nav_img_alt: Symbole du gouvernement du Canada / Symbol of the Government of Canad
+  app_multi_nav_img_src: "images/wmms.gif"
+  app_multi_nav_img_alt: Symbole du gouvernement du Canada / Symbol of the Government of Canad
 
-app_multi_nav_de: Deutsch
-app_multi_nav_es: "Espa&#241;o"
-app_multi_nav_it: Italiano
-app_multi_nav_pt: Português
-app_multi_nav_ru: "&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081"
+  app_multi_nav_de: Deutsch
+  app_multi_nav_es: "Espa&#241;o"
+  app_multi_nav_it: Italiano
+  app_multi_nav_pt: Português
+  app_multi_nav_ru: "&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081"
 
-app_multi_foot_title: Pied de page
-app_multi_foot_notice_en: Important Notices
-app_multi_foot_notice_fr: Avis importants
+  app_multi_foot_title: Pied de page
+  app_multi_foot_notice_en: Important Notices
+  app_multi_foot_notice_fr: Avis importants
 
-# wp-pa.en.html.erb
+  # wp-pa.en.html.erb
 
-app_wppa_skip_content_en: Skip to main content
-app_wppa_skip_content_fr: Passer au contenu principal
-app_wppa_skip_footer_en: Skip to footer
-app_wppa_skip_footer_fr: Passer au pied de page
-app_wppa_img_src: sig-fra.gif
-app_wppa_img_alt: Gouvernement du Canada / Government of Canada
-app_wppa_foot_title: Pied de page
-app_wppa_foot_notice_en: Important Notices
-app_wppa_foot_notice_en_url: "http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-eng.asp"
-app_wppa_foot_notice_fr: Avis importants
-app_wppa_foot_notice_fr_url: "http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-fra.asp"
+  app_wppa_skip_content_en: Skip to main content
+  app_wppa_skip_content_fr: Passer au contenu principal
+  app_wppa_skip_footer_en: Skip to footer
+  app_wppa_skip_footer_fr: Passer au pied de page
+  app_wppa_img_src: sig-fra.gif
+  app_wppa_img_alt: Gouvernement du Canada / Government of Canada
+  app_wppa_foot_title: Pied de page
+  app_wppa_foot_notice_en: Important Notices
+  app_wppa_foot_notice_en_url: "http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-eng.asp"
+  app_wppa_foot_notice_fr: Avis importants
+  app_wppa_foot_notice_fr_url: "http://www.tbs-sct.gc.ca/tbs-sct/cmn/notices-avis-fra.asp"
 
-# welcome.en.html.erb
+  # welcome.en.html.erb
 
-app_welcome_nav_en: English
-app_welcome_nav_en_alt: English - English version of the Web site
-app_welcome_nav_fr: Français
-app_welcome_nav_fr_alt: Français - Version française de ce site Web
-app_welcome_img_wmms_src: wmms.gif
-app_welcome_img_wmms_alt: Symbole du gouvernement du Canada / Symbol of the Government of Canada
+  app_welcome_nav_en: English
+  app_welcome_nav_en_alt: English - English version of the Web site
+  app_welcome_nav_fr: Français
+  app_welcome_nav_fr_alt: Français - Version française de ce site Web
+  app_welcome_img_wmms_src: wmms.gif
+  app_welcome_img_wmms_alt: Symbole du gouvernement du Canada / Symbol of the Government of Canada
 
 
 
