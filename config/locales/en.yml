@@ -4,6 +4,7 @@ en:
   clf2_text_read_more: Read More
   label_clf_redmine: IRCan Redmine
   label_app_title: Extranet Environment
+  label_overview: Overview
   label_powered_by: Free Software at Work
   field_description_fr: French Description
   field_description: Description
@@ -72,6 +73,7 @@ en:
   
   app_header_img_alt: Government of Canada 
   app_header_img_wmms_alt: Symbol of the Government of Canada
+  app_header_img_wmms_src: Symbol of the Header
   app_header_breadcrumb: Breadcrumb
 
   # _left_nav.en.html.erb
