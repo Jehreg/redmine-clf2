@@ -2,7 +2,7 @@ en:
   clf2_text_top_menu: Site Menu
   clf2_text_main_menu: Project Menu
   clf2_text_read_more: Read More
-  label_clf_redmine: IRCan Redmine
+  label_clf_redmine: Redmine
   label_app_title: Extranet Environment
   label_overview: Overview
   label_powered_by: Free Software at Work
@@ -10,11 +10,11 @@ en:
   field_description: Description
   field_name_fr: French Project Name
   field_name : English Project Name
+  text_report_a_problem: Report a Problem
+  text_registration_instructions: "To guard against spam, all account applications are manually verified by administrators.  The approval process can take up to 24 hours.  To learn more, please visit our <a href='/projects/ircan-initiative/wiki/How_can_I_register_with_IRCan'>account registration and activation process</a> page."
+  notice_account_invalid_creditentials: "Login failed.  Either you provided an incorrect username or password, or your account has not yet been activated by an administrator.  Please visit our <a href='/projects/ircan-initiative/wiki/How_can_I_register_with_IRCan'>account registration and activation process</a> page."
   setting_welcome_text: English Welcome Text
   setting_welcome_text_fr: French Welcome Text
-  text_report_a_problem: Report a Problem
-  text_registration_instructions: "To guard against spam, all account applications are manually verified by IRCan administrators.  The approval process can take up to 24 hours.  To learn more, please visit our <a href='/projects/ircan-initiative/wiki/How_can_I_register_with_IRCan'>account registration and activation process</a> page."
-  notice_account_invalid_creditentials: "Login failed.  Either you provided an incorrect username or password, or your account has not yet been activated by an IRCan administrator.  Please visit our <a href='/projects/ircan-initiative/wiki/How_can_I_register_with_IRCan'>account registration and activation process</a> page."
   #
   # Rename all language strings in the core Redmine:
   #
@@ -50,12 +50,12 @@ en:
   field_overtime: Overtime
 
   # Metadata Strings
-  app_title: Intellectual Resources Canada
-  app_description: IRCan is a management framework and set of online services available to any community engaged in the joint creation and evolution of re-usable digital data, information or knowledge assets, which Canadian Government personnel consider to be helpful towards achieving their public interest mandate.
-  app_keywords: TBS, Franchise, Intellectual, Resources, Canada, Proof-of-Concept, Environment, issue, bug, tracker
-  app_creator: Government of Canada, Treasury Board of Canada, Secretariat, Treasury Board of Canada Secretariat, Chief Information Officer Branch, Information Technology, Intellectual Resources Canada
+  app_title: MYSITE
+  app_description: MYSITE is great.
+  app_keywords: Keyword1, keyword2
+  app_creator: My Name
   app_creator_title: Titles of Federal Organizations
-  app_url: www.ircan-rican.gc.ca
+  app_url: www.mysite-monsite.com
   app_subject: English subject terms
 
   # Other Strings
@@ -71,20 +71,20 @@ en:
 
   # _header.en.html.erb
   
-  app_header_img_alt: Government of Canada 
-  app_header_img_wmms_alt: Symbol of the Government of Canada
+  app_header_img_alt: Header image string 
   app_header_img_wmms_src: Symbol of the Header
+  app_header_img_wmms_alt: Symbol of the Header
   app_header_breadcrumb: Breadcrumb
 
   # _left_nav.en.html.erb
   
   app_leftnav_title: Primary navigation (left column)
-  app_leftnav_men_title: IRCan
-  app_leftnav_men_title_alt: Intellectual Resources Canada
+  app_leftnav_men_title: Mysite
+  app_leftnav_men_title_alt: MySite
   app_leftnav_men_reg: Register
-  app_leftnav_men_reg_alt: Register &lt; Intellectual Resources Canada
+  app_leftnav_men_reg_alt: Register &lt; MySite
   app_leftnav_men_login: Login
-  app_leftnav_men_login_alt: Login &lt; Intellectual Resources Canada
+  app_leftnav_men_login_alt: Login &lt; MySite
   app_leftnav_disclose_title: Proactive Disclosure
   app_leftnav_disclose: Proactive Disclosure
   app_leftnav_disclose_url: "http://www.tbs-sct.gc.ca/pd-dp/gr-rg/index-eng.asp"
