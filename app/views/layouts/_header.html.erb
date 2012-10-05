@@ -1,14 +1,15 @@
 <div id="cn-head"><div id="cn-head-inner">
 <header>
 <!-- clf2-nsi2 theme begins / Début du thème clf2-nsi2 -->
-  <div id="cn-sig"><%= image_tag 'sig-eng.gif', :plugin => 'redmine_clf2', :width => "372", :height=>"20", :alt=>"Gouvernement du Canada", :title => "Gouvernement du Canada" %></div>
-  <div id="cn-wmms"><%= image_tag 'wmms.gif', :plugin => 'redmine_clf2', :width => "83", :height=>"20", :alt=>"Symbole du gouvernement du Canada", :title => "Symbole du gouvernement du Canada" %></div>
+
+  <div id="cn-sig"><%= image_tag 'sig-eng.gif', :plugin => 'redmine_clf2', :width => "372", :height=>"20", :alt=>"l(:app_header_img_sig_alt)", :title => "l(:app_header_img_sig_alt)" %></div>
+  <div id="cn-wmms"><%= image_tag 'wmms.gif', :plugin => 'redmine_clf2', :width => "83", :height=>"20", :alt=>"l(:app_header_img_wmms_alt)", :title => "l(:app_header_img_wmms_alt)" %></div>
 
   <!-- Banner begins / Début de la bannière -->
   <div id="cn-leaf"></div>
   <div id="cn-banner" role="banner">
     <p id="cn-banner-text"><%= l(:app_title) %></p>
-    <p><!-- <%= l(:app_url) %> -->www.ircan-rican.gc.ca</p>
+    <p><%= l(:app_url) %></p>
   </div>
   <!-- Banner ends / Fin de la bannière -->
 
@@ -17,7 +18,7 @@
 
     <!-- Breadcrumb begins / Début du fil d'Ariane -->
     <div id="cn-bcrumb">
-      <h2>Fil d'Ariane</h2>
+      <h2><%= l(:app_header_breadcrumb) %></h2>
       <ol>
         <% breadcrumbs %>
       </ol>
