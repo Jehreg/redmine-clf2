@@ -2,17 +2,17 @@ fr:
   clf2_text_top_menu: Menu du site
   clf2_text_main_menu: Menu du projet
   clf2_text_read_more: Lire la suite
-  label_clf_redmine: RICan Redmine
+  label_clf_redmine: Redmine
   label_app_title: Environnement extranet
-  label_overview: Vue d'ensemble
+  label_overview: "Vue d'ensemble"
   label_powered_by: Logiciels Libre en marche
   field_description_fr: Description Francophone
   field_description: Description
   field_name_fr: Nom Francophone du projet
   field_name : Nom Anglophone du projet
   text_report_a_problem: Signaler un problème
-  text_registration_instructions: "Pour se prémunir contre le spam, toutes les applications de compte sont vérifiés manuellement par les administrateurs RICan. Le processus d'approbation peut prendre jusqu'à 24 heures. Pour en savoir plus, s'il vous plaît visitez notre <a href='/projects/ircan-initiative/wiki/How_can_I_register_with_IRCan'>page d'inscription en compte et processus d'activation</a>."
-  notice_account_invalid_creditentials: "Échec de la connexion. Soit vous avez fourni un nom d'utilisateur ou mot de passe incorrect ou votre compte n'a pas encore été activé par un administrateur RICan. S'il vous plaît visitez notre <a href='/projects/ircan-initiative/wiki/How_can_I_register_with_IRCan'>page d'inscription en compte et processus d'activation</a>."
+  text_registration_instructions: "Pour se prémunir contre le spam, toutes les applications de compte sont vérifiés manuellement par les administrateurs. Le processus d'approbation peut prendre jusqu'à 24 heures. Pour en savoir plus, s'il vous plaît visitez notre <a href='/projects/ircan-initiative/wiki/How_can_I_register_with_IRCan'>page d'inscription en compte et processus d'activation</a>."
+  notice_account_invalid_creditentials: "Échec de la connexion. Soit vous avez fourni un nom d'utilisateur ou mot de passe incorrect ou votre compte n'a pas encore été activé par un administrateur. S'il vous plaît visitez notre <a href='/projects/ircan-initiative/wiki/How_can_I_register_with_IRCan'>page d'inscription en compte et processus d'activation</a>."
   setting_welcome_text: "Texte d'accueil anglophone"
   setting_welcome_text_fr: "Texte d'accueil francophone"
   #
@@ -50,12 +50,12 @@ fr:
   field_overtime: Temps supplémentaire
   
   # Metadata Strings
-  app_title: Ressources Intellectuelles Canada 
-  app_description: RICan est un cadre de gestion et un ensemble de services en direct offerts aux collectivités qui participent à la création et à l’évolution communes de données, de renseignements ou de connaissances numériques réutilisables, chose qui, selon les fonctionnaires, pourrait aider le gouvernement du Canada à remplir son mandat de servir l’intérêt public.
-  app_keywords: Environnement, validation, principe, franchise, SCT, Ressources, Intellectuelles, Canada, enjeu, bogue, traqueur
-  app_creator: Gouvernement du Canada, Conseil du Trsor du Canada, Secrtariat, Secrtariat du Conseil du Trsor du Canada, Direction du dirigeant principal de l'information, Technologie de l'information, Ressources Intellectuelles Canada
+  app_title: MONSITE 
+  app_description: MONSITE est superbe.
+  app_keywords: Mot cle1, Mot cle2
+  app_creator: Mon nom
   app_creator_title: Titres des institutions fédérales
-  app_url: www.ircan-rican.gc.ca
+  app_url: www.mysite-monsite.com
   app_subject: Termes de sujet en français
 
 
@@ -72,9 +72,9 @@ fr:
 
   # _header.fr.html.erb
  
-  app_header_img_alt: Gouvernement du Canada
-  app_header_img_wmms_src: Symbole du gouvernement du Canada
-  app_header_img_wmms_alt: Symbole du gouvernement du Canada
+  app_header_img_alt: "Object de l'image de l'entete"
+  app_header_img_wmms_src: "Symbole de l'entete"
+  app_header_img_wmms_alt: "Symbole de l'entete"
   app_header_breadcrumb: "Fil d'Ariane"
   
   # _left_nav.fr.html.erb
